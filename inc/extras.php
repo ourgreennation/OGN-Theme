@@ -397,8 +397,9 @@ function ourgreennation_content_popular_articles() {
 
     if( $popular_query->have_posts() ):
 
-        echo '<div class="popular-articles-inner masonry"><div class="grid-sizer"></div>';
-
+    	if( !get_field( 'home_popular_content' ) ) {
+        	echo '<div class="popular-articles-inner masonry"><div class="grid-sizer"></div>';
+		}
             while( $popular_query->have_posts() ) : $popular_query->the_post();
 
                	get_template_part( 'components/post/content', get_post_format() );
@@ -409,7 +410,9 @@ function ourgreennation_content_popular_articles() {
 
             wp_reset_query();
 
-        echo '</div>';
+        if( !get_field( 'home_popular_content' ) ) {
+        	echo '</div>';
+        }
 
     endif;
 

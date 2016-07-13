@@ -12,9 +12,11 @@
 ?>
 
 	</div>
-	<?php get_template_part( 'components/navigation/navigation', 'bottom' ); ?>
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php // get_template_part( 'components/footer/site', 'info' ); ?>
+	<footer id="colophon" class="site-footer-wrap" role="contentinfo">
+		<div class="site-footer">
+			<?php get_template_part( 'components/navigation/navigation', 'bottom' ); ?>
+			<?php get_template_part( 'components/footer/site', 'info' ); ?>
+		</div>
 	</footer>
 </div>
 <?php wp_footer(); ?>

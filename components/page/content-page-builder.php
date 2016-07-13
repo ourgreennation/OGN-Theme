@@ -62,6 +62,8 @@ function ourgreennation_page_content_scripts() {
 
 	        elseif( get_row_layout() == 'recent_articles' ): // Recent Articles
 
+	        elseif( get_row_layout() == 'home_popular_content' ): // Home Popular Content
+
 	        elseif( get_row_layout() == 'content_carousel' ): // Slider of Client Images
 				?>
 				<script>
@@ -239,6 +241,33 @@ function ourgreennation_page_content() {
 					}
 
 	        		ourgreennation_content_recent_articles();
+
+	        	echo '</div></div>';
+
+
+
+
+
+	        elseif( get_row_layout() == 'home_popular_content' ): // Home Popular Articles Content
+
+	        	echo '<div class="home-popular-content single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
+
+	        		echo '<div class="two-thirds first">';
+
+		        		if( get_sub_field( 'content_headline' ) ) {
+			        		echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
+			        		echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+			        	}
+
+		        		ourgreennation_content_popular_articles();
+
+	        		echo '</div>';
+
+	        		echo '<div class="one-third">';
+
+	        			dynamic_sidebar( 'sidebar-home-popular-content' );
+
+	        		echo '</div>';
 
 	        	echo '</div></div>';
 

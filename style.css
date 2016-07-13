@@ -773,6 +773,16 @@ hr {
   left: calc(50% - 100px);
 }
 
+.site-footer-wrap {
+  background-color: #6f953e;
+}
+
+.site-info {
+  color: #FFFFFF;
+  font-size: 0.9em;
+  text-align: center;
+}
+
 /* ---------------------------------------------
 /* ## Column Classes
 --------------------------------------------- */
@@ -945,6 +955,13 @@ table {
   color: #FFFFFF;
 }
 
+.footer-social a {
+  font-size: 0;
+}
+.footer-social a .fa {
+  font-size: 20px;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -982,12 +999,10 @@ table {
 }
 
 .footer-navigation {
-  clear: both;
   display: block;
-  float: left;
   width: 100%;
-  background-color: #6f953e;
   text-align: center;
+  margin: 10px 0;
 }
 
 /*--------------------------------------------------------------
