@@ -612,6 +612,8 @@ hr {
 
 .full-width .content-area {
   width: 100%;
+  float: none;
+  padding: 0;
 }
 
 .widget-area {
@@ -947,8 +949,10 @@ table {
   padding: 10px 15px;
 }
 .main-navigation a,
+.main-navigation a:hover,
 .main-navigation a:visited,
 .footer-navigation a,
+.footer-navigation a:hover,
 .footer-navigation a:visited {
   display: block;
   text-decoration: none;
