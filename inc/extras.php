@@ -377,6 +377,49 @@ function ourgreennation_content_carousel() {
 
 
 // Popular Articles Display
+function ourgreennation_no_masonry_articles() {
+
+    // WP_Query arguments
+    $popular_args = array (
+        'post_type'  				=> 'post',
+        'cat'						=> get_sub_field( 'popular_category' ),
+        'order'   					=> 'ASC',
+        'orderby'       			=> 'date',
+        'cache_results' 			=> true,
+        'update_post_meta_cache' 	=> true,
+        'update_post_term_cache' 	=> true,
+        'ignore_sticky_posts'   	=> true,
+        'posts_per_page'         	=> get_sub_field( 'number_of_articles' ),
+    );
+
+    // The Query
+    $popular_query = new WP_Query( $popular_args );
+
+    if( $popular_query->have_posts() ):
+
+    	if( !get_field( 'home_popular_content' ) ) {
+        	echo '<div class="popular-articles-inner"><div class="grid-sizer"></div>';
+		}
+            while( $popular_query->have_posts() ) : $popular_query->the_post();
+
+               	get_template_part( 'components/post/content', get_post_format() );
+
+                wp_reset_postdata();
+
+            endwhile;
+
+            wp_reset_query();
+
+        if( !get_field( 'home_popular_content' ) ) {
+        	echo '</div>';
+        }
+
+    endif;
+
+}
+
+
+// Popular Articles Display
 function ourgreennation_content_popular_articles() {
 
     // WP_Query arguments
@@ -454,3 +497,16 @@ function ourgreennation_content_recent_articles() {
     endif;
 
 }
+
+
+
+/* TODO: Regex some stuff! */
+function fix_content_regex() {
+	// find strings that match <p style="text-align:center;"> + Any characters + </p>
+	// /(<p style="text-align:center;">).*(<\/p>)/g
+
+	// find strings that match <li style="text-align:left;"> + Any characters + </li>
+	// /(<li style="text-align:left;">).*(<\/li>)/g
+}
+
+

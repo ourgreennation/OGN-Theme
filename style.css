@@ -41,6 +41,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Infinite scroll
 # Media
 	## Galleries
+# Plugins
+  ## BuddyPress
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -90,6 +92,7 @@ template {
 
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 
 a:active,
@@ -848,7 +851,7 @@ hr {
 # Lists
 --------------------------------------------------------------*/
 ul, ol {
-  margin: 0 0 1.5em 1em;
+  margin: 0 0 1.5em 0;
   padding-left: 30px;
 }
 
@@ -864,6 +867,10 @@ li > ul,
 li > ol {
   margin-bottom: 0;
   margin-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
 }
 
 dt {
@@ -918,7 +925,8 @@ table {
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   left: 100%;
 }
-.main-navigation ul ul a {
+.main-navigation ul ul a,
+.main-navigation ul ul a:visited {
   width: 200px;
   color: #363636;
   text-align: left;
@@ -947,9 +955,9 @@ table {
   display: inline-block;
   position: relative;
   padding: 10px 15px;
+  margin: 0;
 }
 .main-navigation a,
-.main-navigation a:hover,
 .main-navigation a:visited,
 .footer-navigation a,
 .footer-navigation a:hover,
@@ -957,6 +965,11 @@ table {
   display: block;
   text-decoration: none;
   color: #FFFFFF;
+}
+
+.main-navigation a:hover,
+.main-navigation ul ul a:hover {
+  color: #6E9432;
 }
 
 .footer-social a {
@@ -1092,7 +1105,8 @@ body {
     content: '\f308' !important; }
   .masonry .status-private .panel .genericon:before, .masonry .status-private .panel li.social-links a:before, li.social-links .masonry .status-private .panel a:before {
     content: '\f470' !important; }
-  .masonry .grid-sizer {
+  .masonry .grid-sizer,
+  .full-width .two-thirds .masonry .grid-sizer {
     width: 50%;
   }
   .full-width .masonry .grid-sizer {
@@ -1113,7 +1127,7 @@ body {
   .masonry .panel {
     padding: 30px;
     font-size: .75em;
-    border: 3px solid #f2f2f2; }
+    border: 2px solid #f2f2f2; }
     .custom-background .masonry .panel {
       border: none; }
     .masonry .panel .entry-title {
@@ -1246,7 +1260,7 @@ body {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 0 2em 0;
   /* Make sure select elements fit in widgets. */
 }
 .widget select {
@@ -1352,3 +1366,27 @@ object {
 .gallery-caption {
   display: block;
 }
+
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## BuddyPress
+--------------------------------------------------------------*/
+
+.avatar {
+  border-radius: 50%;
+}
+
+#buddypress ul.item-list li {
+  border: 2px solid #f2f2f2;
+  padding: 15px;
+  margin: 1em 0;
+}
+
+#buddypress .activity-list .activity-content {
+  margin-left: 65px;
+}
+
+
