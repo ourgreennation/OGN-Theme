@@ -500,6 +500,25 @@ function ourgreennation_content_recent_articles() {
 
 
 
+// Excerpt maker to limit strings by word count
+function ourgreennation_string_limit_words( $string, $word_limit, $more = '&nbsp;&hellip;' ) {
+
+    $words = explode( ' ', $string, ( $word_limit + 1 ) );
+    if ( count( $words ) > $word_limit ) {
+        array_pop( $words );
+        $excerpt = implode( ' ', $words );
+    } else {
+        $excerpt = implode( ' ', $words );
+    }
+
+    $excerpt .= $more;
+
+    return $excerpt;
+
+}
+
+
+
 /* TODO: Regex some stuff! */
 function fix_content_regex() {
 	// find strings that match <p style="text-align:center;"> + Any characters + </p>
