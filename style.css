@@ -38,6 +38,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Pages
 # Comments
 # Widgets
+# Page Builder
 # Infinite scroll
 # Media
 	## Galleries
@@ -701,7 +702,6 @@ hr {
 
 .single-column {
   padding: 60px 0;
-  overflow: hidden;
 }
 
 .single-column h2 {
@@ -1217,6 +1217,15 @@ body {
 }
 .widget select {
   max-width: 100%;
+}
+
+
+
+/*--------------------------------------------------------------
+# Page Builder
+--------------------------------------------------------------*/
+.general-content {
+  overflow: hidden;
 }
 
 .full-background {

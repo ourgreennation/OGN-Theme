@@ -125,7 +125,7 @@ function ourgreennation_page_content() {
 
 	        if( get_row_layout() == 'general_content' ): // General Content Layout
 
-	        	echo '<div class="single-column" style="background-color:' . get_sub_field( 'background_color' ) . ';"><div class="wrap">';
+	        	echo '<div class="general-content single-column" style="background-color:' . get_sub_field( 'background_color' ) . ';"><div class="wrap">';
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
 	        			echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
