@@ -148,20 +148,23 @@ function ourgreennation_page_content() {
 	        	$bg_img = get_sub_field( 'background_image' );
 	        	$bg_img_url = $bg_img['url'];
 
-	        	echo '<div class="single-column full-background" style="background-color:' . get_sub_field( 'background_color' ) . '; background-image: url(' . $bg_img_url . ');"><div class="wrap">';
+	        	echo '<div class="single-column full-background" style="background-image: url(' . $bg_img_url . ');">';
+		        	echo '<div class="full-background-overlay" style="background-color:' . get_sub_field( 'background_color' ) . ';"></div>';
+		        	echo '<div class="wrap">';
 
-	        		if( get_sub_field( 'headline' ) ) {
-                        echo '<h3>' . get_sub_field( 'headline' ) . '</h3>';
-                        // echo '<div class="headline-border" style="background-color: #FFFFFF"></div>';
-                    }
+		        		if( get_sub_field( 'headline' ) ) {
+	                        echo '<h3>' . get_sub_field( 'headline' ) . '</h3>';
+	                        // echo '<div class="headline-border" style="background-color: #FFFFFF"></div>';
+	                    }
 
-                    if( get_sub_field( 'subheadline' ) ) {
-                        echo '<h4>' . get_sub_field( 'subheadline' ) . '</h4>';
-                    }
+	                    if( get_sub_field( 'subheadline' ) ) {
+	                        echo '<h4>' . get_sub_field( 'subheadline' ) . '</h4>';
+	                    }
 
-                    echo '<p><a class="button slide-button" href="' . get_sub_field( 'cta_button_link' ) . '" />' . get_sub_field( 'cta_button_text' ) . '</a></p>';
+	                    echo '<p><a class="button slide-button" href="' . get_sub_field( 'cta_button_link' ) . '" />' . get_sub_field( 'cta_button_text' ) . '</a></p>';
 
-	        	echo '</div></div>';
+		        	echo '</div>';
+	        	echo '</div>';
 
 	        	$block_arrow = get_sub_field( 'block_arrow' );
 	        	if( $block_arrow ) :

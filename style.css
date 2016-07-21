@@ -898,7 +898,6 @@ table {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
   width: 100%;
   background-color: #553E1D;
   text-align: center;
@@ -1230,6 +1229,21 @@ body {
 
 .full-background {
   text-align: center;
+  position: relative;
+}
+
+.full-background-overlay {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.full-background .wrap {
+  position: relative;
+  z-index: 2;
 }
 
 .full-background h3 {
