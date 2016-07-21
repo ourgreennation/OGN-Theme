@@ -153,12 +153,12 @@ function ourgreennation_page_content() {
 		        	echo '<div class="wrap">';
 
 		        		if( get_sub_field( 'headline' ) ) {
-	                        echo '<h3>' . get_sub_field( 'headline' ) . '</h3>';
+	                        echo '<h3 style="color:' . get_sub_field( 'headline_color' ) . ';">' . get_sub_field( 'headline' ) . '</h3>';
 	                        // echo '<div class="headline-border" style="background-color: #FFFFFF"></div>';
 	                    }
 
 	                    if( get_sub_field( 'subheadline' ) ) {
-	                        echo '<h4>' . get_sub_field( 'subheadline' ) . '</h4>';
+	                        echo '<h4 style="color:' . get_sub_field( 'subheadline_color' ) . ';">' . get_sub_field( 'subheadline' ) . '</h4>';
 	                    }
 
 	                    echo '<p><a class="button slide-button" href="' . get_sub_field( 'cta_button_link' ) . '" />' . get_sub_field( 'cta_button_text' ) . '</a></p>';

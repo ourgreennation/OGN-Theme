@@ -1246,6 +1246,12 @@ body {
   z-index: 2;
 }
 
+.full-background h3,
+.full-background h4 {
+  margin: 0 auto;
+  padding: 0 0 30px;
+}
+
 .full-background h3 {
   font-size: 2em;
 }
