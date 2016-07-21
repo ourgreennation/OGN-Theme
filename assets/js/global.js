@@ -86,10 +86,6 @@
 
     $('nav .menu').meanmenu({meanScreenWidth: "768",meanMenuClose: "&#215;"});
 
-    $('.flip-container').on('touchstart',function(e){
-      $(this).toggleClass('hover');
-    });
-
     $('.menu-item-has-children > a').on('click',function(e){
       var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
 

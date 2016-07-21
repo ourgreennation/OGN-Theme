@@ -1,4 +1,4 @@
-		<div class="site-header-wrapper">
+		<div class="site-header">
 			<div class="site-branding">
 				<?php
 				if ( function_exists( 'the_custom_logo' ) ) {
@@ -32,4 +32,4 @@
 					?>
 				</div>
 			</div><!-- .site-login -->
-		</div><!-- .site-header-wrapper -->
+		</div><!-- .site-header -->

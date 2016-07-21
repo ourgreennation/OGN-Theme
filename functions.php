@@ -138,8 +138,8 @@ function ourgreennation_widgets_init() {
 		'description'   => 'General page and post sidebar',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -148,8 +148,8 @@ function ourgreennation_widgets_init() {
 		'description'   => 'Widgets that appear above footer menu and footer widgets, below content',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -158,8 +158,8 @@ function ourgreennation_widgets_init() {
 		'description'   => 'Footer that appears below footer menu',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -168,8 +168,8 @@ function ourgreennation_widgets_init() {
 		'description'   => 'Displayed if the Home Popular Content block is being used',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 }

@@ -152,7 +152,7 @@ function ourgreennation_page_content() {
 
 	        		if( get_sub_field( 'headline' ) ) {
                         echo '<h3>' . get_sub_field( 'headline' ) . '</h3>';
-                        echo '<div class="headline-border" style="background-color: #FFFFFF"></div>';
+                        // echo '<div class="headline-border" style="background-color: #FFFFFF"></div>';
                     }
 
                     if( get_sub_field( 'subheadline' ) ) {

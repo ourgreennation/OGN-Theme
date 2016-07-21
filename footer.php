@@ -12,7 +12,16 @@
 ?>
 
 	</div>
-	<footer id="colophon" class="site-footer-wrap" role="contentinfo">
+
+	<div class="site-before-footer-wrap wrap">
+		<div class="site-before-footer">
+
+		<?php // dynamic_sidebar( 'sidebar-before-footer' ); ?>
+
+		</div>
+	</div>
+
+	<footer id="colophon" class="site-footer-wrap wrap" role="contentinfo">
 		<div class="site-footer">
 			<?php get_template_part( 'components/navigation/navigation', 'bottom' ); ?>
 			<?php get_template_part( 'components/footer/site', 'info' ); ?>

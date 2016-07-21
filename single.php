@@ -15,7 +15,11 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'components/post/content', get_post_format() );
+			the_title( '<h2>', '</h2>' );
+
+			the_post_thumbnail( 'large' );
+
+			the_content();
 
 			the_post_navigation();
 
