@@ -359,12 +359,12 @@ th {
 --------------------------------------------------------------*/
 body,
 button,
-.button,
+a.button,
 input,
 select,
 textarea {
   color: #404040;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -536,7 +536,7 @@ textarea {
   width: 100%;
 }
 
-.button,
+a.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -544,12 +544,12 @@ input[type="submit"] {
   border-radius: 3px;
   background: #6e9432;
   box-shadow: none;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   line-height: 1;
   padding: .6em 1em ;
 }
 button:hover,
-.button:hover,
+a.button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
@@ -557,7 +557,7 @@ input[type="submit"]:hover {
   color: #FFFFFF;
 }
 button:active, button:focus,
-.button:active, .button:focus,
+a.button:active, a.button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -660,7 +660,7 @@ hr {
   background-color: transparent;
   border: none;
   color: #FFFFFF;
-  font-family: 'Roboto', serif;
+  font-family: 'Open Sans', serif;
   font-weight: 400;
   letter-spacing: 1px;
   padding: 0;
@@ -697,88 +697,6 @@ hr {
   border-left: 1px solid #FFFFFF;
   color: #FFFFFF;
   text-decoration: none;
-}
-
-
-.single-column {
-  padding: 60px 0;
-}
-
-.single-column h2 {
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.img-content {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  margin: 60px 0;
-  color: #959595;
-}
-
-.img-content img {
-  width: 25%;
-}
-
-.img-content:nth-child(odd) img {
-  float: right;
-  padding-left: 5%;
-}
-
-.img-content:nth-child(even) img {
-  float: left;
-  padding-right: 5%;
-}
-
-.img-content:nth-child(odd) .img-content-text {
-  float: left;
-}
-
-.img-content:nth-child(even) .img-content-text {
-  float: right;
-
-}
-
-.img-content-text {
-  padding-left: 40px;
-  position: relative;
-  width: 75%;
-}
-
-.img-content h4 {
-  display: inline-block;
-  border-bottom: 1px solid #959595;
-  padding-bottom: 20px;
-  color: #58595B;
-}
-.img-content h4:before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-  position: absolute;
-  left: 0px;
-  background-color: #81bd41;
-}
-
-
-.headline-border {
-  max-width: 200px;
-  width: 15%;
-  height: 5px;
-  margin: 0 auto 60px;
-  border-radius: 5px;
-}
-
-.block-arrow {
-  position: absolute;
-  width: 0; 
-  height: 0; 
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  left: calc(50% - 100px);
 }
 
 .site-footer-wrap {
@@ -939,6 +857,15 @@ table {
   background: rgba(255, 255, 255, 0.9);
   margin-top: 20px;
 }
+.main-navigation ul li.edge:hover > ul,
+.main-navigation ul li.edge.focus > ul {
+  right: 0;
+}
+.main-navigation ul li.edge:hover > ul ul,
+.main-navigation ul li.edge.focus > ul ul {
+  right: auto;
+} 
+
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
   margin-top: 0;
@@ -1274,6 +1201,87 @@ body {
   color: #404040;
 }
 
+.single-column {
+  padding: 60px 0;
+  clear: both;
+}
+
+.single-column h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.img-content {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 60px 0;
+  color: #959595;
+}
+
+.img-content img {
+  width: 25%;
+}
+
+.img-content:nth-child(odd) img {
+  float: right;
+  padding-left: 5%;
+}
+
+.img-content:nth-child(even) img {
+  float: left;
+  padding-right: 5%;
+}
+
+.img-content:nth-child(odd) .img-content-text {
+  float: left;
+}
+
+.img-content:nth-child(even) .img-content-text {
+  float: right;
+
+}
+
+.img-content-text {
+  padding-left: 40px;
+  position: relative;
+  width: 75%;
+}
+
+.img-content h4 {
+  display: inline-block;
+  border-bottom: 1px solid #959595;
+  padding-bottom: 20px;
+  color: #58595B;
+}
+.img-content h4:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  background-color: #81bd41;
+}
+
+
+.headline-border {
+  max-width: 200px;
+  width: 15%;
+  height: 5px;
+  margin: 0 auto 60px;
+  border-radius: 5px;
+}
+
+.block-arrow {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  left: calc(50% - 100px);
+}
 
 /*--------------------------------------------------------------
 # Infinite scroll
