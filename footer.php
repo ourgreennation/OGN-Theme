@@ -16,7 +16,7 @@
 	<div class="site-before-footer-wrap wrap">
 		<div class="site-before-footer">
 
-		<?php // dynamic_sidebar( 'sidebar-before-footer' ); ?>
+		<?php dynamic_sidebar( 'sidebar-before-footer' ); ?>
 
 		</div>
 	</div>

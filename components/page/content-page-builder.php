@@ -12,9 +12,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if( !is_home() && !is_front_page() ){
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		}
+		// if( !is_home() && !is_front_page() ){
+		// 	the_title( '<h1 class="entry-title">', '</h1>' );
+		// }
 		?>
 	</header>
 	<div class="entry-content">
@@ -125,13 +125,13 @@ function ourgreennation_page_content() {
 
 	        if( get_row_layout() == 'general_content' ): // General Content Layout
 
-	        	echo '<div class="general-content single-column" style="background-color:' . get_sub_field( 'background_color' ) . ';"><div class="wrap">';
+	        	echo '<section class="general-content single-column" style="background-color:' . get_sub_field( 'background_color' ) . ';"><div class="wrap">';
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
 	        			echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 	        		}
 	        		echo get_sub_field( 'content' );
-	        	echo '</div></div>';
+	        	echo '</div></section>';
 
 	        	$block_arrow = get_sub_field( 'block_arrow' );
 	        	if( $block_arrow ) :
@@ -148,7 +148,7 @@ function ourgreennation_page_content() {
 	        	$bg_img = get_sub_field( 'background_image' );
 	        	$bg_img_url = $bg_img['url'];
 
-	        	echo '<div class="single-column full-background" style="background-image: url(' . $bg_img_url . ');">';
+	        	echo '<section class="single-column full-background" style="background-image: url(' . $bg_img_url . ');">';
 		        	echo '<div class="full-background-overlay" style="background-color:' . get_sub_field( 'background_color' ) . ';"></div>';
 		        	echo '<div class="wrap">';
 
@@ -164,7 +164,7 @@ function ourgreennation_page_content() {
 	                    echo '<p><a class="button" href="' . get_sub_field( 'cta_button_link' ) . '" />' . get_sub_field( 'cta_button_text' ) . '</a></p>';
 
 		        	echo '</div>';
-	        	echo '</div>';
+	        	echo '</section>';
 
 	        	$block_arrow = get_sub_field( 'block_arrow' );
 	        	if( $block_arrow ) :
@@ -192,7 +192,7 @@ function ourgreennation_page_content() {
 					$position = 'right: 0;';
 				}
 
-	        	echo '<div class="image-content single-column" style="background-color:' . get_sub_field( 'background_color' ) . '">';
+	        	echo '<section class="image-content single-column" style="background-color:' . get_sub_field( 'background_color' ) . '">';
 
 		        	echo '<div class="wrap">';
 						echo '<div class="image-background" style="background-image: url(' . $bg_img_url. '); ' . $position . '"></div>';
@@ -206,7 +206,7 @@ function ourgreennation_page_content() {
 			        		echo get_sub_field( 'content' );
 		        		echo '</div>';
 		        	echo '</div>';
-	        	echo '</div>';
+	        	echo '</section>';
 
 	        	$block_arrow = get_sub_field( 'block_arrow' );
 	        	if( $block_arrow ) :
@@ -219,7 +219,7 @@ function ourgreennation_page_content() {
 
 	        elseif( get_row_layout() == 'popular_articles' ): // Popular Articles Layout
 
-	        	echo '<div class="popular-articles single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
+	        	echo '<section class="popular-articles single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 		        		echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
@@ -228,7 +228,7 @@ function ourgreennation_page_content() {
 
 	        		ourgreennation_content_popular_articles();
 
-	        	echo '</div></div>';
+	        	echo '</div></section>';
 
 
 
@@ -236,7 +236,7 @@ function ourgreennation_page_content() {
 
 	        elseif( get_row_layout() == 'recent_articles' ): // Recent Articles Layout
 
-	        	echo '<div class="recent-articles single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
+	        	echo '<section class="recent-articles single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
@@ -245,7 +245,7 @@ function ourgreennation_page_content() {
 
 	        		ourgreennation_content_recent_articles();
 
-	        	echo '</div></div>';
+	        	echo '</div></section>';
 
 
 
@@ -253,7 +253,7 @@ function ourgreennation_page_content() {
 
 	        elseif( get_row_layout() == 'home_popular_content' ): // Home Popular Articles Content
 
-	        	echo '<div class="home-popular-content single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
+	        	echo '<section class="home-popular-content single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
 
 	        		echo '<div class="two-thirds first">';
 
@@ -272,7 +272,7 @@ function ourgreennation_page_content() {
 
 	        		echo '</div>';
 
-	        	echo '</div></div>';
+	        	echo '</div></section>';
 
 
 
@@ -280,7 +280,7 @@ function ourgreennation_page_content() {
 
 	        elseif( get_row_layout() == 'content_carousel' ): // Slider of Client Images
 
-	        	echo '<div class="single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
+	        	echo '<section class="single-column" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2>' . get_sub_field( 'content_headline' ) . '</h2>';
@@ -291,7 +291,7 @@ function ourgreennation_page_content() {
 
 	        		ourgreennation_content_carousel();
 
-	        	echo '</div></div>';
+	        	echo '</div></section>';
 
 	        	$block_arrow = get_sub_field( 'block_arrow' );
 	        	if( $block_arrow ) :

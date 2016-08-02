@@ -373,6 +373,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
 }
 
 p {
@@ -605,6 +606,7 @@ hr {
   width: 820px;
   float: left;
   padding-right: 60px;
+  padding-top: 20px;
 }
 
 .content-sidebar .content-area {
@@ -626,6 +628,7 @@ hr {
 .widget-area {
   width: 320px;
   float: right;
+  padding-top: 20px;
 }
 
 .content-sidebar .widget-area {
@@ -699,8 +702,15 @@ hr {
   text-decoration: none;
 }
 
+.site-before-footer-wrap {
+  background-color: #63666a;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-align: center;
+}
+
 .site-footer-wrap {
-  background-color: #6f953e;
+  background-color: #789d4a;
 }
 
 .site-info {
@@ -817,7 +827,7 @@ table {
   clear: both;
   display: block;
   width: 100%;
-  background-color: #553E1D;
+  background-color: #63666a;
   text-align: center;
 }
 .main-navigation ul,
@@ -929,6 +939,7 @@ table {
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
+  clear: both;
 }
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
@@ -961,7 +972,7 @@ a:visited {
   color: #97856A;
 }
 a:hover, a:focus, a:active {
-  color: #553E1D;
+  color: #63666a;
 }
 a:focus {
   outline: thin dotted;
@@ -1029,6 +1040,7 @@ body {
 
 .masonry {
   padding-bottom: 40px;
+  clear: both;
 }
 .masonry .panel .fa, .masonry .panel li.social-links a, li.social-links .masonry .panel a {
   width: 32px;
@@ -1231,7 +1243,7 @@ body {
 }
 
 .full-background h3 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .full-background .button {
@@ -1506,11 +1518,18 @@ a.bp-title-button {
   .site-navigation,
   .site-content,
   .site-before-footer,
-  .site-footer {
+  .site-footer,
+  .page-builder .entry-content .wrap {
     max-width: 1140px;
     width: 90%;
     padding: 0 5%;
     margin: 0 auto;
+  }
+
+  .page-builder .site-content {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
   }
 
 }

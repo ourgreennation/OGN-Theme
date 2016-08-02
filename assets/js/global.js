@@ -38,6 +38,7 @@
       isAnimated         : true,
     };
 
+    // Can potentially remove imagesLoaded requirement
     imagesLoaded( $container, function( instance ) {
       $container.masonry(masonry_options);
     });
@@ -76,6 +77,7 @@
     $elements.css({ 'opacity': 0 });
 
     if( typeof $container.masonry() !== false ){
+      // Can potentially remove imagesLoaded requirement
       imagesLoaded( $selector, function( instance ) {
           $container.append( $elements ).masonry( 'appended', $elements ).find($selector).remove();
       });

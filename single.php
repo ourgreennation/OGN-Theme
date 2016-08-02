@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			the_title( '<h2>', '</h2>' );
+			the_title( '<h1 class="entry-title">', '</h1>' );
 
 			the_post_thumbnail( 'large' );
 
