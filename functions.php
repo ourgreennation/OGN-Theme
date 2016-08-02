@@ -213,7 +213,7 @@ function ourgreennation_scripts() {
 
 	// Checks for images having loaded into the page
 	// Can potentially remove imagesLoaded requirement
-	// wp_enqueue_script( 'ourgreennation-imagesloaded', get_template_directory_uri() . '/assets/js/imagesLoaded.js', array(), '', true );
+	wp_enqueue_script( 'ourgreennation-imagesloaded', get_template_directory_uri() . '/assets/js/imagesLoaded.js', array(), '', true );
 
 	// Enqueue Masonry
 	wp_register_script( 'ourgreennation-jquery-masonry', get_template_directory_uri() . '/assets/js/jquery.masonry.js', array('jquery'), '', true );
