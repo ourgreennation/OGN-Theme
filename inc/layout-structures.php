@@ -250,7 +250,8 @@ function ourgreennation_layout_add_custom_layout_box() {
     add_meta_box(
         'ourgreennation_layout_custom_layout',
         $layout,
-        'ourgreennation_layout_inner_custom_layout_box'
+        'ourgreennation_layout_inner_custom_layout_box',
+        'page'
     );
 
 }
