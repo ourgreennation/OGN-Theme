@@ -9,7 +9,17 @@
 
 		<?php ourgreennation_before_post(); ?>
 
-		<h3 class="entry-title"><?php the_title(); ?></h3>
-		<?php if ( get_the_excerpt() ){ ?><div class="entry-summary"><?php the_excerpt(); ?></div><?php } ?>
+		<div class="panel">
+
+			<i class="fa fa-<?php echo get_post_format(); ?>" aria-hidden="true"></i>
+
+			<?php if( get_the_title() ){ ?>
+			<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<?php } ?>
+
+			<?php the_excerpt(); ?>
+
+    	</div>
+
 
 	</article><!--/.post-->
