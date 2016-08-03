@@ -257,8 +257,9 @@ function ourgreennation_get_featured_media(){
 		$media_html = ourgreennation_get_first_oembed();
 	endif;
 
-	if( get_the_post_thumbnail( get_the_ID() ) )
-		return '<a href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), ourgreennation_get_grid_column_width() ) . '</a>';
+	if( has_post_thumbnail( $post->ID ) ) {
+		return '<a href="' . get_permalink() . '">' . get_the_post_thumbnail( $post->ID, 'medium' ) . '</a>';
+	}
 
 	if( isset( $media_html ) ):
 		$resized_html = preg_replace_callback(ourgreennation_height_width_regex(), "ourgreennation_modify_height_width_atts", $media_html);
