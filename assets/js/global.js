@@ -43,28 +43,6 @@
       $container.masonry(masonry_options);
     });
 
-    $("#access").sticky({
-      topSpacing : 0
-    });
-
-    $(".flexslider").flexslider({
-      controlNav: false,
-      smoothHeight: true,
-      animationSpeed: 200,
-      slideshow: false,
-      prevText: "<i class='fa fa-chevron-circle-left' aria-hidden='true'></i>",
-      nextText: "<i class='fa fa-chevron-circle-right' aria-hidden='true'></i>",
-      init : function(){
-        if( typeof $('.masonry').masonry() !== false ){
-          $('.masonry').masonry( 'reloadItems' );
-        }
-      },
-      after : function(){
-        if( typeof $('.masonry').masonry() !== false ){
-          $('.masonry').masonry( 'reloadItems' );
-        }
-      }
-    });
   });
 
   // Triggers re-layout on infinite scroll

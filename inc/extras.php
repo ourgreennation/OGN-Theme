@@ -242,25 +242,19 @@ function ourgreennation_get_featured_media(){
 
 	$post_format = get_post_format($post);
 
-	if( $post_format !== 'ourgreennation' ):
+	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
+	$embeds = get_media_embedded_in_content( $content );
 
-		$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
-		$embeds = get_media_embedded_in_content( $content );
+	if( ! empty( $embeds ) ):
+		$media = $embeds[0];
+	endif;
 
-		if( ! empty( $embeds ) ):
-			$media = $embeds[0];
-		endif;
+	if( isset( $media ) ):
+		$media_html = $media;
+	endif;
 
-		if( isset( $media ) ):
-			$media_html = $media;
-		endif;
-
-		if( ! isset( $media_html ) ):
-			$media_html = ourgreennation_get_first_oembed();
-		endif;
-
-	elseif( $post_format === 'ourgreennation' ):
-		$media_html = ourgreennation_get_shortcode( 'ourgreennation' );
+	if( ! isset( $media_html ) ):
+		$media_html = ourgreennation_get_first_oembed();
 	endif;
 
 	if( get_the_post_thumbnail( get_the_ID() ) )
