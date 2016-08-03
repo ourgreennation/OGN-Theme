@@ -194,15 +194,13 @@ function ourgreennation_scripts() {
 	wp_enqueue_style( 'ourgreennation-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Oswald' );
 	// wp_enqueue_style( 'ourgreennation_fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/font-awesome.min.css' );
 	wp_enqueue_script( 'ourgreennation-fontawesome', 'https://use.fontawesome.com/40a13a40e7.js' );
-	// Enqueue Masonry
-	wp_register_script( 'ourgreennation-jquery-masonry', get_template_directory_uri() . '/assets/js/jquery.masonry.js', array('jquery'), '', true );
 
 	// Minified scripts for theme
-	// imagesLoaded.js, fitvids.js
-	wp_enqueue_script( 'ourgreennation-global', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'));
+	// imagesLoaded.js, fitvids.js, masonry
+	wp_enqueue_script( 'ourgreennation-scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'));
 
 	// Global styles for theme
-	wp_enqueue_script( 'ourgreennation-global', get_template_directory_uri() . '/assets/js/global.js', array('jquery','ourgreennation-jquery-masonry'), '', true);
+	wp_enqueue_script( 'ourgreennation-global', get_template_directory_uri() . '/assets/js/global.js', array('jquery', 'ourgreennation-scripts'), '', true);
 
 }
 add_action( 'wp_enqueue_scripts', 'ourgreennation_scripts' );
