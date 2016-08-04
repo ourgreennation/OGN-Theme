@@ -21,28 +21,25 @@ add_filter( 'body_class', 'ourgreennation_change_layout', 99, 1 );
  */
 function ourgreennation_layout_create_defaults() {
 
-    // Default layout image path
-    $image = get_template_directory_uri() . '/assets/img/';
-
     $layouts = apply_filters( 'ourgreennation_default_layouts', array(
 
         'content-sidebar' => array(
             'label'     => __( 'Content / Sidebar', 'ourgreennation' ),
-            'img'       => $image . 'content-sidebar.png',
+            'img'       => OGN_IMG_DIR . 'content-sidebar.png',
             'default'   => true,
         ),
 
         'sidebar-content' => array(
             'label'     => __( 'Sidebar / Content', 'ourgreennation' ),
-            'img'       => $image . 'sidebar-content.png',
+            'img'       => OGN_IMG_DIR . 'sidebar-content.png',
         ),
 
         'full-width' => array(
             'label'     => __( 'Full Width', 'ourgreennation' ),
-            'img'       => $image . 'full-width.png',
+            'img'       => OGN_IMG_DIR . 'full-width.png',
         ),
 
-    ), $image );
+    ), OGN_IMG_DIR );
 
     foreach ( (array)  $layouts as $layout_id => $layout_args ) {
         ourgreennation_layout_register( $layout_id, $layout_args );
@@ -71,7 +68,7 @@ function ourgreennation_layout_register( $id = '', $args = array() ) {
 
     $defaults = array(
         'label' => __( 'No Layout', 'ourgreennation' ),
-        'img'   => ourgreennation_image_dir . '/thumbnail.png',
+        'img'   => OGN_IMG_DIR . '/thumbnail.png',
     );
 
     $args = wp_parse_args( $args, $defaults );

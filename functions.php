@@ -7,6 +7,9 @@
  * @package Our_Green_Nation
  */
 
+// Define our constants
+define ( 'OGN_IMG_DIR', get_template_directory_uri() . '/assets/img/' );
+
 if ( ! function_exists( 'ourgreennation_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

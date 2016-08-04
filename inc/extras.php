@@ -221,7 +221,7 @@ function ourgreennation_modify_height_width_atts($matches) {
 function ourgreennation_get_first_image() {
 	global $post, $posts;
 
-	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', is_single() && $post->post_content, $matches);
+	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
 
 	if( isset( $matches[1][0] ) ){
 		$first_img = $matches[1][0];
@@ -238,6 +238,7 @@ function ourgreennation_get_first_image() {
  * Checks for featured image, then displays media based on
  */
 function ourgreennation_get_featured_media(){
+
 	global $post;
 
 	$post_format = get_post_format($post);
@@ -258,11 +259,12 @@ function ourgreennation_get_featured_media(){
 	endif;
 
 	if( has_post_thumbnail( $post->ID ) ) {
-		return '<a href="' . get_permalink() . '">' . get_the_post_thumbnail( $post->ID, 'medium' ) . '</a>';
+		// return 'we have a thumbnail';
+		return '<a href="' . get_permalink() . '">' . get_the_post_thumbnail( $post->ID ) . '</a>';
 	}
 
 	if( isset( $media_html ) ):
-		$resized_html = preg_replace_callback(ourgreennation_height_width_regex(), "ourgreennation_modify_height_width_atts", $media_html);
+		$resized_html = preg_replace_callback( ourgreennation_height_width_regex(), "ourgreennation_modify_height_width_atts", $media_html );
 		return $resized_html;
 	endif;
 
