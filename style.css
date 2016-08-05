@@ -31,6 +31,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Lists
 # Tables
 # Navigation
+## SmartMenu
 # Links
 # Layout
 	## Posts
@@ -831,70 +832,19 @@ table {
 }
 .main-navigation ul,
 .footer-navigation ul {
-  display: none;
+  /*display: none;*/
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 1.5em;
-  left: -999em;
-  z-index: 99999;
-}
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-.main-navigation ul ul li {
-  padding: 5px 15px;
-}
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-.main-navigation ul ul a,
-.main-navigation ul ul a:visited {
-  width: 200px;
-  color: #363636;
-  text-align: left;
-}
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
-  background: rgba(255, 255, 255, 0.9);
-  margin-top: 20px;
-}
-.main-navigation ul li.edge:hover > ul,
-.main-navigation ul li.edge.focus > ul {
-  right: 0;
-}
-.main-navigation ul li.edge:hover > ul ul,
-.main-navigation ul li.edge.focus > ul ul {
-  right: auto;
-} 
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  margin-top: 0;
-}
-.main-navigation ul ul .menu-item-has-children {
-  
-}
-.main-navigation ul ul .menu-item-has-children::before {
-  font-family: 'FontAwesome';
-  content: "\f0da";
-  position: absolute;
-  right: 15px;
-}
-.main-navigation li,
 .footer-navigation li {
   display: inline-block;
   position: relative;
   padding: 10px 15px;
   margin: 0;
 }
+
 .main-navigation a,
 .main-navigation a:visited,
 .footer-navigation a,
@@ -906,8 +856,23 @@ table {
 }
 
 .main-navigation a:hover,
+.main-navigation ul a:hover,
 .main-navigation ul ul a:hover {
   color: #789d4a;
+}
+
+.main-navigation ul a:focus,
+.main-navigation ul a:active,
+.main-navigation ul a.highlighted {
+  color: #404040;
+}
+
+.main-navigation ul .sub-menu a,
+.main-navigation ul .sub-menu a:hover,
+.main-navigation ul .sub-menu a:focus,
+.main-navigation ul .sub-menu a:active,
+.main-navigation ul .sub-menu a.highlighted {
+  color: #404040;
 }
 
 .footer-social a {
@@ -918,7 +883,7 @@ table {
 }
 
 /* Small menu. */
-.menu-toggle,
+/*.menu-toggle,
 .main-navigation.toggled ul {
   display: block;
 }
@@ -932,7 +897,7 @@ table {
   .footer-navigation ul {
     display: block;
   }
-}
+}*/
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -960,6 +925,153 @@ table {
   text-align: center;
   margin: 10px 0;
 }
+
+/*--------------------------------------------------------------
+# SmartMenu
+--------------------------------------------------------------*/
+/* Mobile first layout SmartMenus Core CSS (it's not recommended editing these rules)
+-------------------------------------------------------------------------------------------*/
+
+.sm{position:relative;z-index:9999;}
+.sm,.sm ul,.sm li{display:block;list-style:none;margin:0;padding:0;line-height:normal;direction:ltr;text-align:left;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.sm-rtl,.sm-rtl ul,.sm-rtl li{direction:rtl;text-align:right;}
+.sm>li>h1,.sm>li>h2,.sm>li>h3,.sm>li>h4,.sm>li>h5,.sm>li>h6{margin:0;padding:0;}
+.sm ul{display:none;}
+.sm li,.sm a{position:relative;}
+.sm a{display:block;}
+.sm a.disabled{cursor:not-allowed;}
+.sm:after{content:"\00a0";display:block;height:0;font:0px/0 serif;clear:both;visibility:hidden;overflow:hidden;}
+.sm,.sm *,.sm *:before,.sm *:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+.sm-clean a span.sub-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: auto;
+  right: 4px;
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  font: bold 16px/34px monospace !important;
+  text-align: center;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.sm-clean a.highlighted span.sub-arrow:before {
+  display: block;
+  content: '-';
+}
+
+@media (min-width: 768px) {
+  /* Switch to desktop layout
+  -----------------------------------------------
+     These transform the menu tree from
+     collapsible to desktop (navbar + dropdowns)
+  -----------------------------------------------*/
+  /* start... (it's not recommended editing these rules) */
+  .sm-clean ul {
+    position: absolute;
+    width: 12em;
+  }
+  .sm-clean li {
+    float: left;
+  }
+  .sm-clean.sm-rtl li {
+    float: right;
+  }
+  .sm-clean ul li, .sm-clean.sm-rtl ul li, .sm-clean.sm-vertical li {
+    float: none;
+  }
+  .sm-clean a {
+    white-space: nowrap;
+  }
+  .sm-clean ul a, .sm-clean.sm-vertical a {
+    white-space: normal;
+  }
+  .sm-clean .sm-nowrap > li > a, .sm-clean .sm-nowrap > li > :not(ul) a {
+    white-space: nowrap;
+  }
+  /* ...end */
+
+  .sm-clean a, .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted {
+    padding: 12px 12px;
+  }
+  .sm-clean a.has-submenu {
+    padding-right: 24px;
+  }
+  .sm-clean a span.sub-arrow {
+    top: 50%;
+    margin-top: -2px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-width: 4px;
+    border-style: solid dashed dashed dashed;
+    border-color: #FFFFFF transparent transparent transparent;
+    background: transparent;
+  }
+  .sm-clean a.highlighted span.sub-arrow:before {
+    display: none;
+  }
+  .sm-clean ul {
+    border: 1px solid #bbbcbc;
+    background: white;
+    -webkit-box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+  }
+  .sm-clean ul a, .sm-clean ul a:hover, .sm-clean ul a:focus, .sm-clean ul a:active, .sm-clean ul a.highlighted {
+    color: #404040;
+  }
+  .sm-clean ul a.has-submenu {
+    padding-right: 20px;
+  }
+  .sm-clean span.scroll-up,
+  .sm-clean span.scroll-down {
+    position: absolute;
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+    background: white;
+    height: 20px;
+  }
+  .sm-clean span.scroll-up:hover,
+  .sm-clean span.scroll-down:hover {
+    background: #eeeeee;
+  }
+  .sm-clean span.scroll-up:hover span.scroll-up-arrow, .sm-clean span.scroll-up:hover span.scroll-down-arrow {
+    border-color: transparent transparent #d23600 transparent;
+  }
+  .sm-clean span.scroll-down:hover span.scroll-down-arrow {
+    border-color: #d23600 transparent transparent transparent;
+  }
+  .sm-clean span.scroll-up-arrow, .sm-clean span.scroll-down-arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -6px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 6px;
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent #404040 transparent;
+  }
+  .sm-clean span.scroll-down-arrow {
+    top: 8px;
+    border-style: solid dashed dashed dashed;
+    border-color: #404040 transparent transparent transparent;
+  }
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 # Links
@@ -1535,3 +1647,12 @@ a.bp-title-button {
 }
 
 
+
+  @media (min-width: 768px) {
+    #top-menu > li {
+      float: none;
+      display: table-cell;
+      width: 1%;
+      text-align: center;
+    }
+  }

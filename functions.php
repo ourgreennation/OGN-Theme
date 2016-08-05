@@ -82,13 +82,10 @@ function ourgreennation_setup() {
 	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside',
 		'audio',
 		'gallery',
 		'image',
-		'link',
 		'quote',
-		'status',
 		'video',
 	) );
 
@@ -199,7 +196,7 @@ function ourgreennation_scripts() {
 	wp_enqueue_script( 'ourgreennation-fontawesome', 'https://use.fontawesome.com/40a13a40e7.js' );
 
 	// Minified scripts for theme
-	// imagesLoaded.js, fitvids.js, masonry
+	// imagesLoaded.js, fitvids.js, masonry.js, smartmenus.js
 	wp_enqueue_script( 'ourgreennation-scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'));
 
 	// Global styles for theme

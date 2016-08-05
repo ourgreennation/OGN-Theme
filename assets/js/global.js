@@ -75,28 +75,38 @@
     });
 
 
-    $('.menu').find('.search-form').append('<span class="close-search"><i class="fa fa-close"></i></span>').find('.close-search').on('click',function(e){
-      $(this).parents('.search-box-wrapper').find('button').addClass('disabled');
-      $(this).parents('.search-box-wrapper').removeClass('boom');
-    });
+    // $('.menu').find('.search-form').append('<span class="close-search"><i class="fa fa-close"></i></span>').find('.close-search').on('click',function(e){
+    //   $(this).parents('.search-box-wrapper').find('button').addClass('disabled');
+    //   $(this).parents('.search-box-wrapper').removeClass('boom');
+    // });
 
-    $("#top-menu li").on('mouseenter mouseleave focus hover', function (e) {
-        if ($('ul', this).length) {
-            var elm = $('ul:first', this);
-            var off = elm.offset();
-            var l = off.left;
-            var w = elm.width();
-            var docH = $(".site-header").height();
-            var docW = $(".site-header").width();
+    // $("#top-menu li").on('mouseenter mouseleave focus hover', function (e) {
+    //     if ($('ul', this).length) {
+    //         var elm = $('ul:first', this);
+    //         var off = elm.offset();
+    //         var l = off.left;
+    //         var w = elm.width();
+    //         var docH = $(".site-header").height();
+    //         var docW = $(".site-header").width();
 
-            var isEntirelyVisible = (l + w <= docW);
+    //         var isEntirelyVisible = (l + w <= docW);
 
-            if (!isEntirelyVisible) {
-                $(this).addClass('edge');
-            } else {
-                $(this).removeClass('edge');
-            }
-        }
+    //         if (!isEntirelyVisible) {
+    //             $(this).addClass('edge');
+    //         } else {
+    //             $(this).removeClass('edge');
+    //         }
+    //     }
+    // });
+
+    $(function() {
+      $('#top-menu').smartmenus({
+        mainMenuSubOffsetX: -1,
+        mainMenuSubOffsetY: 4,
+        subMenusSubOffsetX: 6,
+        subMenusSubOffsetY: -6,
+        subIndicators: true,
+      });
     });
 
     infinite_count = 0;
