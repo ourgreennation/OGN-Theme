@@ -24,18 +24,18 @@ function ourgreennation_layout_create_defaults() {
     $layouts = apply_filters( 'ourgreennation_default_layouts', array(
 
         'content-sidebar' => array(
-            'label'     => __( 'Content / Sidebar', 'ourgreennation' ),
+            'label'     => __( 'Content / Sidebar', 'our-green-nation' ),
             'img'       => OGN_IMG_DIR . 'content-sidebar.png',
             'default'   => true,
         ),
 
         'sidebar-content' => array(
-            'label'     => __( 'Sidebar / Content', 'ourgreennation' ),
+            'label'     => __( 'Sidebar / Content', 'our-green-nation' ),
             'img'       => OGN_IMG_DIR . 'sidebar-content.png',
         ),
 
         'full-width' => array(
-            'label'     => __( 'Full Width', 'ourgreennation' ),
+            'label'     => __( 'Full Width', 'our-green-nation' ),
             'img'       => OGN_IMG_DIR . 'full-width.png',
         ),
 
@@ -67,7 +67,7 @@ function ourgreennation_layout_register( $id = '', $args = array() ) {
     }
 
     $defaults = array(
-        'label' => __( 'No Layout', 'ourgreennation' ),
+        'label' => __( 'No Layout', 'our-green-nation' ),
         'img'   => OGN_IMG_DIR . '/thumbnail.png',
     );
 
@@ -243,7 +243,7 @@ function ourgreennation_layout_set_layout() {
  */
 function ourgreennation_layout_add_custom_layout_box() {
 
-    $layout = __( 'Layout Settings', 'ourgreennation' );
+    $layout = __( 'Layout Settings', 'our-green-nation' );
     add_meta_box(
         'ourgreennation_layout_custom_layout',
         $layout,
@@ -282,7 +282,7 @@ function ourgreennation_layout_inner_custom_layout_box( $post ) {
         <div class="default-layout-meta">
             <input type="radio" id="default-layout" name="_ourgreennation_post_layout" value="" <?php checked( $selected_layout, '' ); ?> />
             <label for="default-layout">
-                <span><?php echo sprintf( __( 'Defaul Layout Set in %1$sTheme Settings%2$s', 'ourgreennation' ), '<a href="' . admin_url() .'customize.php">', '</a>' ); ?></span>
+                <span><?php echo sprintf( __( 'Defaul Layout Set in %1$sTheme Settings%2$s', 'our-green-nation' ), '<a href="' . admin_url() .'customize.php">', '</a>' ); ?></span>
             </label>
         </div>
 
@@ -290,7 +290,7 @@ function ourgreennation_layout_inner_custom_layout_box( $post ) {
 
         <div class="layout-meta layout-class">
             <label for="ourgreennation_layout_new_field">
-            <span><?php _e( 'Custom Body Class For This Page/Post:', 'ourgreennation' ); ?></span>
+            <span><?php _e( 'Custom Body Class For This Page/Post:', 'our-green-nation' ); ?></span>
             </label>
             <br />
             <input type="text" id="ourgreennation_layout_custom_body_class" name="_ourgreennation_layout_custom_body_class" value="<?php echo esc_attr( sanitize_html_class( $custom_body_class ) ) ?>" size="20" />

@@ -24,9 +24,9 @@ function ourgreennation_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on components, use a find and replace
-	 * to change 'ourgreennation' to the name of your theme in all the template files.
+	 * to change 'our-green-nation' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'ourgreennation', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'our-green-nation', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -61,8 +61,8 @@ function ourgreennation_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'top' => esc_html__( 'Top', 'ourgreennation' ),
-		'bottom' => esc_html__( 'Bottom', 'ourgreennation' ),
+		'top' => esc_html__( 'Top', 'our-green-nation' ),
+		'bottom' => esc_html__( 'Bottom', 'our-green-nation' ),
 	) );
 
 	/*
@@ -133,7 +133,7 @@ add_action( 'after_setup_theme', 'ourgreennation_content_width', 0 );
 function ourgreennation_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'ourgreennation' ),
+		'name'          => esc_html__( 'Sidebar', 'our-green-nation' ),
 		'id'            => 'sidebar-1',
 		'description'   => 'General page and post sidebar',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -143,7 +143,7 @@ function ourgreennation_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Before Footer', 'ourgreennation' ),
+		'name'          => esc_html__( 'Before Footer', 'our-green-nation' ),
 		'id'            => 'sidebar-before-footer',
 		'description'   => 'Widgets that appear above footer menu and footer widgets, below content',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -153,7 +153,7 @@ function ourgreennation_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'ourgreennation' ),
+		'name'          => esc_html__( 'Footer', 'our-green-nation' ),
 		'id'            => 'sidebar-footer',
 		'description'   => 'Footer that appears below footer menu',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -163,7 +163,7 @@ function ourgreennation_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Home Popular Content', 'ourgreennation' ),
+		'name'          => esc_html__( 'Home Popular Content', 'our-green-nation' ),
 		'id'            => 'sidebar-home-popular-content',
 		'description'   => 'Displayed if the Home Popular Content block is being used',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',

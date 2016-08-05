@@ -16,7 +16,7 @@
 				<?php the_content(); ?>
 		</div><!--/.post-content-->
 
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'ourgreennation' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'our-green-nation' ), 'after' => '</div>' ) ); ?>
 
 	  <?php
 	  if( comments_open() ) {

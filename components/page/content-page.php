@@ -22,7 +22,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ourgreennation' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'our-green-nation' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -32,7 +32,7 @@
 			// edit_post_link(
 			// 	sprintf(
 			// 		/* translators: %s: Name of current post */
-			// 		esc_html__( 'Edit %s', 'ourgreennation' ),
+			// 		esc_html__( 'Edit %s', 'our-green-nation' ),
 			// 		the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			// 	),
 			// 	'<span class="edit-link">',

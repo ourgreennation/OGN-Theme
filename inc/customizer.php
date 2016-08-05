@@ -43,21 +43,21 @@ function ourgreennation_register_customizer_settings(){
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_image_scale', array(
-		'label'  			=> __( 'Header Image Style', 'ourgreennation' ),
+		'label'  			=> __( 'Header Image Style', 'our-green-nation' ),
 		'section' 			=> 'header_image',
 		'settings' 			=> 'header_image_scale',
 		'type'				=> 'radio',
 		'priority'  		=> 100,
 		'sanitize_callback' => 'ourgreennation_sanitize_image_scale',
 		'choices'			=> array(
-			'cover'				=> __( 'Cover header area with image at all times', 'ourgreennation' ),
-			'100% auto'			=> __( 'Force image to same width as browser', 'ourgreennation' ),
-			'auto 100%'			=> __( 'Force image to same height as header area', 'ourgreennation' ),
+			'cover'				=> __( 'Cover header area with image at all times', 'our-green-nation' ),
+			'100% auto'			=> __( 'Force image to same width as browser', 'our-green-nation' ),
+			'auto 100%'			=> __( 'Force image to same height as header area', 'our-green-nation' ),
 			),
 	) ) );
 
 	$wp_customize->add_section('theme_layout' , array(
-	    'title'     => __('Theme Layout', 'ourgreennation'),
+	    'title'     => __('Theme Layout', 'our-green-nation'),
 	    'priority'  => 100
 	));
 
@@ -70,16 +70,16 @@ function ourgreennation_register_customizer_settings(){
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ourgreennation_default_layout', array(
-		'label'  			=> __( 'Post/Page Default Layout', 'ourgreennation' ),
+		'label'  			=> __( 'Post/Page Default Layout', 'our-green-nation' ),
 		'section' 			=> 'theme_layout',
 		'settings' 			=> 'ourgreennation_default_layout',
 		'type'				=> 'radio',
 		'priority'  		=> 100,
 		'sanitize_callback' => 'ourgreennation_sanitize_single_width',
 		'choices'			=> array(
-			'content-sidebar'		=> __( 'Content/Sidebar', 'ourgreennation' ),
-			'sidebar-content'		=> __( 'Sidebar/Content', 'ourgreennation' ),
-			'full-width'			=> __( 'Full Width', 'ourgreennation' ),
+			'content-sidebar'		=> __( 'Content/Sidebar', 'our-green-nation' ),
+			'sidebar-content'		=> __( 'Sidebar/Content', 'our-green-nation' ),
+			'full-width'			=> __( 'Full Width', 'our-green-nation' ),
 			),
 	) ) );
 
@@ -92,7 +92,7 @@ function ourgreennation_register_customizer_settings(){
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ourgreennation_accent_color', array(
-		'label'  			=> __( 'Accent Color', 'ourgreennation' ),
+		'label'  			=> __( 'Accent Color', 'our-green-nation' ),
 		'section' 			=> 'colors',
 		'settings' 			=> 'ourgreennation_accent_color',
 		'type'				=> 'color',
@@ -100,7 +100,7 @@ function ourgreennation_register_customizer_settings(){
 	) ) );
 
 	$wp_customize->add_section('post_page_section' , array(
-		'title'     => __('Individual Post Page', 'ourgreennation'),
+		'title'     => __('Individual Post Page', 'our-green-nation'),
 		'priority'  => 100
 	));
 
@@ -110,7 +110,7 @@ function ourgreennation_register_customizer_settings(){
 	));
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'hide_author_info', array(
-		'label'     => __('Hide Author Info (If checked, this hides the author image, name, and bio box at the end of posts)', 'ourgreennation'),
+		'label'     => __('Hide Author Info (If checked, this hides the author image, name, and bio box at the end of posts)', 'our-green-nation'),
 		'section'   => 'post_page_section',
 		'settings'  => 'hide_author_info',
 		'type'      => 'checkbox',

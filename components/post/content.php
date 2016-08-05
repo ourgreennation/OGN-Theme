@@ -24,7 +24,7 @@
 		<div class="post-meta before-content">
 			<?php if( is_multi_author() ){ ?>
 				<?php $author_link = '<a href="' . get_author_posts_url( get_the_author_meta('ID') ) . '">' . get_the_author() . '</a>'; ?>
-				<span class="author"><?php echo sprintf( __('Posted by %s on %s','ourgreennation' ), $author_link, get_the_date() ); ?></span>
+				<span class="author"><?php echo sprintf( __('Posted by %s on %s','our-green-nation' ), $author_link, get_the_date() ); ?></span>
 			<?php } else { ?>
 				<span class="author"><?php the_date(); ?></span>
 			<?php } ?>
@@ -36,7 +36,7 @@
 		<?php the_content(); ?>
 	</div><!--/.post-content-->
 
-	<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'ourgreennation' ), 'after' => '</div>' ) ); ?>
+	<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'our-green-nation' ), 'after' => '</div>' ) ); ?>
 
 	<div class="post-meta after-content">
 		<div class="tags"><?php the_tags( ' <span class="hashtag">#','</span><span class="hashtag">#','</span>'); ?></div>
