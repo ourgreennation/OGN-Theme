@@ -21,7 +21,7 @@ add_action( 'customize_register', 'ourgreennation_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function ourgreennation_customize_preview_js() {
-	wp_enqueue_script( 'ourgreennation_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'ourgreennation_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20160807', true );
 }
 add_action( 'customize_preview_init', 'ourgreennation_customize_preview_js' );
 
@@ -56,6 +56,8 @@ function ourgreennation_register_customizer_settings(){
 			),
 	) ) );
 
+
+
 	$wp_customize->add_section('theme_layout' , array(
 	    'title'     => __('Theme Layout', 'our-green-nation'),
 	    'priority'  => 100
@@ -75,7 +77,6 @@ function ourgreennation_register_customizer_settings(){
 		'settings' 			=> 'ourgreennation_default_layout',
 		'type'				=> 'radio',
 		'priority'  		=> 100,
-		'sanitize_callback' => 'ourgreennation_sanitize_single_width',
 		'choices'			=> array(
 			'content-sidebar'		=> __( 'Content/Sidebar', 'our-green-nation' ),
 			'sidebar-content'		=> __( 'Sidebar/Content', 'our-green-nation' ),
@@ -83,11 +84,57 @@ function ourgreennation_register_customizer_settings(){
 			),
 	) ) );
 
+	// /**
+	// * Add homepage masonry column width to customizer
+	// */
+	// $wp_customize->add_setting( 'masonry_home_column_width', array(
+	// 	'default' 	=> '3-col',
+	// ) );
+
+	// $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'masonry_home_column_width', array(
+	// 	'label'  			=> __( 'Masonry Columns on Homepage', 'our-green-nation' ),
+	// 	'section' 			=> 'theme_layout',
+	// 	'settings' 			=> 'masonry_home_column_width',
+	// 	'type'				=> 'radio',
+	// 	'priority'  		=> 100,
+	// 	'sanitize_callback' => 'ourgreennation_sanitize_home_column_width',
+	// 	'choices'			=> array(
+	// 		'2-col'			=> __( '2 Columns', 'our-green-nation' ),
+	// 		'3-col'			=> __( '3 Columns', 'our-green-nation' ),
+	// 		'4-col'			=> __( '4 Columns', 'our-green-nation' ),
+	// 		),
+	// ) ) );
+
+	// /**
+	// * Add archive masonry column width to customizer
+	// */
+
+	// $wp_customize->add_setting( 'masonry_archive_column_width', array(
+	// 	'default' 	=> '2-col',
+	// ) );
+
+	// $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'masonry_archive_column_width', array(
+	// 	'label'  			=> __( 'Masonry Columns on Archive Pages', 'our-green-nation' ),
+	// 	'section' 			=> 'theme_layout',
+	// 	'settings' 			=> 'masonry_archive_column_width',
+	// 	'type'				=> 'radio',
+	// 	'priority'  		=> 100,
+	// 	'sanitize_callback' => 'ourgreennation_sanitize_archive_column_width',
+	// 	'choices'			=> array(
+	// 		'2-col'			=> __( '2 Columns', 'our-green-nation' ),
+	// 		'3-col'			=> __( '3 Columns', 'our-green-nation' ),
+	// 		'4-col'			=> __( '4 Columns', 'our-green-nation' ),
+	// 		),
+	// ) ) );
+
+
+
+
 	/**
 	* Add accent color to ourgreennation theme.
 	*/
 	$wp_customize->add_setting( 'ourgreennation_accent_color', array(
-		'default' 	        => '#b2d234',
+		'default' 	        => '#789d4a',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -117,7 +164,6 @@ function ourgreennation_register_customizer_settings(){
 	) ) );
 
 }
-
 add_action( 'customize_register', 'ourgreennation_register_customizer_settings' );
 
 
@@ -143,27 +189,27 @@ function ourgreennation_sanitize_image_scale( $value ) {
     return $value;
 }
 
-/**
- * Sanitize the image scale value.
- *
- */
-function ourgreennation_sanitize_grid_width( $value ) {
-    if ( ! in_array( $value, array( 300, 400, 500 ) ) )
-        $value = 300;
+// /**
+//  * Sanitize the width of home columns
+//  *
+//  */
+// function ourgreennation_sanitize_home_column_width( $value ) {
+//     if ( ! in_array( $value, array( '2-col', '3-col', '4-col' ) ) )
+//         $value = '3-col';
 
-    return $value;
-}
+//     return $value;
+// }
 
-/**
- * Sanitize the image scale value.
- *
- */
-function ourgreennation_sanitize_single_width( $value ) {
-    if ( ! in_array( $value, array( 700, 800, 900, 1000, 1100, 1200 ) ) )
-        $value = 700;
+// /**
+//  * Sanitize the width of archive columns
+//  *
+//  */
+// function ourgreennation_sanitize_archive_column_width( $value ) {
+//     if ( ! in_array( $value, array( '2-col', '3-col', '4-col' ) ) )
+//         $value = '2-col';
 
-    return $value;
-}
+//     return $value;
+// }
 
 /**
  * Output custom styles based on customizer options.
@@ -178,28 +224,69 @@ function ourgreennation_add_header_styles(){
 </style>
 <?php
 }
-
 add_action( 'wp_head', 'ourgreennation_add_header_styles' );
 
-function ourgreennation_filter_column_width(){
-	$column_width = esc_attr( get_theme_mod( 'masonry_column_width', 320 ) );
 
-	return $column_width . "px";
-}
+// /**
+//  * Calculate percent width of homepage column from customizer
+//  *
+//  */
+// function ourgreennation_filter_home_column_width(){
+// 	$column_width = esc_attr( get_theme_mod( 'masonry_home_column_width', '3-col' ) );
 
-add_filter( 'ourgreennation_item_width', 'ourgreennation_filter_column_width' );
+// 	if ( $column_width === '2-col' ) {
+// 		$column_width = 50;
+// 	} elseif ( $column_width === '3-col' ) {
+// 		$column_width = 33;
+// 	} elseif ( $column_width === '4-col' ) {
+// 		$column_width = 25;
+// 	}
 
-function ourgreennation_column_styles(){
-	$column_width = get_theme_mod( 'masonry_column_width', 320 ) . "px";
+// 	return $column_width . "%";
+// }
+// add_filter( 'ourgreennation_home_item_width', 'ourgreennation_filter_home_column_width' );
 
-	$custom_css = "
-	.masonry .hentry{
-		width: {$column_width};
-	}";
-	wp_add_inline_style( 'ourgreennation-style', $custom_css );
-}
 
-add_action( 'wp_enqueue_scripts', 'ourgreennation_column_styles', 999 );
+// /**
+//  * Calculate percent width of archive column from customizer
+//  *
+//  */
+// function ourgreennation_filter_archive_column_width(){
+// 	$column_width = esc_attr( get_theme_mod( 'masonry_archive_column_width', '2-col' ) );
+
+// 	if ( $column_width === '2-col' ) {
+// 		$column_width = 50;
+// 	} elseif ( $column_width === '3-col' ) {
+// 		$column_width = 33;
+// 	} elseif ( $column_width === '4-col' ) {
+// 		$column_width = 25;
+// 	}
+
+// 	return $column_width . "%";
+// }
+// add_filter( 'ourgreennation_archive_item_width', 'ourgreennation_filter_archive_column_width' );
+
+
+
+// /**
+//  * enqueue masonry width styles
+//  *
+//  */
+// function ourgreennation_column_styles(){
+// 	$home_column_width = apply_filters( 'ourgreennation_home_item_width', '33%' );
+
+// 	$archive_column_width = apply_filters( 'ourgreennation_archive_item_width', '50%' );
+
+// 	$custom_css = "
+// 	.home .masonry .hentry{
+// 		width: {$home_column_width};
+// 	}
+// 	.archive .masonry .hentry{
+// 		width: {$archive_column_width};
+// 	}";
+// 	wp_add_inline_style( 'ourgreennation-style', $custom_css );
+// }
+// add_action( 'wp_enqueue_scripts', 'ourgreennation_column_styles', 999 );
 
 
 function ourgreennation_footer_styles(){
@@ -211,19 +298,7 @@ function ourgreennation_footer_styles(){
 	}";
 	wp_add_inline_style( 'ourgreennation-style', $custom_css );
 }
-
 add_action( 'wp_enqueue_scripts', 'ourgreennation_footer_styles', 999 );
-
-
-function ourgreennation_change_content_width( $content_width ){
-	$single_width = get_theme_mod( 'ourgreennation_single_width', 700 );
-	$single_width = $single_width - 80;
-
-	if( $single_width !== 700 )
-		return $single_width;
-}
-
-add_filter( 'ourgreennation_content_width', 'ourgreennation_change_content_width' );
 
 
 function ourgreennation_accent_color_styles(){
@@ -305,8 +380,8 @@ a:hover{
 	';
 	wp_add_inline_style( 'ourgreennation-style', $custom_css );
 }
-
 add_action( 'wp_enqueue_scripts', 'ourgreennation_accent_color_styles', 999 );
+
 
 function ourgreennation_color_contrast($hexcolor, $dark = '#000000', $light = '#FFFFFF'){
     return (hexdec($hexcolor) > 0xffffff/2) ? $dark : $light;

@@ -97,7 +97,12 @@ function ourgreennation_embed_youtube_video( $oembed ){
 
 		preg_match_all($yt_regex, $post->post_content, $matches);
 
-		$width  = apply_filters('ourgreennation_item_width',300);
+		// if( is_home() || is_front_page() ) {
+		// 	$width  = apply_filters( 'ourgreennation_home_item_width', '33%' );
+		// } else {
+		// 	$width  = apply_filters( 'ourgreennation_archive_item_width', '50%' );
+		// }
+	 	$width  = apply_filters( 'ourgreennation_item_width', '300' );
 		$height = ($width / 9 * 6);
 
 		if( !empty( $matches[1][0] ) ){
