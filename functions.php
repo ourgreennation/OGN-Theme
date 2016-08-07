@@ -81,13 +81,13 @@ function ourgreennation_setup() {
 	 * Enable support for Post Formats.
 	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
-	add_theme_support( 'post-formats', array(
-		'audio',
-		'gallery',
-		'image',
-		'quote',
-		'video',
-	) );
+	// add_theme_support( 'post-formats', array(
+	// 	'audio',
+	// 	'gallery',
+	// 	'image',
+	// 	'quote',
+	// 	'video',
+	// ) );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'ourgreennation_custom_background_args', array(

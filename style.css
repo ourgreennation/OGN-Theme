@@ -831,10 +831,7 @@ table {
 }
 .main-navigation ul,
 .footer-navigation ul {
-  /*display: none;*/
   list-style: none;
-  margin: 0;
-  padding-left: 0;
 }
 
 .footer-navigation li {
@@ -872,6 +869,10 @@ table {
 .main-navigation ul .sub-menu a:active,
 .main-navigation ul .sub-menu a.highlighted {
   color: #404040;
+}
+
+.main-navigation .site-navigation > li:first-child > a {
+  padding-left: 0;
 }
 
 .footer-social a {
@@ -932,7 +933,7 @@ table {
 -------------------------------------------------------------------------------------------*/
 
 .sm{position:relative;z-index:9999;}
-.sm,.sm ul,.sm li{display:block;list-style:none;margin:0;padding:0;line-height:normal;direction:ltr;text-align:left;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.sm,.sm ul,.sm li{display:block;list-style:none;padding:0;margin-bottom:0;line-height:normal;direction:ltr;text-align:left;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 .sm-rtl,.sm-rtl ul,.sm-rtl li{direction:rtl;text-align:right;}
 .sm>li>h1,.sm>li>h2,.sm>li>h3,.sm>li>h4,.sm>li>h5,.sm>li>h6{margin:0;padding:0;}
 .sm ul{display:none;}
@@ -964,6 +965,13 @@ table {
 .sm-clean a.highlighted span.sub-arrow:before {
   display: block;
   content: '-';
+}
+
+.sm-clean ul.sub-menu li a:hover,
+.sm-clean ul.sub-menu li a:active,
+.sm-clean ul.sub-menu li a:focus {
+  background: #789d4a;
+  color: #FFFFFF;
 }
 
 @media (min-width: 768px) {
@@ -1014,6 +1022,14 @@ table {
     border-color: #FFFFFF transparent transparent transparent;
     background: transparent;
   }
+  .sm-clean ul.sub-menu a span.sub-arrow {
+    border-color: #404040 transparent transparent transparent;
+  }
+  .sm-clean ul.sub-menu a:hover span.sub-arrow,
+  .sm-clean ul.sub-menu a:focus span.sub-arrow,
+  .sm-clean ul.sub-menu a:active span.sub-arrow {
+    border-color: #FFFFFF transparent transparent transparent;
+  }
   .sm-clean a.highlighted span.sub-arrow:before {
     display: none;
   }
@@ -1023,6 +1039,7 @@ table {
     -webkit-box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
   }
   .sm-clean ul a, .sm-clean ul a:hover, .sm-clean ul a:focus, .sm-clean ul a:active, .sm-clean ul a.highlighted {
     color: #404040;
