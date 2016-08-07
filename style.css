@@ -1187,28 +1187,35 @@ body {
 }
 
 /* grid sizers to flex grid width */
-.masonry .grid-sizer,
-.full-width .two-thirds .masonry .grid-sizer {
+.masonry .grid-sizer {
+  width: 50%
+}
+.masonry.two-col .grid-sizer {
   width: 50%;
 }
-
-.full-width .masonry .grid-sizer,
-.full-width .masonry .hentry {
+.masonry.three-col .grid-sizer {
   width: 33.3%;
+}
+.masonry.four-col .grid-sizer {
+  width: 25%;
 }
 
 /* masonry item sizers to flex item width */
-.masonry .hentry,
-.full-width .two-thirds .masonry .hentry {
-  width: 45%;
+.masonry .hentry {
+  width: 47%;
 }
-
-.full-width .masonry .hentry {
-  width: 28%;
+.masonry.two-col .hentry {
+  width: 47%;
+}
+.masonry.three-col .hentry {
+  width: 30.3%;
+}
+.masonry.four-col .hentry {
+  width: 22%;
 }
 
 .masonry .hentry {
-  margin: 2.5%;
+  margin: 1.5%;
   font-size: 20px;
   background-color: #fff;
   float: left;

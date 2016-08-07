@@ -439,6 +439,9 @@ function ourgreennation_no_masonry_articles() {
 // Popular Articles Display
 function ourgreennation_content_popular_articles() {
 
+	// Get number of columns for masonry
+	$columns = get_sub_field( 'number_of_columns' );
+
     // WP_Query arguments
     $popular_args = array (
         'post_type'  				=> 'post',
@@ -457,8 +460,9 @@ function ourgreennation_content_popular_articles() {
 
     if( $popular_query->have_posts() ):
 
+    	// If we're not doing the home content/sidebar popular post layout
     	if( !get_field( 'home_popular_content' ) ) {
-        	echo '<div class="popular-articles-inner masonry"><div class="grid-sizer"></div>';
+        	echo "<div class='popular-articles-inner {$columns} masonry'><div class='grid-sizer'></div>";
 		}
             while( $popular_query->have_posts() ) : $popular_query->the_post();
 
@@ -470,6 +474,7 @@ function ourgreennation_content_popular_articles() {
 
             wp_reset_query();
 
+    	// If we're not doing the home content/sidebar popular post layout
         if( !get_field( 'home_popular_content' ) ) {
         	echo '</div>';
         }
@@ -481,6 +486,9 @@ function ourgreennation_content_popular_articles() {
 
 // Popular Articles Display
 function ourgreennation_content_recent_articles() {
+
+	// Get number of columns for masonry
+	$columns = get_sub_field( 'number_of_columns' );
 
     // WP_Query arguments
     $recent_args = array (
@@ -497,7 +505,7 @@ function ourgreennation_content_recent_articles() {
 
     if( $recent_query->have_posts() ):
 
-        echo '<div class="recent-articles-inner masonry"><div class="grid-sizer"></div>';
+        echo "<div class='recent-articles-inner {$columns} masonry'><div class='grid-sizer'></div>";
 
             while( $recent_query->have_posts() ) : $recent_query->the_post();
 
