@@ -18,7 +18,7 @@
 			<h3 class="entry-title"><a href="<?php echo ourgreennation_get_link_url(); ?>"><?php the_title(); ?></a></h3>
 			<?php } ?>
 
-			<?php the_excerpt(); ?>
+			<?php ourgreennation_post_excerpt( 20 ); ?>
 
 		</div>
 

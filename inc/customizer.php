@@ -40,6 +40,7 @@ function ourgreennation_register_customizer_settings(){
 	*/
 	$wp_customize->add_setting( 'header_image_scale', array(
 		'default' 	=> 'cover',
+		'sanitize_callback' => 'ourgreennation_sanitize_image_scale',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_image_scale', array(
@@ -69,6 +70,7 @@ function ourgreennation_register_customizer_settings(){
 	*/
 	$wp_customize->add_setting( 'ourgreennation_default_layout', array(
 		'default' 	=> 'content-sidebar',
+		'sanitize_callback' => 'ourgreennation_sanitize_default_layout',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ourgreennation_default_layout', array(
@@ -77,6 +79,7 @@ function ourgreennation_register_customizer_settings(){
 		'settings' 			=> 'ourgreennation_default_layout',
 		'type'				=> 'radio',
 		'priority'  		=> 100,
+		'sanitize_callback' => 'ourgreennation_sanitize_default_layout',
 		'choices'			=> array(
 			'content-sidebar'		=> __( 'Content/Sidebar', 'our-green-nation' ),
 			'sidebar-content'		=> __( 'Sidebar/Content', 'our-green-nation' ),
@@ -89,6 +92,7 @@ function ourgreennation_register_customizer_settings(){
 	// */
 	// $wp_customize->add_setting( 'masonry_home_column_width', array(
 	// 	'default' 	=> '3-col',
+	// 	'sanitize_callback' => 'ourgreennation_sanitize_home_column_width',
 	// ) );
 
 	// $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'masonry_home_column_width', array(
@@ -111,6 +115,7 @@ function ourgreennation_register_customizer_settings(){
 
 	// $wp_customize->add_setting( 'masonry_archive_column_width', array(
 	// 	'default' 	=> '2-col',
+	// 	'sanitize_callback' => 'ourgreennation_sanitize_archive_column_width',
 	// ) );
 
 	// $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'masonry_archive_column_width', array(
@@ -185,6 +190,17 @@ function ourgreennation_sanitize_hide_author_info( $value ) {
 function ourgreennation_sanitize_image_scale( $value ) {
     if ( ! in_array( $value, array( 'cover', '100% auto', 'auto 100%' ) ) )
         $value = 'cover';
+
+    return $value;
+}
+
+/**
+ * Sanitize the image scale value.
+ *
+ */
+function ourgreennation_sanitize_default_layout( $value ) {
+    if ( ! in_array( $value, array( 'content-sidebar', 'sidebar-content', 'full-width' ) ) )
+        $value = 'content-sidebar';
 
     return $value;
 }

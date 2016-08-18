@@ -543,6 +543,25 @@ function ourgreennation_string_limit_words( $string, $word_limit, $more = '&nbsp
 }
 
 
+// Create excerpts for posts with string limiter and HTML stripping
+function ourgreennation_get_post_excerpt( $word_limit, $more = '&nbsp;&hellip;' ) {
+
+	// Get the string that we'll be working with from the post content
+	$string = ourgreennation_string_limit_words( get_the_content(), $word_limit, $more );
+
+	// Strip HTML and slashes
+	$post_excerpt = wp_strip_all_tags( wp_unslash( $string ) );
+
+	return $post_excerpt;
+
+}
+
+// Echo ourgreennation_get_post_excerpt()
+function ourgreennation_post_excerpt( $word_limit, $more = '&nbsp;&hellip;' ) {
+	echo ourgreennation_get_post_excerpt( $word_limit, $more );
+}
+
+
 
 /* TODO: Regex some stuff! */
 function fix_content_regex( $content ) {

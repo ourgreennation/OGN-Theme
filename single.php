@@ -17,6 +17,8 @@ get_header(); ?>
 
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
+			echo '<h3>' . get_field( 'hook' ) . '</h3>';
+
 			the_post_thumbnail( 'large' );
 
 			the_content();

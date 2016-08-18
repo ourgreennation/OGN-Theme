@@ -588,8 +588,13 @@ hr {
   margin: 0 auto;
 }
 
+.site-content {
+  padding: 40px 0;
+}
+
 .page-builder .site-content {
   max-width: 100%;
+  padding: 0;
 }
 
 .page-builder .entry-content {
@@ -815,7 +820,7 @@ dd {
 # Tables
 --------------------------------------------------------------*/
 table {
-  margin: 0 0 1.5em;
+  margin: 0 0 1em;
   width: 100%;
 }
 
@@ -1611,17 +1616,58 @@ object {
 #buddypress .generic-button a,
 #buddypress .comment-reply-link,
 a.bp-title-button {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
+  border: none;
   border-radius: 3px;
   background-color: #789d4a;
   box-shadow: none;
   color: #FFFFFF;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  padding: 1em;
+  text-shadow: none;
+}
+#buddypress button:hover,
+#buddypress a.button:hover,
+#buddypress input[type=submit]:hover,
+#buddypress input[type=button]:hover,
+#buddypress input[type=reset]:hover,
+#buddypress ul.button-nav li a:hover,
+#buddypress .generic-button a:hover,
+#buddypress .comment-reply-link:hover,
+a.bp-title-button:hover {
+  background-color: #7e5475;
+  color: #FFFFFF;
+  border: none;
+  box-shadow: none;
+}
+#buddypress button:active,
+#buddypress a.button:active,
+#buddypress input[type=submit]:active,
+#buddypress input[type=button]:active,
+#buddypress input[type=reset]:active,
+#buddypress ul.button-nav li a:active,
+#buddypress .generic-button a:active,
+#buddypress .comment-reply-link:active,
+a.bp-title-button:active {
+  background-color: #a9c47f;
+  color: #FFFFFF;
+  border: none;
+  box-shadow: none;
+}
+#buddypress button:focus,
+#buddypress a.button:focus,
+#buddypress input[type=submit]:focus,
+#buddypress input[type=button]:focus,
+#buddypress input[type=reset]:focus,
+#buddypress ul.button-nav li a:focus,
+#buddypress .generic-button a:focus,
+#buddypress .comment-reply-link:focus,
+a.bp-title-button:focus {
+  background-color: #512a44;
+  color: #FFFFFF;
+  border: none;
+  box-shadow: none;
 }
 
 .avatar {
@@ -1650,7 +1696,76 @@ a.bp-title-button {
 
 
 
+/*--------------------------------------------------------------
+## WP Ultimate Recipe
+--------------------------------------------------------------*/
 
+.wpurp-container {
+  max-width: 100%;
+  padding: 10px 0;
+  margin: 20px auto;
+  border-top: 1px solid #d7d2cb;
+  border-bottom: 1px solid #d7d2cb;
+}
+
+.wpurp-columns td {
+  vertical-align: top;
+}
+
+.wpurp-columns td td {
+  width: 50%;
+}
+
+.wpurp-recipe-title {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.wpurp-recipe-description {
+  margin: 20px 0 40px 0;
+  display: block;
+}
+
+.wpurp-recipe-print-button {
+  float: right;
+}
+
+.wpurp-recipe-image {
+  max-width: 200px;
+  height: auto;
+}
+
+.wpurp-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.wpurp-recipe-servings-changer input[type="number"] {
+  max-width: 50px;
+}
+
+.wpurp-recipe-stars {
+  display: none;
+}
+
+.wpurp-columns .wpurp-box {
+  padding: 0.5em;
+  background: #789d4a;
+  color: #FFFFFF;
+}
+
+.wpurp-box .wpurp-title {
+  font-weight: 600;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.wpurp-recipe-instruction-group {
+  font-weight: 600;
+  font-size: 1.2em;
+}
 
 
 

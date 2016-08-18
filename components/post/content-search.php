@@ -19,7 +19,7 @@
 				<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<?php } ?>
 
-				<?php the_excerpt(); ?>
+				<?php ourgreennation_post_excerpt( 20 ); ?>
 			</div>
 
 		<?php } else { ?>
@@ -28,7 +28,7 @@
 			<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 			<?php } ?>
 
-			<?php the_excerpt(); ?>
+			<?php ourgreennation_post_excerpt( 20 ); ?>
 
 		<?php } ?>
 
