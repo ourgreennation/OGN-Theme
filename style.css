@@ -363,7 +363,7 @@ a.button,
 input,
 select,
 textarea {
-  color: #404040;
+  color: #212721;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -554,7 +554,7 @@ a.button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background: #404040;
+  background: #212721;
   color: #FFFFFF;
 }
 button:active, button:focus,
@@ -567,6 +567,10 @@ input[type="submit"]:active,
 input[type="submit"]:focus {
   background: #363636;
   color: #FFFFFF;
+}
+
+.button.button-grey {
+  background-color: #63666a;
 }
 
 /*--------------------------------------------------------------
@@ -709,14 +713,14 @@ hr {
 }
 
 .site-before-footer-wrap {
-  background-color: #63666a;
+  background-color: #789d4a;
   color: #FFFFFF;
   overflow: hidden;
   text-align: center;
 }
 
 .site-footer-wrap {
-  background-color: #789d4a;
+  background-color: #63666a;
 }
 
 .site-info {
@@ -860,7 +864,7 @@ table {
 .main-navigation a:visited {
   display: block;
   text-decoration: none;
-  color: #404040;
+  color: #212721;
 }
 
 .main-navigation a:hover,
@@ -872,7 +876,7 @@ table {
 .main-navigation ul a:focus,
 .main-navigation ul a:active,
 .main-navigation ul a.highlighted {
-  color: #404040;
+  color: #212721;
 }
 
 .main-navigation ul .sub-menu a,
@@ -880,7 +884,7 @@ table {
 .main-navigation ul .sub-menu a:focus,
 .main-navigation ul .sub-menu a:active,
 .main-navigation ul .sub-menu a.highlighted {
-  color: #404040;
+  color: #212721;
 }
 
 .main-navigation .site-navigation > li:first-child > a {
@@ -1035,7 +1039,7 @@ table {
     background: transparent;
   }
   .sm-clean ul.sub-menu a span.sub-arrow {
-    border-color: #404040 transparent transparent transparent;
+    border-color: #212721 transparent transparent transparent;
   }
   .sm-clean ul.sub-menu a:hover span.sub-arrow,
   .sm-clean ul.sub-menu a:focus span.sub-arrow,
@@ -1054,7 +1058,7 @@ table {
     margin-bottom: 0;
   }
   .sm-clean ul a, .sm-clean ul a:hover, .sm-clean ul a:focus, .sm-clean ul a:active, .sm-clean ul a.highlighted {
-    color: #404040;
+    color: #212721;
   }
   .sm-clean ul a.has-submenu {
     padding-right: 20px;
@@ -1088,12 +1092,12 @@ table {
     overflow: hidden;
     border-width: 6px;
     border-style: dashed dashed solid dashed;
-    border-color: transparent transparent #404040 transparent;
+    border-color: transparent transparent #212721 transparent;
   }
   .sm-clean span.scroll-down-arrow {
     top: 8px;
     border-style: solid dashed dashed dashed;
-    border-color: #404040 transparent transparent transparent;
+    border-color: #212721 transparent transparent transparent;
   }
 }
 
@@ -1265,7 +1269,7 @@ body {
   display: inline-block;
   color: #222;
   padding-bottom: 5px;
-  border-bottom: 2px solid #bbbcbc/;
+  border-bottom: 2px solid #bbbcbc;
 }
 
 .masonry .panel .entry-title a:hover {
@@ -1415,12 +1419,12 @@ body {
 }
 
 .popular-articles-inner article a {
-  color: #404040;
+  color: #212721;
 }
 
 .popular-articles-inner .entry-title {
   margin-top: 0;
-  color: #404040;
+  color: #212721;
 }
 
 .single-column {
@@ -1668,7 +1672,8 @@ a.bp-title-button:active {
 #buddypress input[type=button]:focus,
 #buddypress input[type=reset]:focus,
 #buddypress ul.button-nav li a:focus,
-#buddypress .generic-button a:focus,
+#buddypress .generic-
+ a:focus,
 #buddypress .comment-reply-link:focus,
 a.bp-title-button:focus {
   background-color: #512a44;
