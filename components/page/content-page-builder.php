@@ -62,6 +62,50 @@ function ourgreennation_page_content_scripts() {
 
 	        elseif( get_row_layout() == 'recent_articles' ): // Recent Articles
 
+	        elseif( get_row_layout() == 'upcoming_events' ): // Slider of Upcoming Events
+
+	        	// Owl Carousel scripts and styles
+				wp_enqueue_script( 'ourgreennation-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery') );
+				wp_enqueue_style( 'ourgreennation-owl-carousel-style', get_template_directory_uri() . '/assets/css/owl.carousel.min.css' );
+				wp_enqueue_style( 'ourgreennation-owl-carousel-theme', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css' );
+
+				?>
+				<script>
+				(function( $ ) {
+
+				  "use strict";
+
+				  $(function() {
+				      var owl = $("#owl-carousel");
+
+					  owl.owlCarousel({
+					      items : 4, // 4 items above 1000px browser width
+					      itemsDesktop : [1000,4], // 4 items between 1000px and 901px
+					      itemsDesktopSmall : [960,3], // 3 items betweem 960px and 721px
+					      itemsTablet: [720,2], // 2 items between 720 and 601
+					      itemsMobile : [600,1], // 1 item between 600 and 0
+					      dots: false,
+					      nav: true,
+					      // rewind: true,
+					      margin: 20,
+					      // infinite: true,
+					      loop: true,
+					      navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
+					  });
+
+					  // Custom Navigation Events
+					  $(".next").click(function(){
+					    owl.trigger('owl.next');
+					  })
+					  $(".prev").click(function(){
+					    owl.trigger('owl.prev');
+					  })
+				  });
+
+				}(jQuery));
+				</script>
+				<?php
+
 	        elseif( get_row_layout() == 'home_popular_content' ): // Home Popular Content
 
 	        elseif( get_row_layout() == 'content_carousel' ): // Slider of Client Images
@@ -81,9 +125,10 @@ function ourgreennation_page_content_scripts() {
 					      itemsTablet: [720,2], // 2 items between 720 and 601
 					      itemsMobile : [600,1], // 1 item between 600 and 0
 					      dots: false,
-					      nav: true,
+					      nav: false,
 					      rewind: true,
-					      navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
+					      infinite: true,
+					      // navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
 					  });
 
 					  // Custom Navigation Events
@@ -246,6 +291,30 @@ function ourgreennation_page_content() {
 	        		ourgreennation_content_recent_articles();
 
 	        	echo '</div></section>';
+
+
+
+
+
+	        elseif( get_row_layout() == 'upcoming_events' ): // Slider of Upcoming Events
+
+	        	echo '<section class="single-column upcoming-events" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
+
+	        		if( get_sub_field( 'content_headline' ) ) {
+	        			echo '<h2>' . get_sub_field( 'content_headline' ) . '</h2>';
+	        			echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+	        		}
+
+	        		echo get_sub_field( 'content' );
+
+	        		ourgreennation_upcoming_events_carousel();
+
+	        	echo '</div></section>';
+
+	        	$block_arrow = get_sub_field( 'block_arrow' );
+	        	if( $block_arrow ) :
+	        		echo '<div class="block-arrow" style="border-top: 40px solid ' . get_sub_field( 'background_color' ) . '"></div>';
+	        	endif;
 
 
 

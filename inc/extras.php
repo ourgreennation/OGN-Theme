@@ -378,6 +378,59 @@ function ourgreennation_content_carousel() {
 }
 
 
+// Upcoming Events Owl Slider Display
+// Note: section relies on The Events Calendar Pro
+function ourgreennation_upcoming_events_carousel() {
+
+    // WP_Query arguments
+    $event_args = array (
+        'post_type'  				=> 'tribe_events',
+        'cache_results' 			=> true,
+        'update_post_meta_cache' 	=> true,
+        'update_post_term_cache' 	=> true,
+        'ignore_sticky_posts'   	=> true,
+        'posts_per_page'         	=> get_sub_field( 'number_of_events' ),
+    );
+
+    // The Query
+    $event_query = new WP_Query( $event_args );
+
+    if( $event_query->have_posts() ):
+
+        echo '<div class="carousel">';
+            echo '<div id="owl-carousel" class="owl-carousel owl-theme">';
+
+	            while( $event_query->have_posts() ) : $event_query->the_post();
+
+					echo '<article id="item">';
+
+						echo '<a class="frame" href="' . get_the_permalink() . '">';
+
+							echo '<div class="panel">';
+								echo '<h3 class="entry-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+								the_excerpt();
+							echo '</div>';
+
+						echo '</a>';
+
+					echo '</article>';
+
+	                wp_reset_postdata();
+
+	            endwhile;
+
+            	wp_reset_query();
+
+
+            echo '</div>';
+            // echo '<div class="customNavigation"><a class="btn prev fa fa-arrow-left"></a><a class="btn next fa fa-arrow-right"></a></div>';
+        echo '</div>';
+
+    endif;
+
+}
+
+
 // Popular Articles Display
 function ourgreennation_no_masonry_articles() {
 
@@ -484,7 +537,7 @@ function ourgreennation_content_popular_articles() {
 }
 
 
-// Popular Articles Display
+// Recent Articles Display
 function ourgreennation_content_recent_articles() {
 
 	// Get number of columns for masonry

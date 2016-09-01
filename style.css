@@ -1185,7 +1185,7 @@ body {
   padding-bottom: 40px;
   clear: both;
 }
-.masonry .panel .fa, .masonry .panel li.social-links a, li.social-links .masonry .panel a {
+.panel .fa, .panel li.social-links a, li.social-links .panel a {
   width: 32px;
   height: 32px;
   font-size: 32px;
@@ -1250,33 +1250,33 @@ body {
   border: 0;
 }
 
-.masonry .panel {
+.panel {
   padding: 30px;
   font-size: 0.8em;
   border: 2px solid #f2f2f2;
 }
 
-.custom-background .masonry .panel {
+.custom-background .panel {
   border: none;
 }
 
-.masonry .panel .entry-title {
+.panel .entry-title {
   text-align: center;
 }
 
-.masonry .panel .entry-title a,
-.masonry .panel .entry-title a:visited {
+.panel .entry-title a,
+.panel .entry-title a:visited {
   display: inline-block;
   color: #222;
   padding-bottom: 5px;
   border-bottom: 2px solid #bbbcbc;
 }
 
-.masonry .panel .entry-title a:hover {
+.panel .entry-title a:hover {
   color: #b2d234;
 }
 
-.masonry .panel p {
+.panel p {
   text-align: center;
   overflow: hidden;
 }
@@ -1413,6 +1413,10 @@ body {
   font-size: 1.5em;
 }
 
+.recent-articles-inner {
+  padding-bottom: 0;
+}
+
 .popular-articles-inner article {
   margin-bottom: 25px;
   overflow: hidden;
@@ -1430,6 +1434,7 @@ body {
 .single-column {
   padding: 60px 0;
   clear: both;
+  overflow: hidden;
 }
 
 .single-column h2 {
@@ -1489,6 +1494,14 @@ body {
   position: absolute;
   left: 0px;
   background-color: #81bd41;
+}
+
+.upcoming-events {
+  
+}
+
+.upcoming-events .owl-item {
+
 }
 
 
