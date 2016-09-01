@@ -26,11 +26,18 @@
 
 	<header id="masthead" class="site-header-wrap wrap" role="banner">
 
-		<?php get_template_part( 'components/header/site', 'branding' ); ?>
+		<?php get_template_part( 'components/header/site', 'menu-bar' ); ?>
 
-		<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
+		<div class="site-header">
 
-		<?php ourgreennation_social_menu(); ?>
+			<?php get_template_part( 'components/header/site', 'branding' ); ?>
+
+			<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
+
+			<?php ourgreennation_social_menu(); ?>
+
+		</div><!-- .site-header -->
 
 	</header>
+
 	<div id="content" class="site-content">

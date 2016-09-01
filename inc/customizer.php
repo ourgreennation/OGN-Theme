@@ -376,8 +376,6 @@ span.category a{
 	background-color: '. $accent_color .';
 	color: ' . ourgreennation_color_contrast($accent_color) . ';
 }
-.masonry .panel .entry-title a,
-.masonry .panel .entry-title a:visited,
 #access .menu,
 #access .mobile-menu .menu-link,
 #footer a{

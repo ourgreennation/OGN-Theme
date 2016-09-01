@@ -542,7 +542,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border-radius: 3px;
+  border-radius: 5px;
   background: #789d4a;
   box-shadow: none;
   color: #FFFFFF !important;
@@ -579,6 +579,7 @@ hr {
   margin-bottom: 1.5em;
 }
 
+.site-menu,
 .site-header,
 .site-navigation,
 .site-content,
@@ -645,26 +646,27 @@ hr {
 }
 
 .site-branding {
-  float: left;
+  margin: 0 auto;
   padding: 10px 0;
   max-width: 300px;
 }
 
-.site-login {
+.site-menu-bar {
+  background-color: #63666a;
+  overflow: hidden;
+}
+
+.site-menu-inner {
   float: right;
+  padding: 5px 0;
 }
 
-.site-login-bar {
-  background-color: #363636;
-  padding: 5px 15px;
-}
-
-.site-login-bar .search-form {
+.site-menu .search-form {
   display: inline-block;
   position: relative;
 }
 
-.site-header .search-form input[type="search"] {
+.site-menu .search-form input[type="search"] {
   background-color: transparent;
   border: none;
   color: #FFFFFF;
@@ -678,7 +680,7 @@ hr {
   -webkit-appearance: none;
 }
 
-.site-header .search-form input[type="submit"] {
+.site-menu .search-form input[type="submit"] {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -687,7 +689,7 @@ hr {
   position: absolute;
   width: 1px;
 }
-.site-header .search-form:before {
+.site-menu .search-form:before {
   color: #FFFFFF;
   content: "\f002";
   font-family: 'FontAwesome';
@@ -831,7 +833,6 @@ table {
   clear: both;
   display: block;
   width: 100%;
-  background-color: #63666a;
   text-align: center;
 }
 .main-navigation ul,
@@ -846,14 +847,20 @@ table {
   margin: 0;
 }
 
-.main-navigation a,
-.main-navigation a:visited,
 .footer-navigation a,
 .footer-navigation a:hover,
 .footer-navigation a:visited {
   display: block;
   text-decoration: none;
   color: #FFFFFF;
+}
+
+
+.main-navigation a,
+.main-navigation a:visited {
+  display: block;
+  text-decoration: none;
+  color: #404040;
 }
 
 .main-navigation a:hover,
@@ -1258,7 +1265,7 @@ body {
   display: inline-block;
   color: #222;
   padding-bottom: 5px;
-  border-bottom: 3px solid #b2d234;
+  border-bottom: 2px solid #bbbcbc/;
 }
 
 .masonry .panel .entry-title a:hover {
@@ -1777,6 +1784,7 @@ a.bp-title-button:focus {
 
 @media screen and (max-width: 1200px) {
 
+  .site-menu,
   .site-header,
   .site-navigation,
   .site-content,
