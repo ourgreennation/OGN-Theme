@@ -544,11 +544,13 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border-radius: 5px;
+  border: none;
   background: #789d4a;
   box-shadow: none;
   color: #FFFFFF !important;
   line-height: 1;
   padding: .6em 1em ;
+  display: inline-block;
 }
 button:hover,
 a.button:hover,
@@ -657,7 +659,7 @@ hr {
 }
 
 .site-menu-bar {
-  background-color: #63666a;
+  background-color: #bbbcbc;
   overflow: hidden;
 }
 
@@ -674,7 +676,7 @@ hr {
 .site-menu .search-form input[type="search"] {
   background-color: transparent;
   border: none;
-  color: #FFFFFF;
+  color: #212721;
   font-family: 'Open Sans', serif;
   font-weight: 400;
   letter-spacing: 1px;
@@ -683,6 +685,15 @@ hr {
   text-align: left;
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
+}
+.site-menu .search-form input::-webkit-input-placeholder {
+  color: #212721;
+}
+.site-menu .search-form input::-moz-input-placeholder {
+  color: #212721;
+}
+.site-menu .search-form input::-ms-input-placeholder {
+  color: #212721;
 }
 
 .site-menu .search-form input[type="submit"] {
@@ -695,7 +706,7 @@ hr {
   width: 1px;
 }
 .site-menu .search-form:before {
-  color: #FFFFFF;
+  color: #212721;
   content: "\f002";
   font-family: 'FontAwesome';
   font-size: 14px;
@@ -708,16 +719,20 @@ hr {
 .login-link {
   padding-left: 10px;
   margin-left: 10px;
-  border-left: 1px solid #FFFFFF;
-  color: #FFFFFF;
+  border-left: 1px solid #212721;
+  color: #212721;
   text-decoration: none;
 }
 
 .site-before-footer-wrap {
-  background-color: #789d4a;
-  color: #FFFFFF;
+  background-color: #bbbcbc;
   overflow: hidden;
   text-align: center;
+  padding: 20px 0;
+}
+
+.site-before-footer-wrap .widget {
+  margin-bottom: 0;
 }
 
 .site-footer-wrap {
@@ -1736,6 +1751,14 @@ a.bp-title-button:focus {
   box-shadow: none;
 }
 
+#buddypress .standard-form #basic-details-section input[type=password],
+#buddypress .standard-form #blog-details-section input#signup_blog_url,
+#buddypress .standard-form textarea,
+#buddypress .standard-form input[type=email],
+#buddypress .standard-form input[type=text] {
+  width: 90%;
+}
+
 .avatar {
   border-radius: 50%;
 }
@@ -1833,6 +1856,22 @@ a.bp-title-button:focus {
   font-size: 1.2em;
 }
 
+
+/*--------------------------------------------------------------
+## Business Directory
+--------------------------------------------------------------*/
+
+.listings .listing-actions a.button {
+  background-color: #789d4a;
+  background-image: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: none;
+}
+
+.listings .wpbdp-listing-excerpt {
+  border-bottom: 1px solid #bbbcbc;
+}
 
 
 
