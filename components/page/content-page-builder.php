@@ -86,9 +86,8 @@ function ourgreennation_page_content_scripts() {
 					      itemsMobile : [600,1], // 1 item between 600 and 0
 					      dots: false,
 					      nav: true,
-					      // rewind: true,
 					      margin: 20,
-					      // infinite: true,
+					      stagePadding: 20,
 					      loop: true,
 					      navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
 					  });
@@ -301,7 +300,7 @@ function ourgreennation_page_content() {
 	        	echo '<section class="single-column upcoming-events" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
 
 	        		if( get_sub_field( 'content_headline' ) ) {
-	        			echo '<h2>' . get_sub_field( 'content_headline' ) . '</h2>';
+	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
 	        			echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 	        		}
 

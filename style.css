@@ -116,7 +116,7 @@ dfn {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin-bottom: 0.67em;
 }
 
 mark {
@@ -374,6 +374,7 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 1px;
+  margin-top: 0;
 }
 
 p {
@@ -811,7 +812,7 @@ li > ol {
 }
 
 li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
 }
 
 dt {
@@ -933,6 +934,19 @@ table {
   float: right;
   text-align: right;
   width: 50%;
+}
+
+.comment-navigation .nav-previous a,
+.posts-navigation .nav-previous a,
+.post-navigation .nav-previous a,
+.comment-navigation .nav-next a,
+.posts-navigation .nav-next a,
+.post-navigation .nav-next a {
+  color: #FFFFFF;
+  background: #789d4a;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 5px;
 }
 
 .footer-navigation {
@@ -1245,7 +1259,12 @@ body {
 .masonry article > a > img {
   display: block;
 }
-
+/*
+.masonry article iframe {
+  width: 100%;
+  height: auto;
+}
+*/
 .masonry .has-featured-image .panel.vertical-center {
   border: 0;
 }
@@ -1496,12 +1515,34 @@ body {
   background-color: #81bd41;
 }
 
-.upcoming-events {
-  
+.upcoming-events .owl-carousel {
+  /*margin: 0 30px;*/
 }
 
 .upcoming-events .owl-item {
+  background: #FFFFFF;
+}
 
+.owl-theme .owl-nav {
+  position: absolute;
+  top: calc(50% - 48px);
+  width: 100%;
+}
+
+.upcoming-events .owl-theme .owl-nav .owl-prev,
+.upcoming-events .owl-theme .owl-nav .owl-next {
+  font-size: 2em;
+  color: #63666a;
+  background: #FFFFFF;
+  padding: 0 5px;
+}
+.upcoming-events .owl-theme .owl-nav .owl-prev {
+  position: absolute;
+  left: -10px;
+}
+.upcoming-events .owl-theme .owl-nav .owl-next {
+  position: absolute;
+  right: -10px;
 }
 
 
