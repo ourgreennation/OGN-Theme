@@ -59,8 +59,6 @@
 
 	<div class="panel">
 
-		<i class="fa fa-align-left"></i>
-
 		<?php if( get_the_title() ){ ?>
 		<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		<?php } ?>

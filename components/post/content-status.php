@@ -13,7 +13,6 @@
 		<a class="frame" href="<?php the_permalink(); ?>">
 
 			<div class="panel">
-				<i class="fa fa-<?php echo get_post_format(); ?>" aria-hidden="true"></i>
 				<?php the_content(); ?>
 			</div>
 
