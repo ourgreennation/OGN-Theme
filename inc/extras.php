@@ -408,7 +408,10 @@ function ourgreennation_upcoming_events_carousel() {
 
 							echo '<div class="panel">';
 								echo '<h3 class="entry-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
-								the_excerpt();
+
+								echo '<h3 class="event-start-date">' . tribe_get_start_date() . '</h3>';
+								echo '<h4 class="event-venue">' . tribe_get_venue() . '</h4>';
+								echo '<p class="event-full-address">' . tribe_get_full_address() . '</p>';
 							echo '</div>';
 
 						echo '</a>';

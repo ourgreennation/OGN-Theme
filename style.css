@@ -35,7 +35,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Layout
 	## Posts
   ## Masonry
-	## Pages
+  ## Pages
+	## Archives
 # Comments
 # Widgets
 # Page Builder
@@ -372,8 +373,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 1px;
+  font-family: 'Source Serif Pro', serif;
   margin-top: 0;
 }
 
@@ -881,6 +881,8 @@ table {
   display: block;
   text-decoration: none;
   color: #212721;
+  text-transform: uppercase;
+  font-size: 0.9em;
 }
 
 .main-navigation a:hover,
@@ -985,7 +987,7 @@ table {
 .sm li,.sm a{position:relative;}
 .sm a{display:block;}
 .sm a.disabled{cursor:not-allowed;}
-.sm:after{content:"\00a0";display:block;height:0;font:0px/0 serif;clear:both;visibility:hidden;overflow:hidden;}
+.sm:after{content:"\00a0";display:block;height:0;font:0px/0 serif;clear:both;visibility:hidden;overflow:hidden; color: #333;}
 .sm,.sm *,.sm *:before,.sm *:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
 
 .sm-clean a span.sub-arrow {
@@ -1051,7 +1053,7 @@ table {
   /* ...end */
 
   .sm-clean a, .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted {
-    padding: 12px 12px;
+    padding: 12px 8px;
   }
   .sm-clean a.has-submenu {
     padding-right: 24px;
@@ -1296,6 +1298,7 @@ body {
 
 .panel .entry-title {
   text-align: center;
+  line-height: 1.3em;
 }
 
 .panel .entry-title a,
@@ -1348,7 +1351,7 @@ body {
 
 .masonry .format-status {
   font-size: 1.2em;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Source Serif Pro', serif;
 }
 
 .masonry .format-status .panel .fa, .masonry .format-status .panel li.social-links a, li.social-links .masonry .format-status .panel a {
@@ -1356,7 +1359,7 @@ body {
 }
 
 .masonry .format-quote {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Source Serif Pro', serif;
 }
 
 .custom-background .masonry .format-quote {
@@ -1382,6 +1385,22 @@ body {
   clear: both;
   margin: 0 0 1.5em;
 }
+
+
+
+/*--------------------------------------------------------------
+## Archives
+--------------------------------------------------------------*/
+.archive .page-header .page-title {
+  float: left;
+}
+
+.archive .page-header select {
+  float: right;
+  margin-top: 12px;
+}
+
+
 
 /*--------------------------------------------------------------
 # Comments
