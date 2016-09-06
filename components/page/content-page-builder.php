@@ -76,7 +76,7 @@ function ourgreennation_page_content_scripts() {
 				  "use strict";
 
 				  $(function() {
-				      var owl = $("#owl-carousel");
+				      var owl = $("#events-carousel");
 
 					  owl.owlCarousel({
 					      items : 4, // 4 items above 1000px browser width
@@ -84,6 +84,41 @@ function ourgreennation_page_content_scripts() {
 					      itemsDesktopSmall : [960,3], // 3 items betweem 960px and 721px
 					      itemsTablet: [720,2], // 2 items between 720 and 601
 					      itemsMobile : [600,1], // 1 item between 600 and 0
+					      dots: false,
+					      nav: true,
+					      margin: 20,
+					      stagePadding: 20,
+					      loop: true,
+					      navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
+					  });
+				  });
+
+				}(jQuery));
+				</script>
+				<?php
+
+	        elseif( get_row_layout() == 'buddypress_groups' ): // Slider of Upcoming Events
+
+	        	// Owl Carousel scripts and styles
+				wp_enqueue_script( 'ourgreennation-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery') );
+				wp_enqueue_style( 'ourgreennation-owl-carousel-style', get_template_directory_uri() . '/assets/css/owl.carousel.min.css' );
+				wp_enqueue_style( 'ourgreennation-owl-carousel-theme', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css' );
+
+				?>
+				<script>
+				(function( $ ) {
+
+				  "use strict";
+
+				  $(function() {
+				      var owl = $("#buddypress-carousel");
+
+					  owl.owlCarousel({
+					      items : 4, // 4 items above 1000px browser width
+					      itemsDesktop : [1000,4], // 4 items between 1000px and 901px
+					      itemsDesktopSmall : [960,3], // 3 items betweem 960px and 721px
+					      itemsTablet: [720,3], // 2 items between 720 and 601
+					      itemsMobile : [600,2], // 1 item between 600 and 0
 					      dots: false,
 					      nav: true,
 					      margin: 20,
@@ -297,7 +332,14 @@ function ourgreennation_page_content() {
 
 	        elseif( get_row_layout() == 'upcoming_events' ): // Slider of Upcoming Events
 
-	        	echo '<section class="single-column upcoming-events" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
+
+	        	// Get background image to display
+	        	$bg_img = get_sub_field( 'background_image' );
+	        	$bg_img_url = $bg_img['url'];
+
+	        	echo '<section class="single-column upcoming-events" style="background-image: url(' . $bg_img_url . ');">';
+		        	echo '<div class="full-background-overlay" style="background-color:' . get_sub_field( 'background_color' ) . ';"></div>';
+		        	echo '<div class="wrap">';
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
@@ -308,7 +350,8 @@ function ourgreennation_page_content() {
 
 	        		ourgreennation_upcoming_events_carousel();
 
-	        	echo '</div></section>';
+	        		echo '</div>';
+	        	echo '</section>';
 
 	        	$block_arrow = get_sub_field( 'block_arrow' );
 	        	if( $block_arrow ) :
@@ -366,6 +409,26 @@ function ourgreennation_page_content() {
 	        		echo '<div class="block-arrow" style="border-top: 40px solid ' . get_sub_field( 'background_color' ) . '"></div>';
 	        	endif;
 
+
+
+
+	        elseif( get_row_layout() == 'buddypress_groups' ): // Slider of Popular BuddyPress Groups
+
+	        	echo '<section class="single-column buddypress-groups" style="background-color:' . get_sub_field( 'background_color' ) . '"><div class="wrap">';
+
+	        		if( get_sub_field( 'content_headline' ) ) {
+	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
+	        			echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+	        		}
+
+	        		ourgreennation_buddypress_carousel();
+
+	        	echo '</div></section>';
+
+	        	$block_arrow = get_sub_field( 'block_arrow' );
+	        	if( $block_arrow ) :
+	        		echo '<div class="block-arrow" style="border-top: 40px solid ' . get_sub_field( 'background_color' ) . '"></div>';
+	        	endif;
 
 
 

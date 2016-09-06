@@ -102,7 +102,7 @@ function ourgreennation_embed_youtube_video( $oembed ){
 		// } else {
 		// 	$width  = apply_filters( 'ourgreennation_archive_item_width', '50%' );
 		// }
-	 	$width  = apply_filters( 'ourgreennation_item_width', '300' );
+	 	$width  = apply_filters( 'ourgreennation_item_width', '350' );
 		$height = ($width / 9 * 6);
 
 		if( !empty( $matches[1][0] ) ){
@@ -199,7 +199,7 @@ function ourgreennation_modify_height_width_atts($matches) {
 	$init_width = 0;
 	$init_height = 0;
 
-	$target_width = apply_filters( 'ourgreennation_item_width', 300 );
+	$target_width = apply_filters( 'ourgreennation_item_width', 350 );
 
 	if(strtolower($key1) == 'width') {
 		$init_width = $val1;
@@ -398,7 +398,7 @@ function ourgreennation_upcoming_events_carousel() {
     if( $event_query->have_posts() ):
 
         echo '<div class="carousel">';
-            echo '<div id="owl-carousel" class="owl-carousel owl-theme">';
+            echo '<div id="events-carousel" class="owl-carousel owl-theme">';
 
 	            while( $event_query->have_posts() ) : $event_query->the_post();
 
@@ -430,6 +430,54 @@ function ourgreennation_upcoming_events_carousel() {
         echo '</div>';
 
     endif;
+
+}
+
+
+// Popular Groups Owl Slider Display
+// Note: section relies on BuddyPress
+function ourgreennation_buddypress_carousel() {
+
+	$group_args = array(
+		'type'	=> 'popular',
+		'max'	=> get_sub_field( 'number_of_groups' ),
+		);
+
+	if ( bp_has_groups( $group_args ) ) :
+
+
+        echo '<div class="carousel">';
+            echo '<div id="buddypress-carousel" class="owl-carousel owl-theme">';
+
+			while ( bp_groups() ) : bp_the_group();
+			?>
+			    <article>
+			        <div class="item-avatar">
+			            <a href="<?php bp_group_permalink() ?>"><?php bp_group_avatar( '' ) ?></a>
+			        </div>
+
+			        <div class="panel">
+			            <div class="entry-title"><a href="<?php bp_group_permalink() ?>"><?php bp_group_name() ?></a></div>
+			            <div class="item-desc"><?php bp_group_description_excerpt() ?></div>
+
+			            <?php // do_action( 'bp_directory_groups_item' ) ?>
+
+			            <?php bp_group_join_button() ?>
+
+			            <div class="meta">
+			                <?php bp_group_member_count() ?>
+			            </div>
+
+			            <?php // do_action( 'bp_directory_groups_actions' ) ?>
+			        </div>
+			    </article>
+			<?php
+			endwhile;
+
+            echo '</div>';
+        echo '</div>';
+
+	endif;
 
 }
 

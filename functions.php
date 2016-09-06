@@ -63,6 +63,7 @@ function ourgreennation_setup() {
 	register_nav_menus( array(
 		'top' => esc_html__( 'Top', 'our-green-nation' ),
 		'bottom' => esc_html__( 'Bottom', 'our-green-nation' ),
+		'menu-bar' => esc_html__( 'Menu Bar', 'our-green-nation' ),
 	) );
 
 	/*

@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
  * The header for our theme.
  *
@@ -30,7 +30,7 @@
 
 		<div class="site-header">
 
-			<?php get_template_part( 'components/header/site', 'branding' ); ?>
+			<?php // get_template_part( 'components/header/site', 'branding' ); ?>
 
 			<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 
