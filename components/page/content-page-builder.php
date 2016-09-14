@@ -240,7 +240,49 @@ function ourgreennation_page_content() {
 	                        echo '<h4 style="color:' . get_sub_field( 'subheadline_color' ) . ';">' . get_sub_field( 'subheadline' ) . '</h4>';
 	                    }
 
-	                    echo '<p><a class="button" href="' . get_sub_field( 'cta_button_link' ) . '" />' . get_sub_field( 'cta_button_text' ) . '</a></p>';
+	                    if( get_sub_field( 'cta_button_link' ) && get_sub_field( 'cta_button_text' ) ) {
+	                    	echo '<p><a class="button" href="' . get_sub_field( 'cta_button_link' ) . '" />' . get_sub_field( 'cta_button_text' ) . '</a></p>';
+						}
+
+		        	echo '</div>';
+	        	echo '</section>';
+
+	        	$block_arrow = get_sub_field( 'block_arrow' );
+	        	if( $block_arrow ) :
+	        		echo '<div class="block-arrow" style="border-top: 40px solid ' . get_sub_field( 'background_color' ) . '"></div>';
+	        	endif;
+
+
+
+
+
+	        elseif( get_row_layout() == 'full_width_background_video' ): // Full-Width Background Video Layout
+
+	        	// Get background image to display
+	        	$bg_img = get_sub_field( 'background_image' );
+	        	$bg_img_url = $bg_img['url'];
+
+	        	echo '<section class="single-column full-background background-video">';
+
+                    if( get_sub_field( 'background_video' ) ) {
+                        echo '<div class="background-video-container">' . get_sub_field( 'background_video' ) . '</div>';
+                    }
+
+		        	echo '<div class="full-background-overlay" style="background-color:' . get_sub_field( 'background_color' ) . ';"></div>';
+		        	echo '<div class="wrap">';
+
+		        		if( get_sub_field( 'headline' ) ) {
+	                        echo '<h3 style="color:' . get_sub_field( 'headline_color' ) . ';">' . get_sub_field( 'headline' ) . '</h3>';
+	                        // echo '<div class="headline-border" style="background-color: #FFFFFF"></div>';
+	                    }
+
+	                    if( get_sub_field( 'subheadline' ) ) {
+	                        echo '<h4 style="color:' . get_sub_field( 'subheadline_color' ) . ';">' . get_sub_field( 'subheadline' ) . '</h4>';
+	                    }
+
+	                    if( get_sub_field( 'cta_button_link' ) && get_sub_field( 'cta_button_text' ) ) {
+	                    	echo '<p><a class="button" href="' . get_sub_field( 'cta_button_link' ) . '" />' . get_sub_field( 'cta_button_text' ) . '</a></p>';
+						}
 
 		        	echo '</div>';
 	        	echo '</section>';
