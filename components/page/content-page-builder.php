@@ -89,7 +89,7 @@ function ourgreennation_page_content_scripts() {
 					      margin: 20,
 					      stagePadding: 20,
 					      loop: true,
-					      navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
+					      navText: [ '<span class="fa fa-chevron-left">', '<span class="fa fa-chevron-right">' ],
 					  });
 				  });
 
@@ -124,7 +124,7 @@ function ourgreennation_page_content_scripts() {
 					      margin: 20,
 					      stagePadding: 20,
 					      loop: true,
-					      navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
+					      navText: [ '<span class="fa fa-chevron-left">', '<span class="fa fa-chevron-right">' ],
 					  });
 
 					  // Custom Navigation Events
@@ -388,6 +388,10 @@ function ourgreennation_page_content() {
 	        			// echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 	        		}
 
+	        		if( get_sub_field( 'subheadline' ) ) {
+	        			echo '<h3 class="subheadline" style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'subheadline' ) . '</h3>';
+	        		}
+
 	        		echo get_sub_field( 'content' );
 
 	        		ourgreennation_upcoming_events_carousel();
@@ -437,7 +441,7 @@ function ourgreennation_page_content() {
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2>' . get_sub_field( 'content_headline' ) . '</h2>';
-	        			echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+	        			// echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 	        		}
 
 	        		echo get_sub_field( 'content' );
@@ -460,7 +464,11 @@ function ourgreennation_page_content() {
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
-	        			echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+	        			// echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+	        		}
+
+	        		if( get_sub_field( 'subheadline' ) ) {
+	        			echo '<h3 class="subheadline" style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'subheadline' ) . '</h3>';
 	        		}
 
 	        		ourgreennation_buddypress_carousel();
