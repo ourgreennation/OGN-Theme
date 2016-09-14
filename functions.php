@@ -176,6 +176,9 @@ function ourgreennation_widgets_init() {
 }
 add_action( 'widgets_init', 'ourgreennation_widgets_init' );
 
+// Enable shortcodes in text widgets
+add_filter('widget_text','do_shortcode');
+
 
 /**
  * Enqueue scripts and styles.

@@ -56,3 +56,21 @@ function ourgreennation_social_menu() {
 		jetpack_social_menu();
 	}
 }
+
+
+/**
+ * Remove Jetpack Related posts from under posts
+ */
+function ourgreennation_remove_jetpack_related() {
+	$jprp = Jetpack_RelatedPosts::init();
+	$callback = array( $jprp, 'filter_add_target_to_dom' );
+	remove_filter( 'the_content', $callback, 40 );
+}
+add_filter( 'wp', 'ourgreennation_remove_jetpack_related', 20 );
+
+function jetpackme_related_posts_headline( $headline ) {
+$headline = '';
+return $headline;
+}
+add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline' );
+
