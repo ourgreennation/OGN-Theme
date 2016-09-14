@@ -322,7 +322,7 @@ function ourgreennation_page_content() {
 		        		echo '<div class="one-half">';
 		        			if( get_sub_field( 'content_headline' ) ) {
 				        		echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
-				        		echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+				        		// echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 				        	}
 			        		echo get_sub_field( 'content' );
 		        		echo '</div>';
@@ -344,7 +344,7 @@ function ourgreennation_page_content() {
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 		        		echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
-		        		echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+		        		// echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 		        	}
 
 	        		ourgreennation_content_popular_articles();
@@ -361,7 +361,7 @@ function ourgreennation_page_content() {
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
-	        			echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+	        			// echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 					}
 
 	        		ourgreennation_content_recent_articles();
@@ -385,7 +385,7 @@ function ourgreennation_page_content() {
 
 	        		if( get_sub_field( 'content_headline' ) ) {
 	        			echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
-	        			echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+	        			// echo '<div class="headline_border" style="color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 	        		}
 
 	        		echo get_sub_field( 'content' );
@@ -412,7 +412,7 @@ function ourgreennation_page_content() {
 
 		        		if( get_sub_field( 'content_headline' ) ) {
 			        		echo '<h2 style="color: ' . get_sub_field( 'headline_underline_color' ) . '">' . get_sub_field( 'content_headline' ) . '</h2>';
-			        		echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
+			        		// echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 			        	}
 
 		        		ourgreennation_no_masonry_articles();
