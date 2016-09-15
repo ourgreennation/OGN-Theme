@@ -667,25 +667,3 @@ function ourgreennation_post_excerpt( $word_limit, $more = '&nbsp;&hellip;' ) {
 
 
 
-/* TODO: Regex some stuff! */
-function fix_content_regex( $content ) {
-	// find strings that match <p style="text-align:center;"> + Any characters + </p>
-	// /(<p style="text-align:center;">).*(<\/p>)/g
-   // return preg_replace('/(<p style="text-align:center;">).*(<\/p>)/', '/.*/', $content);
-
-	// $string = $content;
-	// $pattern = '/(<p style="text-align:center;">)(.*)(<\/p>)/';
-	// $replacement = '$2';
-	// echo preg_replace($pattern, $replacement, $string);
-
-
-
-	// find strings that match <li style="text-align:left;"> + Any characters + </li>
-	// /(<li style="text-align:left;">).*(<\/li>)/g
-}
-
-// add_action( 'the_content', 'fix_content_regex', 99 );
-
-
-
-

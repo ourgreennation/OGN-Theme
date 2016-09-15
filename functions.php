@@ -84,7 +84,6 @@ function ourgreennation_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'audio',
-		'gallery',
 		'image',
 		'quote',
 		'video',
@@ -249,3 +248,9 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Page Layout builders
  */
 require get_template_directory() . '/inc/layout-structures.php';
+
+
+/**
+ * Load Temporary Functions
+ */
+// require get_template_directory() . '/inc/temporary.php';

@@ -1345,6 +1345,7 @@ body {
   padding: 30px;
   font-size: 0.8em;
   border: 2px solid #f2f2f2;
+  max-width: 300px;
 }
 
 .custom-background .panel {
