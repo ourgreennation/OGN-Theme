@@ -1772,6 +1772,40 @@ body {
   margin-top: -1px;
 }
 
+
+.solutions-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.solution-box {
+  display: inline-block;
+  margin: 20px 0;
+  flex-grow: 1;
+  width: calc(100% * (1/5));
+  position: relative;
+}
+
+.solution-box img {
+  max-width: 100px;
+}
+
+.solution-text {
+  display: none;
+}
+
+.solution-box:hover .solution-text {
+  display: block;
+  position: absolute;
+  width: auto;
+  height: auto;
+  background: #FFFFFF;
+  border: 1px solid #66676A;
+  z-index: 2;
+}
+
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
