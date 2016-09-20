@@ -375,16 +375,6 @@ span.category a{
 #footer a{
 	border-color: '. $accent_color .';
 }
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-button:hover,
-span.category a:hover {
-	background-color: #222;
-	color: ' . ourgreennation_color_contrast('#222') . ';
-}
-a:hover{
-	color: #222;
-}
 	';
 	wp_add_inline_style( 'ourgreennation-style', $custom_css );
 }

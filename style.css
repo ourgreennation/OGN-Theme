@@ -239,6 +239,17 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+.search .site-content .search-form input[type="search"],
+.error404 .site-content .search-form input[type="search"] {
+  width: 70%;
+  margin-left: 1.5%;
+}
+
+.search .site-content .search-form input[type="submit"]
+.error404 .site-content .search-form input[type="submit"] {
+  background: #6F953D;
+}
+
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -373,8 +384,9 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Source Serif Pro', serif;*/
   clear: both;
-  font-family: 'Source Serif Pro', serif;
   margin-top: 0;
 }
 
@@ -550,7 +562,7 @@ input[type="submit"] {
   box-shadow: none;
   color: #FFFFFF !important;
   line-height: 1;
-  padding: .6em 1em ;
+  padding: .5em 1em ;
   display: inline-block;
 }
 button:hover,
@@ -679,7 +691,7 @@ hr {
 }
 
 .site-menu-bar {
-  background-color: #D8D7D7;
+  background-color: #EAEAEB;
   overflow: hidden;
 }
 
@@ -778,7 +790,7 @@ hr {
 }
 
 .site-before-footer-wrap {
-  background-color: #D8D7D7;
+  background-color: #EAEAEB;
   overflow: hidden;
   text-align: center;
   padding: 20px 0;
@@ -936,6 +948,7 @@ table {
   color: #231F20;
   text-transform: uppercase;
   font-size: 0.9em;
+  font-weight: 600;
 }
 
 .main-navigation a:hover,
@@ -1134,7 +1147,7 @@ table {
     display: none;
   }
   .sm-clean ul {
-    border: 1px solid #D8D7D7;
+    border: 1px solid #EAEAEB;
     background: white;
     -webkit-box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
@@ -1193,13 +1206,13 @@ table {
 # Links
 --------------------------------------------------------------*/
 a {
-  color: #6F953D;
+  color: #66676a;
 }
 a:visited {
   color: #BDBBBC;
 }
 a:hover, a:focus, a:active {
-  color: #66676A;
+  color: #6F953D;
 }
 a:focus {
   outline: thin dotted;
@@ -1255,6 +1268,7 @@ body {
 }
 
 .entry-title {
+  font-family: 'Source Serif Pro', serif;
   font-size: 2em;
   margin: 0 0 1em 0;
   font-weight: normal;
@@ -1345,7 +1359,7 @@ body {
   padding: 30px;
   font-size: 0.8em;
   border: 2px solid #f2f2f2;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 .custom-background .panel {
@@ -1363,7 +1377,7 @@ body {
   display: inline-block;
   color: #222;
   padding-bottom: 5px;
-  border-bottom: 2px solid #D8D7D7;
+  border-bottom: 2px solid #EAEAEB;
 }
 
 .panel .entry-title a:hover {
@@ -1481,6 +1495,10 @@ body {
   max-width: 100%;
 }
 
+.widget-title {
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -1575,9 +1593,9 @@ body {
 .single-column h2,
 .site-before-footer .widget-title {
   text-align: center;
-  text-transform: uppercase;
   font-size: 2em;
   margin-bottom: 0.5em;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .img-content {
@@ -1643,10 +1661,14 @@ body {
   opacity: 0;
 }
 
-.events-carousel article .panel,
-.buddypress-carousel article .panel {
+#events-carousel article .panel,
+#buddypress-carousel article .panel {
   background: #FFFFFF;
-  max-width: 300px;
+  max-width: 400px;
+}
+
+#buddypress-carousel .panel {
+  min-height: 330px;
 }
 
 .upcoming-events .owl-carousel {
@@ -1922,6 +1944,24 @@ a.bp-title-button:focus {
   padding: 0;
 }
 
+.widget.buddypress ul.item-list img.avatar {
+  margin-right: 15px;
+}
+
+.widget .widget.buddypress #groups-list li,
+.widget .widget.buddypress #members-list li,
+.widget .widget.buddypress #friends-list li {
+  border-bottom: 1px solid #BDBBBC;
+  margin-bottom: 10px;
+}
+
+.widget.buddypress a,
+.widget .tribe-events-title a {
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+}
 
 
 /*--------------------------------------------------------------
@@ -2025,9 +2065,28 @@ a.bp-title-button:focus {
 }
 
 .listings .wpbdp-listing-excerpt {
-  border-bottom: 1px solid #D8D7D7;
+  border-bottom: 1px solid #EAEAEB;
 }
 
+.content-area #wpbdp-main-box {
+  background: none;
+}
+
+.content-area #wpbdp-main-box .box-row {
+  padding: 10px 0;
+}
+
+.content-area #wpbdp-main-box .box-col.distance-field {
+  width: 40% !important;
+}
+
+.content-area #wpbdp-main-box .box-col.unit-label {
+  width: 60% !important;
+}
+
+.content-area .wpbdp-listing-excerpt.odd {
+  background: #EAEAEB;
+}
 
 
 
@@ -2062,10 +2121,40 @@ a.bp-title-button:focus {
   display: none;
 }
 
+.widget .widgets-list-layout-links {
+  width: calc(100% - 55px);
+  line-height: 1.3em;
+}
 
 /*--------------------------------------------------------------
 ## Misc Plugins
 --------------------------------------------------------------*/
+.tribe-events-single-event-title {
+  font-family: 'Source Serif Pro', serif;
+}
+
+.widget .tribe-mini-calendar-event {
+  border-bottom: 1px solid #BDBBBC;
+}
+
+.widget .tribe-mini-calendar-event .list-date {
+  max-width: 40px;
+}
+
+#tribe-events #tribe-bar-form .tribe-bar-submit input[type=submit] {
+  background-color: #6f953d;
+}
+
+#tribe-events .tribe-events-ical.tribe-events-button,
+#tribe-events .tribe-events-gcal.tribe-events-button {
+  font-size: 8px;
+}
+
+#tribe-events .tribe-events-nav-next a,
+#tribe-events .tribe-events-nav-previous a {
+  font-size: 1.5em;
+}
+
 
 
 /*--------------------------------------------------------------

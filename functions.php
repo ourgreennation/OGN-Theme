@@ -172,6 +172,36 @@ function ourgreennation_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
+	register_sidebar( array(
+		'name'          => esc_html__( 'BuddyPress - Activity Sidebar', 'our-green-nation' ),
+		'id'            => 'sidebar-buddypress-activity',
+		'description'   => 'Displayed on the BuddyPress Activity page',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'BuddyPress - Profile Sidebar', 'our-green-nation' ),
+		'id'            => 'sidebar-buddypress-profile',
+		'description'   => 'Displayed on the BuddyPress Profile page',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'BuddyPress - Group Sidebar', 'our-green-nation' ),
+		'id'            => 'sidebar-buddypress-group',
+		'description'   => 'Displayed on the BuddyPress Group page',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
 }
 add_action( 'widgets_init', 'ourgreennation_widgets_init' );
 
@@ -194,7 +224,7 @@ function ourgreennation_scripts() {
 
 	// Enqueue Fonts
 	// wp_enqueue_style( 'ourgreennation-league-gothic-font', get_template_directory_uri() . '/assets/fonts/league-gothic/stylesheet.css', false );
-	wp_enqueue_style( 'ourgreennation-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400|Source+Serif+Pro:400,700' );
+	wp_enqueue_style( 'ourgreennation-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600|Source+Serif+Pro:400' );
 	// wp_enqueue_style( 'ourgreennation_fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/font-awesome.min.css' );
 	wp_enqueue_script( 'ourgreennation-fontawesome', 'https://use.fontawesome.com/40a13a40e7.js' );
 
@@ -253,4 +283,4 @@ require get_template_directory() . '/inc/layout-structures.php';
 /**
  * Load Temporary Functions
  */
-// require get_template_directory() . '/inc/temporary.php';
+require get_template_directory() . '/inc/temporary.php';
