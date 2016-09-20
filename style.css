@@ -593,6 +593,11 @@ input[type="submit"]:focus {
   background-color: #6F953D;
 }
 
+.home-section-button {
+  margin: 40px auto 0;
+  /*font-size: 1.2em !important;*/
+}
+
 .centered-buttons {
   margin: 0 auto;
   text-align: center;
@@ -641,6 +646,7 @@ hr {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .page-builder .hentry {
@@ -1547,6 +1553,14 @@ body {
   opacity: 0.5;
 }
 
+.page-builder .entry-content .background-video .wrap {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  max-width: 100%;
+  z-index: 3;
+}
+
 .full-background .wrap {
   position: relative;
   z-index: 2;
@@ -1653,7 +1667,7 @@ body {
 }
 
 .upcoming-events {
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
 }
 
@@ -1665,10 +1679,35 @@ body {
 #buddypress-carousel article .panel {
   background: #FFFFFF;
   max-width: 400px;
+  position: relative;
+}
+
+#events-carousel article .panel .event-start-date {
+  margin-bottom: 0;
+}
+
+#events-carousel article .panel .event-start-date::before {
+  content: "\f073";
+  font-family: FontAwesome;
+  font-size: 1em;
+  margin-right: 10px;
+  color: #BDBBBC;
 }
 
 #buddypress-carousel .panel {
   min-height: 330px;
+}
+
+#events-carousel .panel {
+  min-height: 185px;
+  border: 2px solid #66676A;
+}
+
+#buddypress-carousel .panel .meta {
+  position: absolute;
+  bottom: 25px;
+  width: 100px;
+  left: calc(50% - 50px);
 }
 
 .upcoming-events .owl-carousel {
@@ -1711,7 +1750,7 @@ body {
 
 .subheadline {
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   font-weight: 400;
 }
 
