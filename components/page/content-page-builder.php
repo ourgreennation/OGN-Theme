@@ -364,7 +364,13 @@ function ourgreennation_page_content() {
 	        			// echo '<div class="headline-border" style="background-color: ' . get_sub_field( 'headline_underline_color' ) . '"></div>';
 					}
 
+	        		if( get_sub_field( 'subheadline' ) ) {
+	        			echo '<h3 class="subheadline" style="color: ' . get_sub_field( 'subheadline_color' ) . '">' . get_sub_field( 'subheadline' ) . '</h3>';
+	        		}
+
 	        		ourgreennation_content_recent_articles();
+
+	        		echo '<a href="/activity/" class="button button-green-text home-section-button">View More</a>';
 
 	        	echo '</div></section>';
 
@@ -396,7 +402,7 @@ function ourgreennation_page_content() {
 
 	        		ourgreennation_upcoming_events_carousel();
 
-	        		echo '<a href="/events/" class="button button-green home-section-button">View More</a>';
+	        		echo '<a href="/events/" class="button button-green-text home-section-button">View More</a>';
 
 	        		echo '</div>';
 	        	echo '</section>';
@@ -475,7 +481,7 @@ function ourgreennation_page_content() {
 
 	        		ourgreennation_buddypress_carousel();
 
-	        		echo '<a href="/groups/" class="button button-green home-section-button">View More</a>';
+	        		echo '<a href="/groups/" class="button button-green-text home-section-button">View More</a>';
 
 	        	echo '</div></section>';
 

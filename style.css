@@ -589,8 +589,17 @@ input[type="submit"]:focus {
   background-color: #66676A;
 }
 
-.button.button-green {
+.button.button-green,
+.button.button-green-text {
+  color: #6F953D !important;
+  background-color: #FFFFFF;
+  border: 3px solid #6F953D;
+}
+.button.button-green-text:hover,
+.button.button-green-text:hover {
+  color: #FFFFFF !important;
   background-color: #6F953D;
+  border: 3px solid #6F953D;
 }
 
 .home-section-button {
@@ -1274,7 +1283,7 @@ body {
 }
 
 .entry-title {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 2em;
   margin: 0 0 1em 0;
   font-weight: normal;
@@ -1675,6 +1684,44 @@ body {
   opacity: 0;
 }
 
+.upcoming-events .list-date {
+  float: left;
+  overflow: hidden;
+  font-weight: bold;
+  margin: 0px auto;
+  padding: 3px;
+  width: 50px;
+  text-align: center;
+  display: inline;
+  background: #666;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.upcoming-events .list-date .list-dayname {
+  background: #fff;
+  color: #666;
+  padding: 3px;
+  font-size: 9px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.upcoming-events .list-date .list-daynumber {
+  color: #fff;
+  font-size: 15px;
+  width: 100%;
+  line-height: 22px;
+  display: block;
+  text-align: center;
+}
+
 #events-carousel article .panel,
 #buddypress-carousel article .panel {
   background: #FFFFFF;
@@ -1750,7 +1797,7 @@ body {
 
 .subheadline {
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   font-weight: 400;
 }
 
@@ -1788,7 +1835,7 @@ body {
 }
 
 .solution-box img {
-  max-width: 100px;
+  max-width: 90px;
 }
 
 .solution-text {
@@ -1804,6 +1851,16 @@ body {
   border: 1px solid #66676A;
   z-index: 2;
 }
+
+.about-page h2 {
+  font-size: 2em;
+}
+
+.about-page p {
+  font-size: 1.17em;
+}
+
+
 
 
 /*--------------------------------------------------------------
@@ -1934,7 +1991,7 @@ a.bp-title-button {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1;
-  padding: 1em;
+  padding: 0.5em 1em;
   text-shadow: none;
 }
 #buddypress button:hover,
@@ -1946,7 +2003,7 @@ a.bp-title-button {
 #buddypress .generic-button a:hover,
 #buddypress .comment-reply-link:hover,
 a.bp-title-button:hover {
-  background-color: #7e5475;
+  background-color: #231F20;
   color: #FFFFFF;
   border: none;
   box-shadow: none;
@@ -1975,10 +2032,30 @@ a.bp-title-button:active {
  a:focus,
 #buddypress .comment-reply-link:focus,
 a.bp-title-button:focus {
-  background-color: #512a44;
+  background-color: #231F20;
   color: #FFFFFF;
   border: none;
   box-shadow: none;
+}
+
+#buddypress a.bp-primary-action span,
+#buddypress #reply-title small a span,
+#buddypress a.bp-primary-action:hover span,
+#buddypress #reply-title small a:hover span {
+  background: none;
+}
+
+.buddypress #buddypress .activity-list .activity-meta .react.open {
+  background-color: #231F20;
+  margin-right: 10px;
+}
+.buddypress #buddypress .activity-list .activity-meta .react {
+  margin-right: 10px;
+}
+
+.buddypress #buddypress .activity-reactions.active {
+  border-top: none;
+  margin: 0px 0 0 65px;
 }
 
 #buddypress .standard-form #basic-details-section input[type=password],
@@ -2013,6 +2090,43 @@ a.bp-title-button:focus {
   font-size: 0.8rem;
 }
 
+#buddypress div.item-list-tabs ul li a span {
+  background: #EAEAEB;
+  border-radius: 0;
+  border: 1px solid #BDBBBC;
+  color: #231F20;
+  font-size: .7em;
+  padding: 1px 3px;
+}
+
+ #buddypress div.item-list-tabs ul li a,
+ #buddypress div.item-list-tabs ul li a:visited,
+ #buddypress div.item-list-tabs ul li span {
+  color: #66676a;
+ }
+
+ #buddypress div.item-list-tabs ul li a:hover {
+  color: #6F953D;
+ }
+
+ #buddypress div.item-list-tabs ul li.selected a,
+ #buddypress div.item-list-tabs ul li.current a {
+  background: #66676A;
+  color: #FFFFFF;
+ }
+
+ #buddypress div.item-list-tabs#object-nav {
+  overflow: hidden;
+  background: #EAEAEB;
+ }
+
+ #buddypress div.item-list-tabs#subnav {
+  margin-top: 0;
+  padding: 10px;
+  border: 1px solid #EAEAEB;
+  border-top: none;
+ }
+
 .widget.buddypress div.item-options {
   padding: 0;
 }
@@ -2035,6 +2149,13 @@ a.bp-title-button:focus {
   font-size: 0.9em;
   font-weight: 600;
 }
+
+.directory.activity #buddypress #activity-stream .activity-item {
+  width: 46%;
+  margin: 2%;
+  float: left;
+}
+
 
 
 /*--------------------------------------------------------------

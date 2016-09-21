@@ -20,6 +20,7 @@
   $(window).on('load', function(e){
 
     var $container = $(".masonry"),
+        $activityContainer = $(".directory.activity #activity-stream"),
         $body = $("body"),
         rtl = false;
 
@@ -38,9 +39,21 @@
       isAnimated         : true,
     };
 
+    var activity_masonry_options = {
+      gutterWidth        : 40,
+      // isFitWidth         : true,
+      columnWidth        : '.activity-item',
+      percentPosition    : true,
+      itemSelector       : '.activity-item',
+      isRTL              : rtl,
+      isResizable        : true,
+      // isAnimated         : true,
+    };
+
     // Can potentially remove imagesLoaded requirement
     imagesLoaded( $container, function( instance ) {
       $container.masonry(masonry_options);
+      $activityContainer.masonry(activity_masonry_options);
     });
 
   });
@@ -58,6 +71,7 @@
       // Can potentially remove imagesLoaded requirement
       imagesLoaded( $selector, function( instance ) {
           $container.append( $elements ).masonry( 'appended', $elements ).find($selector).remove();
+          $activityContainer.append( $elements ).masonry( 'appended', $elements ).find($selector).remove();
       });
     }
   });

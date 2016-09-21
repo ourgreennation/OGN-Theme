@@ -104,6 +104,9 @@ function ourgreennation_setup() {
 		'tumblr',
 	) );
 
+	// Add support for BuddyPress
+	// add_theme_support( 'buddypress' );
+
 }
 endif;
 add_action( 'after_setup_theme', 'ourgreennation_setup' );
@@ -247,6 +250,20 @@ function ourgreennation_admin_scripts() {
 
 }
 add_action( 'admin_enqueue_scripts', 'ourgreennation_admin_scripts' );
+
+
+
+/**
+ * Misc Theme Functionality
+ */
+function ourgreennation_xprofile_cover_image( $settings = array() ) {
+	$settings['default_cover'] = get_stylesheet_directory_uri() . 'wood_cover.jpg';
+
+	return $settings;
+}
+add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'ourgreennation_xprofile_cover_image', 10, 1 );
+
+
 
 
 /**
