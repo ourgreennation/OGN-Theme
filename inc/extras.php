@@ -409,19 +409,19 @@ function ourgreennation_upcoming_events_carousel() {
 							if( has_post_thumbnail() ) {
 								echo get_the_post_thumbnail();
 							} else {
-								echo '<div style="width: 100%; height: 250px; background: #66676A;"></div>';
+								echo '<div class="no-event-image"><i class="fa fa-calendar"></i></div>';
 							}
 
 							echo '<div class="panel">';
 								echo '<h3 class="entry-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
 
-								echo '<div class="list-date">';
-									echo '<span class="list-dayname">' . tribe_get_start_date( null, true, 'M' ) . '</span>';
-									echo '<span class="list-daynumber">' . tribe_get_start_date( null, true, 'j' ) . '</span>';
-								echo '</div>';
+								// echo '<div class="list-date">';
+								// 	echo '<span class="list-dayname">' . tribe_get_start_date( null, true, 'M' ) . '</span>';
+								// 	echo '<span class="list-daynumber">' . tribe_get_start_date( null, true, 'j' ) . '</span>';
+								// echo '</div>';
 
-								// echo '<h3 class="event-start-date">' . tribe_get_start_date( null, true, 'M j g:i a' ) . '</h3>';
-								// echo '<h4 class="event-venue">' . tribe_get_venue() . '</h4>';
+								echo '<h3 class="event-start-date">' . tribe_get_start_date( null, true, 'M j g:i a' ) . '</h3>';
+								echo '<h4 class="event-venue">' . tribe_get_venue() . '</h4>';
 								// echo '<p class="event-full-address">' . tribe_get_full_address() . '</p>';
 							echo '</div>';
 

@@ -176,6 +176,16 @@ function ourgreennation_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => esc_html__( 'Search Sidebar', 'our-green-nation' ),
+		'id'            => 'sidebar-search',
+		'description'   => 'Displayed on the Search page',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'BuddyPress - Activity Sidebar', 'our-green-nation' ),
 		'id'            => 'sidebar-buddypress-activity',
 		'description'   => 'Displayed on the BuddyPress Activity page',

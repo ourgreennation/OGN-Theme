@@ -557,10 +557,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border-radius: 5px;
-  border: none;
-  background: #6F953D;
+  color: #6F953D !important;
+  background-color: #FFFFFF;
+  border: 3px solid #6F953D;
   box-shadow: none;
-  color: #FFFFFF !important;
   line-height: 1;
   padding: .5em 1em ;
   display: inline-block;
@@ -570,8 +570,9 @@ a.button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background: #231F20;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+  background-color: #6F953D;
+  border: 3px solid #6F953D;
 }
 button:active, button:focus,
 a.button:active, a.button:focus,
@@ -581,25 +582,17 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  background: #363636;
+  background: #6F953D;
   color: #FFFFFF;
+}
+
+.home .button {
+  font-size: 1.2em;
+  min-width: 200px;
 }
 
 .button.button-grey {
   background-color: #66676A;
-}
-
-.button.button-green,
-.button.button-green-text {
-  color: #6F953D !important;
-  background-color: #FFFFFF;
-  border: 3px solid #6F953D;
-}
-.button.button-green-text:hover,
-.button.button-green-text:hover {
-  color: #FFFFFF !important;
-  background-color: #6F953D;
-  border: 3px solid #6F953D;
 }
 
 .home-section-button {
@@ -1282,6 +1275,10 @@ body {
   margin: 1.5em 0 0;
 }
 
+.buddypress .entry-content {
+  margin-top: 0;
+}
+
 .entry-title {
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
@@ -1746,8 +1743,26 @@ body {
 }
 
 #events-carousel .panel {
-  min-height: 185px;
+  min-height: 205px;
   border: 2px solid #66676A;
+}
+
+#events-carousel img,
+#events-carousel .no-event-image {
+  width: 100%;
+  height: 175px;
+  max-height: 175px;
+  background: #66676A;
+  overflow: hidden;
+  position: relative;
+}
+
+#events-carousel .no-event-image .fa {
+  color: #FFFFFF;
+  font-size: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
 }
 
 #buddypress-carousel .panel .meta {
@@ -1973,81 +1988,88 @@ object {
 /*--------------------------------------------------------------
 ## BuddyPress
 --------------------------------------------------------------*/
-
-#buddypress button,
-#buddypress a.button,
-#buddypress input[type=submit],
-#buddypress input[type=button],
-#buddypress input[type=reset],
-#buddypress ul.button-nav li a,
-#buddypress .generic-button a,
-#buddypress .comment-reply-link,
+.buddypress #buddypress button,
+.buddypress #buddypress a.button,
+.buddypress #buddypress input[type=submit],
+.buddypress #buddypress input[type=button],
+.buddypress #buddypress input[type=reset],
+.buddypress #buddypress ul.button-nav li a,
+.buddypress #buddypress .generic-button a,
+.buddypress #buddypress .comment-reply-link,
 a.bp-title-button {
-  border: none;
-  border-radius: 3px;
-  background-color: #6F953D;
+  color: #6F953D !important;
+  background-color: #FFFFFF;
+  border: 2px solid #6F953D;
+  border-radius: 5px;
   box-shadow: none;
-  color: #FFFFFF;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1;
-  padding: 0.5em 1em;
+  padding: 0.2em 0.5em;
   text-shadow: none;
 }
-#buddypress button:hover,
-#buddypress a.button:hover,
-#buddypress input[type=submit]:hover,
-#buddypress input[type=button]:hover,
-#buddypress input[type=reset]:hover,
-#buddypress ul.button-nav li a:hover,
-#buddypress .generic-button a:hover,
-#buddypress .comment-reply-link:hover,
+.buddypress #buddypress button:hover,
+.buddypress #buddypress a.button:hover,
+.buddypress #buddypress input[type=submit]:hover,
+.buddypress #buddypress input[type=button]:hover,
+.buddypress #buddypress input[type=reset]:hover,
+.buddypress #buddypress ul.button-nav li a:hover,
+.buddypress #buddypress .generic-button a:hover,
+.buddypress #buddypress .comment-reply-link:hover,
 a.bp-title-button:hover {
-  background-color: #231F20;
-  color: #FFFFFF;
-  border: none;
+  color: #FFFFFF !important;
+  background-color: #6F953D;
+  border: 2px solid #6F953D;
   box-shadow: none;
 }
-#buddypress button:active,
-#buddypress a.button:active,
-#buddypress input[type=submit]:active,
-#buddypress input[type=button]:active,
-#buddypress input[type=reset]:active,
-#buddypress ul.button-nav li a:active,
-#buddypress .generic-button a:active,
-#buddypress .comment-reply-link:active,
-a.bp-title-button:active {
-  background-color: #a9c47f;
-  color: #FFFFFF;
-  border: none;
-  box-shadow: none;
-}
-#buddypress button:focus,
-#buddypress a.button:focus,
-#buddypress input[type=submit]:focus,
-#buddypress input[type=button]:focus,
-#buddypress input[type=reset]:focus,
-#buddypress ul.button-nav li a:focus,
-#buddypress .generic-
- a:focus,
-#buddypress .comment-reply-link:focus,
+.buddypress #buddypress button:active,
+.buddypress #buddypress a.button:active,
+.buddypress #buddypress input[type=submit]:active,
+.buddypress #buddypress input[type=button]:active,
+.buddypress #buddypress input[type=reset]:active,
+.buddypress #buddypress ul.button-nav li a:active,
+.buddypress #buddypress .generic-button a:active,
+.buddypress #buddypress .comment-reply-link:active,
+a.bp-title-button:active,
+.buddypress #buddypress button:focus,
+.buddypress #buddypress a.button:focus,
+.buddypress #buddypress input[type=submit]:focus,
+.buddypress #buddypress input[type=button]:focus,
+.buddypress #buddypress input[type=reset]:focus,
+.buddypress #buddypress ul.button-nav li a:focus,
+.buddypress #buddypress .generic-button a:focus,
+.buddypress #buddypress .comment-reply-link:focus,
 a.bp-title-button:focus {
-  background-color: #231F20;
-  color: #FFFFFF;
-  border: none;
+  background-color: #a9c47f;
+  color: #FFFFFF !important;
+  border: 2px solid #a9c47f;
   box-shadow: none;
 }
 
-#buddypress a.bp-primary-action span,
-#buddypress #reply-title small a span,
-#buddypress a.bp-primary-action:hover span,
-#buddypress #reply-title small a:hover span {
+.buddypress #buddypress #item-header .generic-button a {
+  padding: 0.1em 0.5em;
+}
+
+.buddypress #buddypress a.bp-primary-action span,
+.buddypress #buddypress #reply-title small a span {
   background: none;
+  color: #6F953D;
+  padding: 0;
+}
+.buddypress #buddypress a.bp-primary-action:hover span,
+.buddypress #buddypress a.bp-primary-action:active span,
+.buddypress #buddypress #reply-title small a:hover span,
+.buddypress #buddypress #reply-title small a:active span,
+.buddypress #buddypress .activity-list .activity-meta .react.open span {
+  background: none;
+  color: #FFFFFF !important;
 }
 
 .buddypress #buddypress .activity-list .activity-meta .react.open {
-  background-color: #231F20;
+  background-color: #6F953D;
   margin-right: 10px;
+  color: #FFFFFF !important;
+  border: 2px solid #6F953D;
 }
 .buddypress #buddypress .activity-list .activity-meta .react {
   margin-right: 10px;
@@ -2056,6 +2078,12 @@ a.bp-title-button:focus {
 .buddypress #buddypress .activity-reactions.active {
   border-top: none;
   margin: 0px 0 0 65px;
+}
+
+.buddypress #buddypress .activity-reactions a,
+.buddypress #buddypress .activity-reactions a.reacted:hover,
+.buddypress #buddypress .activity-reactions a.reacted:active {
+  font-size: 1.5em;
 }
 
 #buddypress .standard-form #basic-details-section input[type=password],
@@ -2067,7 +2095,22 @@ a.bp-title-button:focus {
 }
 
 .avatar {
-  /*border-radius: 50%;*/
+}
+
+.buddypress #buddypress #item-header-cover-image #item-header-avatar {
+  margin-top: 90px;
+}
+
+.buddypress #buddypress div#item-header #item-header-cover-image #item-header-content {
+  margin-top: -90px;
+}
+
+.buddypress #buddypress div#item-header #item-header-content .friendship-button.is_friend {
+  display: none;
+}
+
+.buddypress #buddypress ul.item-list {
+  border-top: none;
 }
 
 #buddypress ul.item-list li {
@@ -2088,12 +2131,22 @@ a.bp-title-button:focus {
 #buddypress .activity-list .activity-content .activity-header,
 #buddypress .activity-list .activity-content .comment-header {
   font-size: 0.8rem;
+  font-weight: 600;
 }
+
+#buddypress .activity-list#activity-stream .activity-content .activity-header p:first-child {
+  margin-top: 0;
+}
+
+#buddypress .activity-list li.mini .activity-avatar img.avatar {
+  margin-top: 5px;
+}
+
 
 #buddypress div.item-list-tabs ul li a span {
   background: #EAEAEB;
   border-radius: 0;
-  border: 1px solid #BDBBBC;
+  border: none;
   color: #231F20;
   font-size: .7em;
   padding: 1px 3px;

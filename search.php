@@ -50,4 +50,5 @@ get_header(); ?>
 <?php
 // Choose to pull sidebar based on layout
 ourgreennation_template_layout();
+get_sidebar();
 get_footer();

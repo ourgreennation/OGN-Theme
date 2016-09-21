@@ -339,9 +339,6 @@ a,
 	color: '. $accent_color .';
 
 }
-input[type="submit"],
-input[type="reset"],
-button,
 .back,
 .page-links a:hover,
 .custom-background .archive-header:before,

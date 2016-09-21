@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if( !is_home() && !is_front_page() ){
+		if( !is_home() && !is_front_page() && !bp_is_user() ){
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		}
 		?>
