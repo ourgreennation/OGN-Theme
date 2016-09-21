@@ -18,7 +18,7 @@ echo '<aside id="secondary" class="widget-area" role="complementary">';
 	if( is_search() ) {
 		dynamic_sidebar( 'sidebar-search' );
 	} elseif( is_category() ) {
-		dynamic_sidebar( 'sidebar-search' );
+		dynamic_sidebar( 'sidebar-1' );
 	} else {
 		// For any other page
 		dynamic_sidebar( 'sidebar-1' );

@@ -9,6 +9,9 @@
  * @since    1.0.0
  */
 
+$theme_options = get_option( 'theme_mods_our-green-nation' );
+$default_layout = $theme_options[ 'ourgreennation_default_layout' ];
+
 add_action( 'admin_init', 'ourgreennation_layout_create_defaults' );
 add_action( 'add_meta_boxes', 'ourgreennation_layout_add_custom_layout_box' );
 add_action( 'save_post', 'ourgreennation_layout_save' );
@@ -360,25 +363,31 @@ function ourgreennation_layout_save( $post_id ) {
  */
 function ourgreennation_change_layout( $classes ) {
 
-    $theme_settings = get_option( 'ourgreennation_theme_settings' );
-    $default_layout = $theme_settings[ 'ourgreennation_default_layout' ];
+    global $default_layout;
+
+    $classes = array();
 
     // Make sure we have the current queried object
     $queried_object = get_queried_object();
 
     if ( is_home() || is_front_page() ){
+
         array_push( $classes, $default_layout );
+
     }
 
     if ( is_single() || is_page() ){
 
-        // Set layout if selected, else set default
-        if ( empty( $queried_object) ){ // this check might not be necessary
-            array_push( $classes, $default_layout );
+        // If there is no default layout set, we're going to go with content-sidebar
+        if ( $default_layout == NULL ){
+
+            array_push( $classes, 'content-sidebar' );
+
         } else {
 
             $_body_class = get_post_meta( $queried_object->ID, '_ourgreennation_post_layout', true );
 
+            // If no body class was set for this specific page/post, use the default layout
             if ( ! empty( $_body_class ) ) {
                 array_push( $classes, $_body_class );
             } else {
@@ -404,6 +413,60 @@ function ourgreennation_change_layout( $classes ) {
 
 }
 
+function ogn_change_layout( $classes ) {
+
+    global $default_layout;
+
+    $classes = array();
+
+    // Make sure we have the current queried object
+    $queried_object = get_queried_object();
+
+    if ( is_home() || is_front_page() ){
+
+        array_push( $classes, $default_layout );
+
+    }
+
+    if ( is_single() || is_page() ){
+
+        // If there is no default layout set, we're going to go with content-sidebar
+        if ( $default_layout == NULL ){
+
+            array_push( $classes, 'content-sidebar' );
+
+        } else {
+
+            $_body_class = get_post_meta( $queried_object->ID, '_ourgreennation_post_layout', true );
+
+            // If no body class was set for this specific page/post, use the default layout
+            if ( ! empty( $_body_class ) ) {
+                array_push( $classes, $_body_class );
+            } else {
+                array_push( $classes, $default_layout );
+            }
+
+            // If a custom body class is assigned, add that class to the body element
+            $custom_body_class = get_post_meta( $queried_object->ID, '_ourgreennation_layout_custom_body_class', true );
+
+            if ( ! empty( $custom_body_class ) )  {
+                array_push( $classes, esc_attr( sanitize_html_class( $custom_body_class ) ) );
+            }
+
+        }
+
+    }
+
+    if ( is_archive() ){
+        array_push( $classes, $default_layout );
+    }
+
+    var_dump($_body_class);
+
+}
+
+// add_filter( 'the_post', 'ogn_change_layout', 99, 1 );
+
 /**
  * Adds Layout Structures
  *
@@ -411,7 +474,7 @@ function ourgreennation_change_layout( $classes ) {
  */
 function ourgreennation_template_layout() {
 
-    $theme_settings = get_option( 'ourgreennation_theme_settings' );
+    global $default_layout;
 
     // Check to see if custom layout is set in page/post, else use theme default
     if ( is_single() || is_page() ) {
@@ -420,13 +483,13 @@ function ourgreennation_template_layout() {
         $layout = get_post_meta( $queried_object->ID, '_ourgreennation_post_layout', true );
 
         if ( empty( $layout) ) {
-           $layout = $theme_settings['ourgreennation_default_layout'];
+            $layout = $default_layout;
         }
 
     } else {
 
         if ( empty( $layout) ) {
-            $layout = $theme_settings['ourgreennation_default_layout'];
+            $layout = $default_layout;
         }
 
     }
