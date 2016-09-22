@@ -1504,6 +1504,7 @@ body {
   /* Make sure select elements fit in widgets. */
 }
 .widget select {
+  width: 100%;
   max-width: 100%;
 }
 
@@ -2402,6 +2403,13 @@ a.bp-title-button:focus {
   font-size: 1.5em;
 }
 
+.searchandfilter ul {
+  padding-left: 0;
+}
+
+.searchandfilter li {
+  margin-bottom: 20px;
+}
 
 
 /*--------------------------------------------------------------

@@ -53,7 +53,7 @@
     // Can potentially remove imagesLoaded requirement
     imagesLoaded( $container, function( instance ) {
       $container.masonry(masonry_options);
-      $activityContainer.masonry(activity_masonry_options);
+      // $activityContainer.masonry(activity_masonry_options);
     });
 
   });
@@ -71,7 +71,7 @@
       // Can potentially remove imagesLoaded requirement
       imagesLoaded( $selector, function( instance ) {
           $container.append( $elements ).masonry( 'appended', $elements ).find($selector).remove();
-          $activityContainer.append( $elements ).masonry( 'appended', $elements ).find($selector).remove();
+          // $activityContainer.append( $elements ).masonry( 'appended', $elements ).find($selector).remove();
       });
     }
   });

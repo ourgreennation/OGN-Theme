@@ -7,9 +7,9 @@
  * @package Our_Green_Nation
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
+// if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+// 	return;
+// }
 
 echo '<aside id="secondary" class="widget-area" role="complementary">';
 
