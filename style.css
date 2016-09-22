@@ -239,6 +239,11 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+.search .site-content .search-form,
+.error404 .site-content .search-form {
+  margin-bottom: 2em;
+}
+
 .search .site-content .search-form input[type="search"],
 .error404 .site-content .search-form input[type="search"] {
   width: 70%;
@@ -1229,6 +1234,10 @@ a:hover, a:active {
   outline: 0;
 }
 
+.error404 .entry-content a:hover {
+  font-weight: 600;
+}
+
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -1528,6 +1537,8 @@ body {
 
 .background-video.single-column {
   padding: 0 0 1px 0;
+  border-top: 2px solid #EAEAEB;
+  border-bottom: 2px solid #EAEAEB;
 }
 
 .background-video-container {
@@ -1804,6 +1815,10 @@ body {
 .owl-theme .owl-nav .owl-next {
   position: absolute;
   right: -10px;
+}
+
+.buddypress-groups {
+  border-bottom: 2px solid #EAEAEB;
 }
 
 .buddypress-groups .avatar {
@@ -2133,6 +2148,8 @@ a.bp-title-button:focus {
 #buddypress .activity-list .activity-content .comment-header {
   font-size: 0.8rem;
   font-weight: 600;
+  line-height: 1.5em;
+  color: #231F20;
 }
 
 #buddypress .activity-list#activity-stream .activity-content .activity-header p:first-child {
@@ -2143,6 +2160,12 @@ a.bp-title-button:focus {
   margin-top: 5px;
 }
 
+#buddypress .activity-header a,
+#buddypress .comment-meta a,
+#buddypress .acomment-meta a,
+#buddypress a.activity-time-since {
+  color: #66676a;
+}
 
 #buddypress div.item-list-tabs ul li a span {
   background: #EAEAEB;
@@ -2169,7 +2192,8 @@ a.bp-title-button:focus {
   color: #FFFFFF;
  }
 
- #buddypress div.item-list-tabs#object-nav {
+ #buddypress div.item-list-tabs#object-nav,
+ .buddypress #buddypress div.item-list-tabs {
   overflow: hidden;
   background: #EAEAEB;
  }
@@ -2205,9 +2229,6 @@ a.bp-title-button:focus {
 }
 
 .directory.activity #buddypress #activity-stream .activity-item {
-  width: 46%;
-  margin: 2%;
-  float: left;
 }
 
 
