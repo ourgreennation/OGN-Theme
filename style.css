@@ -2412,6 +2412,7 @@ a.bp-title-button:focus {
 
 #tribe-events #tribe-bar-form .tribe-bar-submit input[type=submit] {
   background-color: #6f953d;
+  color: #FFFFFF !important;
 }
 
 #tribe-events .tribe-events-ical.tribe-events-button,
