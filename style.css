@@ -591,7 +591,7 @@ input[type="submit"]:focus {
   color: #FFFFFF;
 }
 
-.home .button {
+.home-page .button {
   font-size: 1.2em;
   min-width: 200px;
 }
@@ -2396,7 +2396,7 @@ a.bp-title-button:focus {
 }
 
 /*--------------------------------------------------------------
-## Misc Plugins
+## The Events Calendar
 --------------------------------------------------------------*/
 .tribe-events-single-event-title {
   font-family: 'Source Serif Pro', serif;
@@ -2425,6 +2425,30 @@ a.bp-title-button:focus {
   font-size: 1.5em;
 }
 
+.tribe-link-tickets-message {
+  display: none;
+}
+
+.single-tribe_events .tribe_events form.cart {
+  background: #EAEAEB;
+}
+
+.single-tribe_events .tribe_events .tribe-events-tickets-title {
+  padding: 8px 10px;
+}
+
+.single-tribe_events .tribe_events .tribe-events-tickets td {
+  vertical-align: top;
+}
+
+.single-tribe_events .tribe_events .tribe-ticket-quantity {
+  max-width: 80px
+  display: block;
+}
+
+/*--------------------------------------------------------------
+## Misc Plugins
+--------------------------------------------------------------*/
 .searchandfilter ul {
   padding-left: 0;
 }
