@@ -176,6 +176,16 @@ function ourgreennation_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => esc_html__( 'Cateories Sidebar', 'our-green-nation' ),
+		'id'            => 'sidebar-category',
+		'description'   => 'Displayed on category pages',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'Search Sidebar', 'our-green-nation' ),
 		'id'            => 'sidebar-search',
 		'description'   => 'Displayed on the Search page',
@@ -283,8 +293,31 @@ function ourgreennation_xprofile_cover_image( $settings = array() ) {
 }
 add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'ourgreennation_xprofile_cover_image', 10, 1 );
 
+function ourgreennation_register_member_types_with_directory() {
+    bp_register_member_type( 'ogn_student', array(
+        'labels' => array(
+            'name'          => 'OGN Students',
+            'singular_name' => 'OGN Student',
+        )
+    ) );
+}
+add_action( 'bp_register_member_types', 'ourgreennation_register_member_types_with_directory', 99 );
 
 
+// Add Toolbar Menus
+function ourgreennation_solutions_center_toolbar() {
+	global $wp_admin_bar;
+
+	$args = array(
+		'id'     => 'solutions-center',
+		'title'  => __( '<span class="dashicons dashicons-admin-tools"></span> Solutions Center', 'our-green-nation' ),
+		'href'   => get_site_url() . '/solutions-center/',
+		'parent' => 'top-secondary',
+	);
+	$wp_admin_bar->add_menu( $args );
+
+}
+add_action( 'wp_before_admin_bar_render', 'ourgreennation_solutions_center_toolbar', 999 );
 
 /**
  * Custom header for this theme.

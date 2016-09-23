@@ -18,6 +18,9 @@ echo '<aside id="secondary" class="widget-area" role="complementary">';
 	if( is_search() ) {
 		// If we're on a search page
 		dynamic_sidebar( 'sidebar-search' );
+	} elseif( is_category() ) {
+		// If we're on a category page
+		dynamic_sidebar( 'sidebar-category' );
 	} elseif( bp_is_group() || bp_is_user_groups() || bp_is_groups_component() ) {
 		// If we're on a BuddyPress group page
 		dynamic_sidebar( 'sidebar-buddypress-group' );
@@ -28,7 +31,7 @@ echo '<aside id="secondary" class="widget-area" role="complementary">';
 		// If we're on a BuddyPress activity page
 		dynamic_sidebar( 'sidebar-buddypress-activity' );
 	} elseif( tribe_is_event() ) {
-		// If we're on a BuddyPress activity page
+		// If we're on a Event page
 		dynamic_sidebar( 'sidebar-events' );
 	} else {
 		// For any other page

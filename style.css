@@ -45,6 +45,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Galleries
 # Plugins
   ## BuddyPress
+  ## WP Ultimate Recipe
+  ## Business Directory
+  ## Jetpack
+  ## The Events Calendar
+  ## Misc Plugins
+# Misc
+# Media Queries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -806,11 +813,11 @@ hr {
   background-color: #EAEAEB;
   overflow: hidden;
   text-align: center;
-  padding: 20px 0;
 }
 
 .site-before-footer-wrap .widget {
   margin-bottom: 0;
+  padding: 20px 0;
 }
 
 .site-footer-wrap {
@@ -1222,7 +1229,7 @@ a {
   color: #66676a;
 }
 a:visited {
-  color: #BDBBBC;
+  color: #66676a;
 }
 a:hover, a:focus, a:active {
   color: #6F953D;
@@ -1510,8 +1517,14 @@ body {
 --------------------------------------------------------------*/
 .widget {
   margin: 0 0 2em 0;
-  /* Make sure select elements fit in widgets. */
+  border-bottom: 1px solid #BDBBBC;
 }
+
+.widget:last-child {
+  border-bottom: none;
+}
+
+/* Make sure select elements fit in widgets. */
 .widget select {
   width: 100%;
   max-width: 100%;
@@ -1521,7 +1534,17 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.widget .fa-ul > li {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
 
+.widget .fa-ul > li:before {
+  width: 25px;
+  display: inline-block;
+  margin-right: 5px;
+}
 
 /*--------------------------------------------------------------
 # Page Builder
@@ -1595,7 +1618,7 @@ body {
 }
 
 .full-background .button {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .recent-articles-inner {
@@ -2231,6 +2254,10 @@ a.bp-title-button:focus {
 .directory.activity #buddypress #activity-stream .activity-item {
 }
 
+.profile .widget-area .widget_text:first-child .widget-title {
+  text-transform: uppercase;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -2403,7 +2430,7 @@ a.bp-title-button:focus {
 }
 
 .widget .tribe-mini-calendar-event {
-  border-bottom: 1px solid #BDBBBC;
+  border-bottom: none;
 }
 
 .widget .tribe-mini-calendar-event .list-date {
@@ -2455,6 +2482,20 @@ a.bp-title-button:focus {
 
 .searchandfilter li {
   margin-bottom: 20px;
+}
+
+
+/*--------------------------------------------------------------
+# Misc
+--------------------------------------------------------------*/
+#wpadminbar .dashicons,
+#wpadminbar .dashicons-before:before {
+  font-family: dashicons;
+}
+
+.about-page .button {
+  min-width: 200px;
+  margin: 10px;
 }
 
 

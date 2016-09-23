@@ -57,6 +57,16 @@ do_action( 'bp_before_directory_members_page' ); ?>
 				<?php endif; ?>
 
 				<?php
+				// Get contributors to get a total count
+				$contributor_query = new WP_User_Query( array( 'role' => 'ogn_contributor' ) );
+
+				// Get total number of contributors
+				$contributor_count = $contributor_query->get_total();
+				?>
+
+				<li class="selected" id="members-contributors"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'Contributors %s', 'our-green-nation' ), '<span>' . $contributor_count . '</span>' ); ?></a></li>
+
+				<?php
 
 				/**
 				 * Fires inside the members directory member types.
@@ -64,6 +74,7 @@ do_action( 'bp_before_directory_members_page' ); ?>
 				 * @since 1.2.0
 				 */
 				do_action( 'bp_members_directory_member_types' ); ?>
+
 
 			</ul>
 		</div><!-- .item-list-tabs -->
