@@ -100,5 +100,18 @@
 
     infinite_count = 0;
 
+    // Scroll down and stick header menu to top of screen
+    var headerMenu = $("header");
+        headerMenuScrolled = "main-nav-scrolled";
+        headerHeight = $(headerMenu).height();
+
+    $(window).scroll(function() {
+      if( $(this).scrollTop() > headerHeight ) {
+        headerMenu.addClass(headerMenuScrolled);
+      } else {
+        headerMenu.removeClass(headerMenuScrolled);
+      }
+    });
+
   });
 })(jQuery);
