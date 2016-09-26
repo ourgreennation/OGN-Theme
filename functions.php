@@ -127,7 +127,6 @@ function ourgreennation_content_width() {
 }
 add_action( 'after_setup_theme', 'ourgreennation_content_width', 0 );
 
-
 /**
  * Register widget area.
  *
@@ -319,6 +318,8 @@ function ourgreennation_solutions_center_toolbar() {
 
 }
 add_action( 'wp_before_admin_bar_render', 'ourgreennation_solutions_center_toolbar', 999 );
+
+
 
 /**
  * Custom header for this theme.

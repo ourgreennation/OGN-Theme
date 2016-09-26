@@ -18,7 +18,7 @@ echo '<aside id="secondary" class="widget-area" role="complementary">';
 	if( is_search() ) {
 		// If we're on a search page
 		dynamic_sidebar( 'sidebar-search' );
-	} elseif( is_category() ) {
+	} elseif( is_category() || is_tag() || is_archive() ) {
 		// If we're on a category page
 		dynamic_sidebar( 'sidebar-category' );
 	} elseif( bp_is_group() || bp_is_user_groups() || bp_is_groups_component() ) {

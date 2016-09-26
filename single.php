@@ -30,6 +30,8 @@ get_header(); ?>
 				comments_template();
 			endif;
 
+			do_action( 'ogn_after_post' );
+
 		endwhile; // End of the loop.
 		?>
 

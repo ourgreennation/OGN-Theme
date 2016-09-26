@@ -676,4 +676,37 @@ function ourgreennation_post_excerpt( $word_limit, $more = '&nbsp;&hellip;' ) {
 }
 
 
+// Display tags below individual posts
+function ourgreennation_display_single_post_tags( $content ) {
+
+	if( is_single() ) {
+		$tags_content = '';
+		$posttags = get_the_tags();
+		if( $posttags ) {
+			$tags_content .= '<div class="post-tags">';
+				foreach( $posttags as $tag ) {
+					$tags_content .= '<a href="' . get_tag_link( $tag->term_id ) . '">#' . $tag->name . '</a>';
+				}
+			$tags_content .= '</div>';
+		}
+	}
+
+	return $content . $tags_content;
+}
+add_filter( 'the_content', 'ourgreennation_display_single_post_tags', 15 );
+
+
+
+// Hacky way to get "View More" at end of widgets that don't include it
+function ourgreennation_widget_view_more_links($params) {
+
+	if( is_active_widget( '', '', 'bp_groups_widget' ) ) {
+		if( $params[0]['widget_name'] === '(BuddyPress) Groups' ) {
+    		$params[0]['after_widget'] = '<p class="buddypress-groups-widget-link"><a href="' . get_site_url() . '/groups/" rel="bookmark">View More…</a></p></section>' ;
+    	}
+    	// var_dump($params);
+	}
+    return $params;
+}
+add_filter( 'dynamic_sidebar_params', 'ourgreennation_widget_view_more_links' );
 

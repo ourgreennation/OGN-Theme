@@ -26,7 +26,7 @@ get_header(); ?>
 						$children = get_categories( array( 'child_of' => $current_cat,'hide_empty' => 0 ) );
 						if ( count( $children ) >= 1 ){
 							$cat_args = array(
-								'show_option_none' => __( 'categories' ),
+								'show_option_none' => __( 'Categories' ),
 	 							'hierarchical' => 1,
 	 							'depth'	=> 0,
 	 							'child_of' => $current_cat,

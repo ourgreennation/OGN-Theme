@@ -671,6 +671,7 @@ hr {
   float: left;
   padding-right: 80px;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .content-sidebar .content-area {
@@ -1382,6 +1383,17 @@ body {
   font-size: 2em;
   margin: 0 0 1em 0;
   font-weight: normal;
+}
+
+.post-tags {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.post-tags a {
+  padding: 2px 8px;
+  margin-right: 5px;
+  display: inline-block;
 }
 
 
@@ -2347,7 +2359,8 @@ a.bp-title-button:focus {
 }
 
 .widget.buddypress a,
-.widget .tribe-events-title a {
+.widget .tribe-events-title a,
+.tribe-events-widget-link {
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9em;
