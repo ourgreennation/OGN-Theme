@@ -287,10 +287,11 @@ add_action( 'admin_enqueue_scripts', 'ourgreennation_admin_scripts' );
  * Misc Theme Functionality
  */
 function ourgreennation_xprofile_cover_image( $settings = array() ) {
-	$settings['default_cover'] = get_stylesheet_directory_uri() . 'wood_cover.jpg';
+	$settings['default_cover'] = get_stylesheet_directory_uri() . '/assets/img/wood_cover.jpg';
 
 	return $settings;
 }
+add_filter( 'bp_before_xprofile_cover_image_settings_parse_args', 'ourgreennation_xprofile_cover_image', 10, 1 );
 add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'ourgreennation_xprofile_cover_image', 10, 1 );
 
 function ourgreennation_register_member_types_with_directory() {

@@ -2446,38 +2446,76 @@ a.bp-title-button:focus {
 ## Business Directory
 --------------------------------------------------------------*/
 
-.listings .listing-actions a.button {
-  background-color: #6F953D;
-  background-image: none;
+.business-directory .listings .listing-actions a.button {
   border-radius: 5px;
-  border: none;
+  color: #6F953D !important;
+  background-color: #FFFFFF;
+  border: 3px solid #6F953D;
+  background-image: none;
   box-shadow: none;
+  font-size: 1rem;
+  margin: 0 5px;
+}
+.business-directory .listings .listing-actions a.button:hover,
+.business-directory .listings .listing-actions a.button:focus,
+.business-directory .listings .listing-actions a.button:active {
+  color: #FFFFFF !important;
+  background-color: #6F953D;
+  border: 3px solid #6F953D;
 }
 
-.listings .wpbdp-listing-excerpt {
+.business-directory .listings .wpbdp-listing-excerpt {
   border-bottom: 1px solid #EAEAEB;
 }
 
-.content-area #wpbdp-main-box {
+.business-directory .content-area #wpbdp-main-box {
   background: none;
 }
 
-.content-area #wpbdp-main-box .box-row {
+.business-directory .content-area #wpbdp-main-box .box-row {
   padding: 10px 0;
 }
 
-.content-area #wpbdp-main-box .box-col.distance-field {
+.business-directory .content-area #wpbdp-main-box .box-col.distance-field {
   width: 40% !important;
 }
 
-.content-area #wpbdp-main-box .box-col.unit-label {
+.business-directory .content-area #wpbdp-main-box .box-col.unit-label {
   width: 60% !important;
 }
 
-.content-area .wpbdp-listing-excerpt.odd {
+.business-directory .content-area .wpbdp-listing-excerpt.odd {
   background: #EAEAEB;
 }
 
+.business-directory .wpbdp-listing .listing-title a,
+.business-directory .wpbdp-listing .listing-title h2,
+.business-directory .wpbdp-listing a {
+  color: #231F20;
+  border-bottom: none;
+}
+
+.business-directory .listing-actions a.delete-listing {
+
+}
+
+.business-directory .wpbdp-map-directions-config .directions-from input,
+.business-directory .wpbdp-map-directions-config .directions-travel-mode select {
+  margin-left: 0;
+}
+
+.business-directory .find-route-btn.wpbdp-button.wpbdp-submit {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1em;
+    margin: 10px 0px;
+}
+
+.business-directory .solutions {
+  background: #EAEAEB;
+  padding: 10px;
+  text-align: center;
+}
 
 
 /*--------------------------------------------------------------
@@ -2567,8 +2605,16 @@ a.bp-title-button:focus {
   display: block;
 }
 
+.single-tribe_events .tribe-events-schedule .tribe-events-cost {
+  display: none;
+}
+
 .tribe-events-schedule h2 {
   font-size: 1.5em;
+}
+
+.single-tribe_events .tribe-events-schedule h2 {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
