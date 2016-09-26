@@ -18,13 +18,37 @@ get_header(); ?>
 				<header class="page-header">
 					<?php
 						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						$current_term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-						$cat_args = array(
- 							'hierarchical' => 1,
- 							'depth'	=> 0,
- 							'child_of' => get_query_var('cat'),
-							);
-						wp_dropdown_categories( $cat_args );
+
+						// Get the current category
+						$current_cat = get_query_var('cat');
+
+						// Only display category dropdown if on a parent category
+						$children = get_categories( array( 'child_of' => $current_cat,'hide_empty' => 0 ) );
+						if ( count( $children ) >= 1 ){
+							$cat_args = array(
+								'show_option_none' => __( 'categories' ),
+	 							'hierarchical' => 1,
+	 							'depth'	=> 0,
+	 							'child_of' => $current_cat,
+	 							'echo' => 0,
+								);
+
+							echo '<form id="category-select" class="category-select" action="' . esc_url( home_url( '/' ) ) . '" method="get">';
+
+								// Change category links to display with JS to submit form
+								$select  = wp_dropdown_categories( $cat_args );
+								$replace = "<select$1 onchange='return this.form.submit()'>";
+								$select  = preg_replace( '#<select([^>]*)>#', $replace, $select );
+
+								echo $select;
+
+								// displays submit button if JS is not available
+								echo '<noscript><input type="submit" value="View" /></noscript>';
+
+							echo '</form>';
+						}
+
+						// Display description of category
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 					?>
 				</header>

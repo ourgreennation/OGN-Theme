@@ -1568,18 +1568,27 @@ body {
 }
 
 .error-404 .widget_recent_entries ul,
-.error-404 .widget_categories ul {
+.error-404 .widget_categories ul,
+.widget.ourgreenation_child_categories ul {
   list-style: none;
 }
 
 .error-404 .widget_recent_entries li:before,
-.error-404 .widget_categories li:before {
+.error-404 .widget_categories li:before,
+.widget.ourgreenation_child_categories li:before {
   font-family: FontAwesome;
   margin-right: 5px;
 }
 
 .error-404 .widget_recent_entries li:before { content: "\f044"; }
 .error-404 .widget_categories li:before { content: "\f06c"; }
+.widget.ourgreenation_child_categories li:before { content: "\f067"; }
+
+.widget.ourgreenation_child_categories ul ul {
+  margin-left: 0;
+}
+
+
 
 
 /*--------------------------------------------------------------
