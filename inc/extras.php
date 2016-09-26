@@ -102,7 +102,7 @@ function ourgreennation_embed_youtube_video( $oembed ){
 		// } else {
 		// 	$width  = apply_filters( 'ourgreennation_archive_item_width', '50%' );
 		// }
-	 	$width  = apply_filters( 'ourgreennation_item_width', '350' );
+	 	$width  = apply_filters( 'ourgreennation_item_width', '380' );
 		$height = ($width / 9 * 6);
 
 		if( !empty( $matches[1][0] ) ){
@@ -199,7 +199,7 @@ function ourgreennation_modify_height_width_atts($matches) {
 	$init_width = 0;
 	$init_height = 0;
 
-	$target_width = apply_filters( 'ourgreennation_item_width', 350 );
+	$target_width = apply_filters( 'ourgreennation_item_width', 380 );
 
 	if(strtolower($key1) == 'width') {
 		$init_width = $val1;

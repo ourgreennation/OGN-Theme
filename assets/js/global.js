@@ -100,18 +100,68 @@
 
     infinite_count = 0;
 
-    // Scroll down and stick header menu to top of screen
-    var headerMenu = $("header");
-        headerMenuScrolled = "main-nav-scrolled";
-        headerHeight = $(headerMenu).height();
 
-    $(window).scroll(function() {
-      if( $(this).scrollTop() > headerHeight ) {
-        headerMenu.addClass(headerMenuScrolled);
-      } else {
-        headerMenu.removeClass(headerMenuScrolled);
-      }
-    });
+
+    /* getting viewport width */
+    var responsive_viewport = $(window).width();
+
+    /* if is above 900px */
+    if (responsive_viewport > 900) {
+
+      // Scroll down and stick header menu to top of screen
+      var headerMenu = $("header#masthead");
+          headerMenuScrolled = "main-nav-scrolled";
+          headerHeight = $(headerMenu).height();
+
+      $(window).scroll(function() {
+        if( $(this).scrollTop() > headerHeight ) {
+          headerMenu.addClass(headerMenuScrolled);
+        } else {
+          headerMenu.removeClass(headerMenuScrolled);
+        }
+      });
+
+    }
+
+    /* if is below 900px */
+    if (responsive_viewport < 901) {
+
+        /* load gravatars */
+        $('.comment img[data-gravatar]').each(function(){
+            $(this).attr('src',$(this).attr('data-gravatar'));
+        });
+
+
+        /* Load Sidr Menu */
+        (function( $ ) {
+            "use strict";
+            $(function() {
+            // Slide-Out Menu
+
+                /* prepend menu icon */
+                $('.site-menu-inner').prepend('<div id="mobile-header"><a class="responsive-menu-button fa fa-bars" href="#sidr"></a></div>');
+
+                $('.responsive-menu-button').sidr({
+                    name: 'sidr',
+                    source: '#top-menu',
+                    side: 'right',
+                    onOpen: function () {
+                        $('.responsive-menu-button').addClass('fa-close');
+                        $('.responsive-menu-button').removeClass('fa-bars');
+                    },
+                    onClose: function () {
+                        $('.responsive-menu-button').addClass('fa-bars');
+                        $('.responsive-menu-button').removeClass('fa-close');
+                    },
+                });
+
+
+            });
+
+        }(jQuery));
+
+    }
 
   });
+
 })(jQuery);
