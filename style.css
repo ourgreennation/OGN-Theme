@@ -2326,7 +2326,7 @@ a.bp-title-button:focus {
 
  #buddypress div.item-list-tabs ul li.selected a,
  #buddypress div.item-list-tabs ul li.current a {
-  background: #66676A;
+  background: #6F953D;
   color: #FFFFFF;
  }
 
@@ -2372,6 +2372,10 @@ a.bp-title-button:focus {
 
 .profile .widget-area .widget_text:first-child .widget-title {
   text-transform: uppercase;
+}
+
+#buddypress table#message-threads .thread-from {
+  max-width: 50%;
 }
 
 

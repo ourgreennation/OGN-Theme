@@ -62,11 +62,8 @@ do_action( 'bp_before_directory_members_page' ); ?>
 
 				// Get total number of contributors
 				$contributor_count = $contributor_query->get_total();
-				?>
 
-				<li class="selected" id="members-contributors"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'Contributors %s', 'our-green-nation' ), '<span>' . $contributor_count . '</span>' ); ?></a></li>
-
-				<?php
+				// echo '<li class="selected" id="members-contributors"><a href="' . bp_members_directory_permalink() . '">' . printf( __( 'Contributors %s', 'our-green-nation' ), '<span>' . $contributor_count . '</span>' ) . '</a></li>';
 
 				/**
 				 * Fires inside the members directory member types.
