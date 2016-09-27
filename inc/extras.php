@@ -44,6 +44,24 @@ function ourgreennation_get_login_button() {
 }
 
 
+/*
+ * CUSTOM LOGIN
+ */
+// Custom login stylesheet, loads only on login page
+add_action( 'login_enqueue_scripts', 'ourgreennation_login_css' );
+function ourgreennation_login_css() {
+	echo '<link rel="stylesheet" id="custom_wp_admin_css"  href="' . get_stylesheet_directory_uri() . '/assets/css/login.css" type="text/css" media="all" />';
+}
+
+// Change login link from wordpress.org to the site url
+add_filter( 'login_headerurl', 'ourgreennation_login_url' );
+function ourgreennation_login_url() { return get_bloginfo( 'url' ); }
+
+// Change alt text on logo to site title
+add_filter( 'login_headertitle', 'ourgreennation_login_title' );
+function ourgreennation_login_title() { return get_option( 'blogname' ); }
+
+
 /**
  * Attaches featured media to ourgreennation_before_post hook
  *
@@ -724,7 +742,7 @@ function ourgreennation_change_friends_menu_link( $html, $nav_item ) {
 }
 
 
-
+// Add Contributor OGN member type
 function bbg_register_member_types() {
     bp_register_member_type( 'ogn_bp_contributor', array(
         'labels' => array(
@@ -737,11 +755,13 @@ function bbg_register_member_types() {
 add_action( 'bp_init', 'bbg_register_member_types' );
 
 
+
+// Update profile page tab text
 function bpcodex_rename_profile_tabs() {
-  
-      buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Friends', 'textdomain' ) ), 'friends' );
-      buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Groups', 'textdomain' ) ), 'groups' );
-  
+
+	buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Friends', 'textdomain' ) ), 'friends' );
+	buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Groups', 'textdomain' ) ), 'groups' );
+
 }
 add_action( 'bp_actions', 'bpcodex_rename_profile_tabs' );
 
