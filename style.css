@@ -646,6 +646,7 @@ hr {
 
 .page-builder .site-content {
   max-width: 100%;
+  width: 100%;
   padding: 0;
 }
 
@@ -2757,6 +2758,26 @@ a.bp-title-button:focus {
 
   body.single-item.groups #buddypress div#item-header #item-header-cover-image #item-actions {
     max-width: 15%;
+  }
+
+  /* grid sizers to flex grid width */
+  .masonry .grid-sizer,
+  .masonry.two-col .grid-sizer,
+  .masonry.three-col .grid-sizer {
+    width: 50%;
+  }
+  .masonry.four-col .grid-sizer {
+    width: 33.3%;
+  }
+
+  /* masonry item sizers to flex item width */
+  .masonry .hentry,
+  .masonry.two-col .hentry,
+  .masonry.three-col .hentry {
+    width: 47%;
+  }
+  .masonry.four-col .hentry {
+    width: 30.3%;
   }
 
 }

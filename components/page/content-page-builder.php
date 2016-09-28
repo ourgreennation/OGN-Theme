@@ -79,11 +79,21 @@ function ourgreennation_page_content_scripts() {
 				      var owl = $("#events-carousel");
 
 					  owl.owlCarousel({
-					      items : 4, // 4 items above 1000px browser width
-					      itemsDesktop : [1000,4], // 4 items between 1000px and 901px
-					      itemsDesktopSmall : [960,3], // 3 items betweem 960px and 721px
-					      itemsTablet: [720,2], // 2 items between 720 and 601
-					      itemsMobile : [600,1], // 1 item between 600 and 0
+						responsiveClass:true,
+						responsive:{
+						    0:{
+						        items:1,
+						    },
+						    521:{
+						        items:2,
+						    },
+						    801:{
+						        items:3,
+						    },
+						    1021:{
+						        items:4,
+						    }
+						  },
 					      dots: false,
 					      nav: true,
 					      margin: 20,
@@ -114,11 +124,22 @@ function ourgreennation_page_content_scripts() {
 				      var owl = $("#buddypress-carousel");
 
 					  owl.owlCarousel({
-					      items : 4, // 4 items above 1000px browser width
-					      itemsDesktop : [1000,4], // 4 items between 1000px and 901px
-					      itemsDesktopSmall : [960,3], // 3 items betweem 960px and 721px
-					      itemsTablet: [720,3], // 2 items between 720 and 601
-					      itemsMobile : [600,2], // 1 item between 600 and 0
+						responsiveClass:true,
+						responsive:{
+						    0:{
+						        items:1,
+						    },
+						    521:{
+						        items:2,
+						    },
+						    801:{
+						        items:3,
+						    },
+						    1021:{
+						        items:4,
+						        nav:true,
+						    }
+						  },
 					      dots: false,
 					      nav: true,
 					      margin: 20,
@@ -127,13 +148,6 @@ function ourgreennation_page_content_scripts() {
 					      navText: [ '<span class="fa fa-chevron-left">', '<span class="fa fa-chevron-right">' ],
 					  });
 
-					  // Custom Navigation Events
-					  $(".next").click(function(){
-					    owl.trigger('owl.next');
-					  })
-					  $(".prev").click(function(){
-					    owl.trigger('owl.prev');
-					  })
 				  });
 
 				}(jQuery));
@@ -142,41 +156,6 @@ function ourgreennation_page_content_scripts() {
 
 	        elseif( get_row_layout() == 'home_popular_content' ): // Home Popular Content
 
-	        elseif( get_row_layout() == 'content_carousel' ): // Slider of Client Images
-				?>
-				<script>
-				(function( $ ) {
-
-				  "use strict";
-
-				  $(function() {
-				      var owl = $("#owl-carousel");
-
-					  owl.owlCarousel({
-					      items : 4, // 4 items above 1000px browser width
-					      itemsDesktop : [1000,4], // 4 items between 1000px and 901px
-					      itemsDesktopSmall : [960,3], // 3 items betweem 960px and 721px
-					      itemsTablet: [720,2], // 2 items between 720 and 601
-					      itemsMobile : [600,1], // 1 item between 600 and 0
-					      dots: false,
-					      nav: false,
-					      rewind: true,
-					      infinite: true,
-					      // navText: [ '<span class="fa fa-angle-left">', '<span class="fa fa-angle-right">' ],
-					  });
-
-					  // Custom Navigation Events
-					  $(".next").click(function(){
-					    owl.trigger('owl.next');
-					  })
-					  $(".prev").click(function(){
-					    owl.trigger('owl.prev');
-					  })
-				  });
-
-				}(jQuery));
-				</script>
-				<?php
 	        endif; // Section Blocks
 
 	    endwhile;

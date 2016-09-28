@@ -729,12 +729,6 @@ function ourgreennation_widget_view_more_links($params) {
 add_filter( 'dynamic_sidebar_params', 'ourgreennation_widget_view_more_links' );
 
 
-
-// apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item->css_id, array( '<li id="' . $user_nav_item->css_id . '-personal-li" ' . $selected . '><a id="user-' . $user_nav_item->css_id . '" href="' . $link . '">' . $user_nav_item->name . '</a></li>', &$user_nav_item ) );
-
-
-// apply_filters_ref_array( 'my_filter', array( &$args ));
-
 // add_filter( 'bp_get_displayed_user_nav_user-friends', 'ourgreennation_change_friends_menu_link', 10, 2 );
 function ourgreennation_change_friends_menu_link( $html, $nav_item ) {
     $args[0] = ( '<li id="' . $user_nav_item->css_id . '-personal-li" ' . $selected . '><a id="user-' . $user_nav_item->css_id . '" href="' . $link . '">My ' . $user_nav_item->name . '</a></li>' );
@@ -742,30 +736,31 @@ function ourgreennation_change_friends_menu_link( $html, $nav_item ) {
 }
 
 
-// Add Contributor OGN member type
-function bbg_register_member_types() {
-    bp_register_member_type( 'ogn_bp_contributor', array(
-        'labels' => array(
-            'name'          => 'Contributors',
-            'singular_name' => 'Contributor',
-        ),
-        'has_directory' => 'custom-name',
-    ) );
-}
-add_action( 'bp_init', 'bbg_register_member_types' );
-
-
-
 // Update profile page tab text
-function bpcodex_rename_profile_tabs() {
+function ourgreennation_rename_profile_tabs() {
 
 	buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Friends', 'textdomain' ) ), 'friends' );
 	buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Groups', 'textdomain' ) ), 'groups' );
 
 }
-add_action( 'bp_actions', 'bpcodex_rename_profile_tabs' );
+add_action( 'bp_actions', 'ourgreennation_rename_profile_tabs' );
 
 
+// /**
+//  * Display contributors on Member Nav
+//  */
+// function ourgreenation_setup_contributors_nav() {
+
+// 	bp_core_new_nav_item( array(
+// 		'name'            => 'ContributorsMI',
+// 		'slug'            => 'contributors-mi',
+// 		'screen_function' => '',
+// 		'parent_slug' 	  => '',
+// 		'parent_url'  	  => '',
+// 	), 'members' );
+
+// }
+// add_action( 'bp_members_setup_nav', 'ourgreenation_setup_contributors_nav', 50 );
 
 
 

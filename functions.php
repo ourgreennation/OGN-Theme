@@ -7,6 +7,7 @@
  * @package Our_Green_Nation
  */
 
+
 // Define our constants
 define ( 'OGN_IMG_DIR', get_template_directory_uri() . '/assets/img/' );
 
@@ -292,17 +293,6 @@ function ourgreennation_xprofile_cover_image( $settings = array() ) {
 }
 add_filter( 'bp_before_xprofile_cover_image_settings_parse_args', 'ourgreennation_xprofile_cover_image', 10, 1 );
 add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'ourgreennation_xprofile_cover_image', 10, 1 );
-
-function ourgreennation_register_member_types_with_directory() {
-    bp_register_member_type( 'ogn_student', array(
-        'labels' => array(
-            'name'          => 'OGN Students',
-            'singular_name' => 'OGN Student',
-        )
-    ) );
-}
-add_action( 'bp_register_member_types', 'ourgreennation_register_member_types_with_directory', 99 );
-
 
 // Add Toolbar Menus
 function ourgreennation_solutions_center_toolbar() {
