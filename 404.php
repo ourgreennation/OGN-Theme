@@ -17,7 +17,7 @@ get_header(); ?>
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'our-green-nation' ); ?></h1>
 				</header>
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'our-green-nation' ); ?></p>
+					<p><?php esc_html_e( 'No stress. We will get you to something good. Try a search or click on one of the links found here.', 'our-green-nation' ); ?></p>
 
 					<?php
 						get_search_form();
@@ -49,7 +49,7 @@ get_header(); ?>
 						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'our-green-nation' ), convert_smilies( ':)' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
-						the_widget( 'WP_Widget_Tag_Cloud', 'title=Popular Tags' );
+						// the_widget( 'WP_Widget_Tag_Cloud', 'title=Popular Tags' );
 					?>
 
 				</div>
@@ -57,4 +57,5 @@ get_header(); ?>
 		</main>
 	</div>
 <?php
+get_sidebar();
 get_footer();

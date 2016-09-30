@@ -618,7 +618,7 @@ input[type="submit"]:focus {
 }
 
 .centered-buttons .button {
-  margin: 0 20px;
+  margin: 10px 20px;
 }
 
 /*--------------------------------------------------------------
@@ -1637,9 +1637,9 @@ body {
   border-bottom: 1px solid #BDBBBC;
 }
 
-.widget:last-child {
+/*.widget:last-child {
   border-bottom: none;
-}
+}*/
 
 /* Make sure select elements fit in widgets. */
 .widget select {
@@ -1661,6 +1661,10 @@ body {
   width: 25px;
   display: inline-block;
   margin-right: 5px;
+}
+
+.widget .tagcloud {
+  padding-bottom: 24px;
 }
 
 /*--------------------------------------------------------------
@@ -1691,8 +1695,8 @@ body {
 .background-video-container video {
   position: relative;
   z-index: 1;
-  min-width: 100%;
-  min-height: 100%;
+  max-width: 100%;
+  min-height: 160px;
   width: auto;
   height: auto;
 }
@@ -2379,6 +2383,10 @@ a.bp-title-button:focus {
   max-width: 50%;
 }
 
+#buddypress form#whats-new-form p.activity-greeting {
+  line-height: 1.5em;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -2669,6 +2677,30 @@ a.bp-title-button:focus {
   margin: 10px;
 }
 
+.contributor-guideline-page hr {
+  margin: 80px auto 160px;
+}
+
+.contributor-guideline-page h3 {
+  text-transform: uppercase;
+}
+
+.contributor-guideline-page ul.guideline-sections,
+.contributor-guideline-page ul.subcategories,
+.contributor-guideline-page ul.subcategories ul {
+  list-style: none;
+}
+
+.contributor-guideline-page .guideline-sections li:before,
+.contributor-guideline-page .subcategories li:before {
+  font-family: FontAwesome;
+  margin-right: 5px;
+  content: "\f06c";
+}
+
+.pledge-page ol li {
+  margin-bottom: 1em;
+}
 
 /*--------------------------------------------------------------
 # Media Queries
@@ -2810,17 +2842,152 @@ a.bp-title-button:focus {
     padding-bottom: 40px;
   }
 
+  .content-sidebar .content-area,
+  .sidebar-content .content-area {
+    padding-bottom: 40px;
+  }
+
   .page-builder .site-content {
     max-width: 100%;
     width: 100%;
     padding: 0;
   }
 
-  .widget {
+  .widget-area .widget {
     width: 50%;
     display: inline-block;
     vertical-align: top;
     border-bottom: none;
+  }
+
+  .widget-area .widget:nth-child(2n+1) {
+    padding-right: 20px;
+  }
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+  .upcoming-events .owl-item,
+  .buddypress-groups .owl-item {
+    max-width: 330px;
+  }
+
+  /* grid sizers to flex grid width */
+  .masonry .grid-sizer,
+  .masonry.two-col .grid-sizer,
+  .masonry.three-col .grid-sizer,
+  .masonry.four-col .grid-sizer {
+    width: 50%;
+  }
+
+  /* masonry item sizers to flex item width */
+  .masonry .hentry,
+  .masonry.two-col .hentry,
+  .masonry.three-col .hentry,
+  .masonry.four-col .hentry {
+    width: 47%;
+  }
+
+  #buddypress div.activity-meta a {
+    margin-bottom: 0.5em;
+  }
+
+  .solution-box {
+    width: calc(100% * (1/4));
+  }
+
+}
+
+@media screen and (max-width: 782px) {
+
+  .buddypress #buddypress #item-header-cover-image #item-header-avatar {
+    margin-top: 10px;
+  }
+
+  .buddypress #buddypress div#item-header #item-header-cover-image #item-header-content {
+    margin-top: 0;
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+  /* WordPress toolbar made fixed on mobile to manage sidr menu */
+  #wpadminbar {
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 560px) {
+
+/*  body {
+    font-size: 18px;
+  }*/
+
+  .upcoming-events .owl-item,
+  .buddypress-groups .owl-item,
+  #buddypress-carousel article .panel,
+  #events-carousel article .panel,
+  .panel {
+    max-width: 100%;
+  }
+
+  /* grid sizers to flex grid width */
+  .masonry .grid-sizer,
+  .masonry.two-col .grid-sizer,
+  .masonry.three-col .grid-sizer,
+  .masonry.four-col .grid-sizer {
+    width: 100%;
+  }
+
+  /* masonry item sizers to flex item width */
+  .masonry .hentry,
+  .masonry.two-col .hentry,
+  .masonry.three-col .hentry,
+  .masonry.four-col .hentry,
+  #events-carousel article .panel,
+  #buddypress-carousel article .panel {
+    width: 100%;
+  }
+
+  #buddypress-carousel article .panel {
+    min-height: 240px;
+  }
+
+  #buddypress-carousel .owl-item {
+    margin-top: 125px;
+  }
+
+  #buddypress-carousel .owl-item .item-avatar {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 2;
+    top: -125px;
+    left: calc(50% - 75px);
+  }
+
+  #events-carousel article .panel {
+  }
+
+  #events-carousel img {
+    height: auto;
+    max-height: 100%;
+  }
+
+  .widget-area .widget {
+    width: 100%;
+    float: none;
+  }
+
+  .widget-area .widget:nth-child(2n+1) {
+    padding-right: 0;
+  }
+
+  .solution-box {
+    width: calc(100% * (1/3));
   }
 
 }

@@ -74,3 +74,11 @@ return $headline;
 }
 // add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline' );
 
+
+// Force posts to be public for related posts
+function ourgreennation_fix_related() {
+	if ( class_exists( 'Jetpack_Options' ) ) {
+	    Jetpack_Options::update_option( 'public' , true);
+}
+}
+add_action( 'init', 'ourgreennation_fix_related' );

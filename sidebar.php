@@ -15,7 +15,7 @@ echo '<aside id="secondary" class="widget-area" role="complementary">';
 
 	// We're going to have a few sidebars for specific page types not covered in the WP template hierarchy
 
-	if( is_search() ) {
+	if( is_search() || is_404() ) {
 		// If we're on a search page
 		dynamic_sidebar( 'sidebar-search' );
 	} elseif( is_category() || is_tag() || is_archive() ) {
