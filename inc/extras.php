@@ -746,21 +746,48 @@ function ourgreennation_rename_profile_tabs() {
 add_action( 'bp_actions', 'ourgreennation_rename_profile_tabs' );
 
 
-// /**
-//  * Display contributors on Member Nav
-//  */
-// function ourgreenation_setup_contributors_nav() {
+/*
+ * Moves the front-end ticket purchase form, accepts WP action/hook and optional hook priority
+ *
+ * @param $ticket_location_action WP Action/hook to display the ticket form at
+ * @param $ticket_location_priority Priority for the WP Action
+ */
+function tribe_etp_move_tickets_purchase_form ( $ticket_location_action = '', $ticket_location_priority = 10 ) {
+    if ( ! class_exists( 'Tribe__Tickets__Tickets') ) return;
+    $etp_classes = array(
+        'Easy_Digital_Downloads' =>     'Tribe__Tickets_Plus__Commerce__EDD__Main',
+        'ShoppVersion' =>               'Tribe__Tickets_Plus__Commerce__Shopp__Main',
+        'WP_eCommerce' =>               'Tribe__Tickets_Plus__Commerce__WPEC__Main',
+        'Woocommerce' =>                'Tribe__Tickets_Plus__Commerce__WooCommerce__Main',
+        'Tribe__Tickets__Tickets' =>    'Tribe__Tickets__RSVP',
+    );
+    foreach ( $etp_classes as  $ecommerce_class => $ticket_class) {
+        if ( ! class_exists( $ecommerce_class ) || ! class_exists( $ticket_class ) ) continue;
+        $form_display_function = array( $ticket_class::get_instance(), 'front_end_tickets_form' );
+        if ( has_action ( 'tribe_events_single_event_after_the_meta', $form_display_function ) ) {
+            remove_action( 'tribe_events_single_event_after_the_meta', $form_display_function, 5 );
+            // add_action( $ticket_location_action, $form_display_function, $ticket_location_priority );
+        }
+    }
+}
+tribe_etp_move_tickets_purchase_form();
 
-// 	bp_core_new_nav_item( array(
-// 		'name'            => 'ContributorsMI',
-// 		'slug'            => 'contributors-mi',
-// 		'screen_function' => '',
-// 		'parent_slug' 	  => '',
-// 		'parent_url'  	  => '',
-// 	), 'members' );
 
-// }
-// add_action( 'bp_members_setup_nav', 'ourgreenation_setup_contributors_nav', 50 );
 
+// Display ticket form below contnet
+function ourgreennation_rsvp_tickets_placement( $content ) {
+
+	if( class_exists( 'Tribe__Tickets__Tickets' ) ) {
+
+		ob_start();
+		$ticket_class = Tribe__Tickets__RSVP::get_instance();
+		$ticket_content = $ticket_class->front_end_tickets_form();
+		$out = ob_get_clean();
+
+	}
+
+	return $content . $out;
+}
+add_filter( 'the_content', 'ourgreennation_rsvp_tickets_placement', 12 );
 
 

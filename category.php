@@ -21,6 +21,7 @@ get_header(); ?>
 
 						// Get the current category
 						$current_cat = get_query_var('cat');
+						$category = get_category( $current_cat );
 
 						// Only display category dropdown if on a parent category
 						$children = get_categories( array( 'child_of' => $current_cat,'hide_empty' => 0 ) );
@@ -32,6 +33,12 @@ get_header(); ?>
 	 							'child_of' => $current_cat,
 	 							'echo' => 0,
 								);
+
+							// Change option_none title for subcategories
+							if ( $category->category_parent > 0 ){
+								$cat_args['show_option_none'] = __( 'Subcategories' );
+							}
+
 
 							echo '<form id="category-select" class="category-select" action="' . esc_url( home_url( '/' ) ) . '" method="get">';
 

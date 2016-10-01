@@ -1595,10 +1595,14 @@ body {
 
 .error-404 .widget_recent_entries li:before { content: "\f044"; }
 .error-404 .widget_categories li:before { content: "\f06c"; }
-.widget.ourgreenation_child_categories li:before { content: "\f067"; }
+.widget.ourgreenation_child_categories li:before { content: "\f067"; font-size: 0.7em; }
 
 .widget.ourgreenation_child_categories ul ul {
   margin-left: 0;
+}
+
+.widget.ourgreenation_child_categories li {
+  font-weight: 600;
 }
 
 
