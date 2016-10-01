@@ -1602,7 +1602,7 @@ body {
 }
 
 .widget.ourgreenation_child_categories li {
-  font-weight: 600;
+  text-transform: uppercase;
 }
 
 
@@ -1659,6 +1659,10 @@ body {
   width: 100%;
   text-align: left;
   margin-bottom: 10px;
+}
+
+.widget .fa-ul > li a {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .widget .fa-ul > li:before {
@@ -2515,6 +2519,10 @@ a.bp-title-button:focus {
   padding: 10px 0;
 }
 
+.business-directory .content-area #wpbdp-main-box .box-row .box-row {
+  padding: 0;
+}
+
 .business-directory .content-area #wpbdp-main-box .box-col.distance-field {
   width: 40% !important;
 }
@@ -2704,6 +2712,10 @@ a.bp-title-button:focus {
 
 .pledge-page ol li {
   margin-bottom: 1em;
+}
+
+.pledge-page ol h3 {
+  margin: 20px 0 20px -30px;
 }
 
 /*--------------------------------------------------------------
