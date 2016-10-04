@@ -707,9 +707,12 @@ function ourgreennation_display_single_post_tags( $content ) {
 				}
 			$tags_content .= '</div>';
 		}
-	}
 
 	return $content . $tags_content;
+
+	}
+
+	return $content;
 }
 add_filter( 'the_content', 'ourgreennation_display_single_post_tags', 15 );
 
@@ -781,7 +784,7 @@ function ourgreennation_rsvp_tickets_placement( $content ) {
 
 		ob_start();
 		$ticket_class = Tribe__Tickets__RSVP::get_instance();
-		$ticket_content = $ticket_class->front_end_tickets_form();
+		$ticket_content = $ticket_class->front_end_tickets_form( $content );
 		$out = ob_get_clean();
 
 	}

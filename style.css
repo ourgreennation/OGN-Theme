@@ -1595,7 +1595,7 @@ body {
 
 .error-404 .widget_recent_entries li:before { content: "\f044"; }
 .error-404 .widget_categories li:before { content: "\f06c"; }
-.widget.ourgreenation_child_categories li:before { content: "\f067"; font-size: 0.7em; }
+.widget.ourgreenation_child_categories li:before { content: "\f06c"; font-size: 0.7em; }
 
 .widget.ourgreenation_child_categories ul ul {
   margin-left: 0;
@@ -1639,6 +1639,10 @@ body {
 .widget {
   margin: 0 0 2em 0;
   border-bottom: 1px solid #BDBBBC;
+}
+
+.site-footer .widget {
+  border-bottom: none;
 }
 
 /*.widget:last-child {
@@ -2396,6 +2400,25 @@ a.bp-title-button:focus {
 }
 
 
+.registration .field-visibility-settings-notoggle {
+  display: none;
+}
+
+.registration #profile-details-section .required-field {
+  margin-bottom: 20px;
+}
+
+.registration .security-question-section {
+  float: right !important;
+  clear: right !important;
+  width: 48%;
+}
+
+.registration .existing-account {
+  font-weight: 600;
+}
+
+
 
 /*--------------------------------------------------------------
 ## WP Ultimate Recipe
@@ -2508,7 +2531,9 @@ a.bp-title-button:focus {
 }
 
 .business-directory .listings .wpbdp-listing-excerpt {
-  border-bottom: 1px solid #EAEAEB;
+  border: 2px solid #f2f2f2;
+  padding: 15px;
+  margin: 1em 0;
 }
 
 .business-directory .content-area #wpbdp-main-box {
@@ -2532,7 +2557,7 @@ a.bp-title-button:focus {
 }
 
 .business-directory .content-area .wpbdp-listing-excerpt.odd {
-  background: #EAEAEB;
+  background: #FFFFFF;
 }
 
 .business-directory .wpbdp-listing .listing-title a,
@@ -2562,6 +2587,46 @@ a.bp-title-button:focus {
   background: #EAEAEB;
   padding: 10px;
   text-align: center;
+}
+
+.business-directory .wpbdp-listing .listing-title {
+  border-bottom: 2px solid #6F953D;
+  margin-bottom: 20px;
+}
+
+.business-directory ul.wpbdp-categories,
+.business-directory ul.wpbdp-categories ul {
+  list-style: circle;
+}
+
+.business-directory ul.wpbdp-categories li {
+  line-height: 1.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.business-directory ul.wpbdp-categories li ul.children li {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.business-directory ul.wpbdp-categories .children {
+  margin-left: 0;
+}
+
+/*.business-directory ul.wpbdp-categories li:before,
+.business-directory ul.wpbdp-categories ul li:before {
+  font-family: FontAwesome;
+  margin-right: 5px;
+  content: "\f10c";
+}*/
+
+.business-directory .wpbdp-listing-excerpt.sticky {
+  background-color: #e6ecd7;
+}
+
+.business-directory .wpbdp-map.with-directions {
+  float: right;
 }
 
 
@@ -2717,6 +2782,27 @@ a.bp-title-button:focus {
 .pledge-page ol h3 {
   margin: 20px 0 20px -30px;
 }
+
+body .contributor-form_wrapper.gform_wrapper ul li.gfield {
+  border: 2px solid #f2f2f2;
+  padding: 15px;
+  margin: 1em 0;
+}
+
+.contributor-form_wrapper.gform_wrapper .top_label .gfield_label {
+  display: none;
+}
+
+body .contributor-form_wrapper.gform_wrapper .top_label div.ginput_container {
+  margin-top: 0;
+}
+
+.contributor-form_wrapper.gform_wrapper .description_above .gfield_description {
+  font-size: 1em;
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Media Queries
@@ -2925,6 +3011,18 @@ a.bp-title-button:focus {
   .buddypress #buddypress div#item-header #item-header-cover-image #item-header-content {
     margin-top: 0;
   }
+
+  #buddypress .standard-form #basic-details-section, #buddypress .standard-form #blog-details-section, #buddypress .standard-form #profile-details-section {
+    float: none;
+    width: 100%;
+  }
+
+  .registration .security-question-section {
+    float: none !important;
+    clear: both !important;
+    width: 100%;
+  }
+
 
 }
 

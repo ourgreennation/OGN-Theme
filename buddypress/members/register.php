@@ -56,7 +56,7 @@
 			/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
 			do_action( 'template_notices' ); ?>
 
-			<p><?php _e( 'Do you already have an account? <a href="/login/">Login here</a>.', 'buddypress' ); ?></p>
+			<p class="existing-account"><?php _e( 'Do you already have an account? <a href="/login/">Login here</a>.', 'buddypress' ); ?></p>
 
 			<?php
 
@@ -73,7 +73,7 @@
 
 				<h4><?php _e( 'Account Details', 'buddypress' ); ?></h4>
 
-				<label for="signup_username"><?php _e( 'Username', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
+				<label for="signup_username"><?php _e( 'Username <em>(Best practice: Use real name for functionality)</em>', 'buddypress' ); ?></label>
 				<?php
 
 				/**
@@ -84,7 +84,7 @@
 				do_action( 'bp_signup_username_errors' ); ?>
 				<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value(); ?>" <?php bp_form_field_attributes( 'username' ); ?>/>
 
-				<label for="signup_email"><?php _e( 'Email Address', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
+				<label for="signup_email"><?php _e( 'Email Address', 'buddypress' ); ?></label>
 				<?php
 
 				/**
@@ -95,7 +95,7 @@
 				do_action( 'bp_signup_email_errors' ); ?>
 				<input type="email" name="signup_email" id="signup_email" value="<?php bp_signup_email_value(); ?>" <?php bp_form_field_attributes( 'email' ); ?>/>
 
-				<label for="signup_password"><?php _e( 'Choose a Password', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
+				<label for="signup_password"><?php _e( 'Choose a Password', 'buddypress' ); ?></label>
 				<?php
 
 				/**
@@ -107,7 +107,7 @@
 				<input type="password" name="signup_password" id="signup_password" value="" class="password-entry" <?php bp_form_field_attributes( 'password' ); ?>/>
 				<div id="pass-strength-result"></div>
 
-				<label for="signup_password_confirm"><?php _e( 'Confirm Password', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
+				<label for="signup_password_confirm"><?php _e( 'Confirm Password', 'buddypress' ); ?></label>
 				<?php
 
 				/**
