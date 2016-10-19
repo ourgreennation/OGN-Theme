@@ -55,7 +55,7 @@ function ourgreennation_login_css() {
 
 // Change login link from wordpress.org to the site url
 add_filter( 'login_headerurl', 'ourgreennation_login_url' );
-function ourgreennation_login_url() { return get_bloginfo( 'url' ); }
+function ourgreennation_login_url() { return home_url(); }
 
 // Change alt text on logo to site title
 add_filter( 'login_headertitle', 'ourgreennation_login_title' );
@@ -723,7 +723,7 @@ function ourgreennation_widget_view_more_links($params) {
 
 	if( is_active_widget( '', '', 'bp_groups_widget' ) ) {
 		if( $params[0]['widget_name'] === '(BuddyPress) Groups' ) {
-    		$params[0]['after_widget'] = '<p class="buddypress-groups-widget-link"><a href="' . get_site_url() . '/groups/" rel="bookmark">View More…</a></p></section>' ;
+    		$params[0]['after_widget'] = '<p class="buddypress-groups-widget-link"><a href="' . get_site_url() . '/groups/" rel="bookmark">View More&nbsp;</a></p></section>' ;
     	}
     	// var_dump($params);
 	}
@@ -742,8 +742,8 @@ function ourgreennation_change_friends_menu_link( $html, $nav_item ) {
 // Update profile page tab text
 function ourgreennation_rename_profile_tabs() {
 
-	buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Friends', 'textdomain' ) ), 'friends' );
-	buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Groups', 'textdomain' ) ), 'groups' );
+	buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Friends', 'our-green-nation' ) ), 'friends' );
+	buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Groups', 'our-green-nation' ) ), 'groups' );
 
 }
 add_action( 'bp_actions', 'ourgreennation_rename_profile_tabs' );

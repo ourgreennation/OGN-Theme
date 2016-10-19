@@ -258,8 +258,8 @@ function ourgreennation_scripts() {
 	// Enqueue Fonts
 	// wp_enqueue_style( 'ourgreennation-league-gothic-font', get_template_directory_uri() . '/assets/fonts/league-gothic/stylesheet.css', false );
 	wp_enqueue_style( 'ourgreennation-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600|Source+Serif+Pro:400' );
-	// wp_enqueue_style( 'ourgreennation_fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/font-awesome.min.css' );
-	wp_enqueue_script( 'ourgreennation-fontawesome', 'https://use.fontawesome.com/40a13a40e7.js' );
+	wp_enqueue_style( 'ourgreennation_fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/font-awesome.min.css' );
+	// wp_enqueue_script( 'ourgreennation-fontawesome', 'https://use.fontawesome.com/40a13a40e7.js' );
 
 	// Minified scripts for theme
 	// imagesLoaded.js, fitvids.js, masonry.js, smartmenus.js

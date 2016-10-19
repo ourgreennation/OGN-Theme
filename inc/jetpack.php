@@ -29,7 +29,7 @@ function ourgreennation_jetpack_setup() {
 	add_theme_support( 'jetpack-social-menu' );
 
 	// Add theme support for site logos
-	add_image_size( 'ourgreennation-logo', 200, 200 );
+	// add_image_size( 'ourgreennation-logo', 200, 200 );
 	add_theme_support( 'site-logo', array( 'size' => 'ourgreennation-logo' ) );
 
 }

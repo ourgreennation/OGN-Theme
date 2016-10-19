@@ -351,7 +351,7 @@ function ourgreennation_page_content() {
 
 	        		ourgreennation_content_recent_articles();
 
-	        		echo '<a href="/activity/" class="button button-green-text home-section-button">View More</a>';
+	        		echo '<a href="/category/all-posts/" class="button button-green-text home-section-button">View More</a>';
 
 	        	echo '</div></section>';
 

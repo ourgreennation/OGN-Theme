@@ -229,6 +229,7 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
+  margin-bottom: 1px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -260,6 +261,10 @@ input[type="search"]::-webkit-search-decoration {
 .search .site-content .search-form input[type="submit"]
 .error404 .site-content .search-form input[type="submit"] {
   background: #6F953D;
+}
+
+body .gform_wrapper.gf_browser_chrome .gform_body {
+  width: 100%;
 }
 
 fieldset {
@@ -600,7 +605,12 @@ input[type="submit"]:focus {
 
 .home-page .button {
   font-size: 1.2em;
-  min-width: 200px;
+  min-width: 160px;
+}
+
+.about-page .button {
+  min-width: 160px;
+  margin: 10px;
 }
 
 .button.button-grey {
@@ -727,6 +737,10 @@ hr {
   border-bottom: 2px solid #EAEAEB;
 }
 
+.home .site-header-wrap {
+  border-bottom: 2px solid #6F9539;
+}
+
 .main-nav-scrolled {
   position: fixed;
   top: 0;
@@ -793,6 +807,7 @@ hr {
   text-align: left;
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
+  max-width: 180px;
 }
 .site-menu .search-form input::-webkit-input-placeholder {
   color: #231F20;
@@ -1493,18 +1508,17 @@ body {
   text-align: center;
   line-height: 1.3em;
   font-size: 1.5em;
+  font-family: 'Source Serif Pro', serif;
 }
 
-.panel .entry-title a,
-.panel .entry-title a:visited {
+.panel .entry-title a {
   display: inline-block;
   color: #222;
   padding-bottom: 5px;
-  border-bottom: 2px solid #EAEAEB;
+  border-bottom: 2px solid #6F953D;
 }
-
 .panel .entry-title a:hover {
-  color: #b2d234;
+  color: #6F953D;
 }
 
 .panel p {
@@ -1693,7 +1707,7 @@ body {
 
 .background-video.single-column {
   padding: 0 0 1px 0;
-  border-bottom: 2px solid #EAEAEB;
+  border-bottom: 2px solid #6F9539;
 }
 
 .background-video-container {
@@ -2210,10 +2224,11 @@ a.bp-title-button:active,
 .buddypress #buddypress ul.button-nav li a:focus,
 .buddypress #buddypress .generic-button a:focus,
 .buddypress #buddypress .comment-reply-link:focus,
-a.bp-title-button:focus {
-  background-color: #a9c47f;
+a.bp-title-button:focus,
+.buddypress #buddypress ul.button-nav li.current a {
+  background-color: #6F953D;
   color: #FFFFFF !important;
-  border: 2px solid #a9c47f;
+  border: 2px solid #6F953D;
   box-shadow: none;
 }
 
@@ -2288,6 +2303,7 @@ a.bp-title-button:focus {
   border: 2px solid #f2f2f2;
   padding: 15px;
   margin: 1em 0;
+  overflow: visible;
 }
 
 #buddypress ul.item-list li div.action {
@@ -2749,11 +2765,6 @@ a.bp-title-button:focus {
   font-family: dashicons;
 }
 
-.about-page .button {
-  min-width: 200px;
-  margin: 10px;
-}
-
 .contributor-guideline-page hr {
   margin: 80px auto 160px;
 }
@@ -2789,8 +2800,23 @@ body .contributor-form_wrapper.gform_wrapper ul li.gfield {
   margin: 1em 0;
 }
 
+body .contributor-form_wrapper.gform_wrapper .top_label li.gfield.gf_left_half,
+body .contributor-form_wrapper.gform_wrapper .top_label li.gfield.gf_right_half {
+  border: none;
+  padding: 0;
+}
+body .contributor-form_wrapper.gform_wrapper .top_label li.gfield.gf_left_half {
+  padding-right: 10px;
+}
+
 .contributor-form_wrapper.gform_wrapper .top_label .gfield_label {
   display: none;
+}
+
+body .contributor-form_wrapper.gform_wrapper .top_label li.gfield.gf_left_half .gfield_label,
+body .contributor-form_wrapper.gform_wrapper .top_label li.gfield.gf_right_half .gfield_label {
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 body .contributor-form_wrapper.gform_wrapper .top_label div.ginput_container {
@@ -2964,6 +2990,15 @@ body .contributor-form_wrapper.gform_wrapper .top_label div.ginput_container {
 
   .widget-area .widget:nth-child(2n+1) {
     padding-right: 20px;
+  }
+
+  .site-menu .site-menu-navigation {
+    margin: 8px 0;
+  }
+
+  .site-menu .search-form {
+    margin: 10px 0;
+    max-width: 160px;
   }
 
 }
