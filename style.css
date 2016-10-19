@@ -1508,6 +1508,7 @@ body {
   text-align: center;
   line-height: 1.3em;
   font-size: 1.5em;
+  margin-bottom: 0;
   font-family: 'Source Serif Pro', serif;
 }
 
@@ -1515,10 +1516,17 @@ body {
   display: inline-block;
   color: #222;
   padding-bottom: 5px;
-  border-bottom: 2px solid #6F953D;
 }
 .panel .entry-title a:hover {
   color: #6F953D;
+}
+
+.panel .entry-author {
+  display: block;
+  color: #66676A;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #6F953D;
+  text-align: center;
 }
 
 .panel p {
