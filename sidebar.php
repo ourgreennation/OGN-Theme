@@ -27,12 +27,17 @@ echo '<aside id="secondary" class="widget-area" role="complementary">';
 	} elseif( bp_is_user_profile() || bp_is_member() ) {
 		// If we're on a BuddyPress profile page
 		dynamic_sidebar( 'sidebar-buddypress-profile' );
+	} elseif( bp_is_members_component() ) {
+		// If we're on a BuddyPress activity page
+		dynamic_sidebar( 'sidebar-buddypress-members' );
 	} elseif( bp_is_user_activity() ) {
 		// If we're on a BuddyPress activity page
 		dynamic_sidebar( 'sidebar-buddypress-activity' );
-	} elseif( tribe_is_event() ) {
-		// If we're on a Event page
-		dynamic_sidebar( 'sidebar-events' );
+	} elseif( function_exists( 'tribe_is_event' ) ) {
+		if( tribe_is_event() ) {
+			// If we're on a Event page
+			dynamic_sidebar( 'sidebar-events' );
+		}
 	} else {
 		// For any other page
 		dynamic_sidebar( 'sidebar-1' );

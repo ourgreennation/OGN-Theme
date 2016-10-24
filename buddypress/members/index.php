@@ -46,27 +46,17 @@ do_action( 'bp_before_directory_members_page' ); ?>
 	 */
 	do_action( 'bp_before_directory_members_tabs' ); ?>
 
-	<form action="" method="post" id="members-directory-form" class="dir-form">
+	<!-- <form action="" method="post" id="members-directory-form" class="dir-form"> -->
 
 		<div class="item-list-tabs" role="navigation">
 			<ul>
-				<li class="selected" id="members-all"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'All Members %s', 'buddypress' ), '<span>' . bp_get_total_member_count() . '</span>' ); ?></a></li>
+				<li class="selected" id="members-all"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'All Members', 'our-green-nation' ) ); ?></a></li>
 
 				<?php if ( is_user_logged_in() && bp_is_active( 'friends' ) && bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
-					<li id="members-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/'; ?>"><?php printf( __( 'My Friends %s', 'buddypress' ), '<span>' . bp_get_total_friend_count( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
+					<li id="members-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/'; ?>"><?php printf( __( 'My Friends', 'our-green-nation' ) ); ?></a></li>
 				<?php endif; ?>
 
 				<?php
-				// Get contributors to get a total count
-				$contributor_query = new WP_User_Query( array( 'role' => 'ogn_contributor' ) );
-
-				// Get total number of contributors
-				$contributor_count = $contributor_query->get_total();
-
-				// echo '<li id="members-contributors">';
-				// 	echo '<a href="' . bp_get_members_directory_permalink() . 'type/contributors/"> ' . __( 'Contributors', 'our-green-nation' ) . '<span>' . $contributor_count . '</span></a>';
-				// echo '</li>';
-
 				/**
 				 * Fires inside the members directory member types.
 				 *
@@ -90,13 +80,13 @@ do_action( 'bp_before_directory_members_page' ); ?>
 				do_action( 'bp_members_directory_member_sub_types' ); ?>
 
 				<li id="members-order-select" class="last filter">
-					<label for="members-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
+					<label for="members-order-by"><?php _e( 'Order By:', 'our-green-nation' ); ?></label>
 					<select id="members-order-by">
-						<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
-						<option value="newest"><?php _e( 'Newest Registered', 'buddypress' ); ?></option>
+						<option value="active"><?php _e( 'Last Active', 'our-green-nation' ); ?></option>
+						<option value="newest"><?php _e( 'Newest Registered', 'our-green-nation' ); ?></option>
 
 						<?php if ( bp_is_active( 'xprofile' ) ) : ?>
-							<option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ); ?></option>
+							<option value="alphabetical"><?php _e( 'Alphabetical', 'our-green-nation' ); ?></option>
 						<?php endif; ?>
 
 						<?php
@@ -136,7 +126,7 @@ do_action( 'bp_before_directory_members_page' ); ?>
 		 */
 		do_action( 'bp_after_directory_members_content' ); ?>
 
-	</form><!-- #members-directory-form -->
+	<!-- </form>#members-directory-form -->
 
 	<?php
 

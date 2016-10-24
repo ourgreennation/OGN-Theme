@@ -398,6 +398,8 @@ textarea {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -734,11 +736,11 @@ hr {
   position: relative;
   background: #FFFFFF;
   width: 100%;
-  border-bottom: 2px solid #EAEAEB;
+  border-bottom: 1px solid #EAEAEB;
 }
 
 .home .site-header-wrap {
-  border-bottom: 2px solid #6F9539;
+  border-bottom: 1px solid #6F9539;
 }
 
 .main-nav-scrolled {
@@ -1006,10 +1008,13 @@ table {
 .main-navigation a:visited {
   display: block;
   text-decoration: none;
-  color: #231F20;
+  color: #5e5e5e;
   text-transform: uppercase;
-  font-size: 0.9em;
+  font-size: 1.1em;
+  letter-spacing: -1px;
   font-weight: 600;
+  padding: 18px .75em;
+  line-height: 1.5em;
 }
 
 .main-navigation a:hover,
@@ -1715,7 +1720,7 @@ body {
 
 .background-video.single-column {
   padding: 0 0 1px 0;
-  border-bottom: 2px solid #6F9539;
+  border-bottom: 1px solid #6F9539;
 }
 
 .background-video-container {
@@ -1750,7 +1755,7 @@ body {
 
 .page-builder .entry-content .background-video .wrap {
   position: absolute;
-  top: 50%;
+  top: 53%;
   width: 100%;
   max-width: 100%;
   z-index: 3;
@@ -1771,8 +1776,12 @@ body {
   font-size: 2.5em;
 }
 
-.full-background .button {
+/*.full-background .button {
   font-size: 1.3em;
+}*/
+
+.recent-articles {
+  border-bottom: 1px solid #6F9539;
 }
 
 .recent-articles-inner {
@@ -1995,7 +2004,8 @@ body {
 }
 
 .buddypress-groups {
-  border-bottom: 2px solid #EAEAEB;
+  border-top: 1px solid #6F9539;
+  border-bottom: 1px solid #6F9539;
 }
 
 .buddypress-groups .avatar {
@@ -2621,12 +2631,18 @@ a.bp-title-button:focus,
 .business-directory ul.wpbdp-categories,
 .business-directory ul.wpbdp-categories ul {
   list-style: circle;
+  column-count: 2;
+  -webkit-column-break-inside: avoid; /* Chrome, Safari */
+  page-break-inside: avoid;           /* Theoretically FF 20+ */
+  break-inside: avoid-column;         /* IE 11 */
 }
 
 .business-directory ul.wpbdp-categories li {
   line-height: 1.5em;
   margin-bottom: 20px;
   font-weight: 600;
+  float: none;
+  width: 100%;
 }
 
 .business-directory ul.wpbdp-categories li ul.children li {
@@ -2636,6 +2652,7 @@ a.bp-title-button:focus,
 
 .business-directory ul.wpbdp-categories .children {
   margin-left: 0;
+  column-count: 1;
 }
 
 /*.business-directory ul.wpbdp-categories li:before,
@@ -2651,6 +2668,11 @@ a.bp-title-button:focus,
 
 .business-directory .wpbdp-map.with-directions {
   float: right;
+  width: calc(75% - 180px);
+}
+
+.business-directory .wpbdp-map-directions-config {
+  margin-left: 160px;
 }
 
 

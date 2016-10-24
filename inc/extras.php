@@ -24,7 +24,7 @@ function ourgreennation_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	if( get_field( 'use_page_builder' ) ) {
+	if( get_field( 'use_page_builder' ) && is_page() ) {
 		$classes[] = 'page-builder';
 	}
 
@@ -781,6 +781,8 @@ tribe_etp_move_tickets_purchase_form();
 function ourgreennation_rsvp_tickets_placement( $content ) {
 
 	if( class_exists( 'Tribe__Tickets__Tickets' ) ) {
+
+		$out = '';
 
 		ob_start();
 		$ticket_class = Tribe__Tickets__RSVP::get_instance();
