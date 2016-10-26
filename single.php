@@ -17,7 +17,18 @@ get_header(); ?>
 
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
-			echo '<h3>' . get_field( 'hook' ) . '</h3>';
+			if( get_field( 'hook' ) ) {
+				echo '<h3>' . get_field( 'hook' ) . '</h3>';
+			}
+
+			echo '<div class="post-meta before-content">';
+				if( is_multi_author() ){
+					$author_link = '<a href="' . get_author_posts_url( get_the_author_meta('ID') ) . '">' . get_the_author() . '</a>';
+					echo '<span class="author">' . sprintf( __('Posted by %s on %s','our-green-nation' ), $author_link, get_the_date() ) . '</span>';
+				} else {
+					echo '<span class="author">' . get_the_date() . '</span>';
+				}
+			echo '</div><!--/.post-meta-->';
 
 			the_post_thumbnail( 'large' );
 
