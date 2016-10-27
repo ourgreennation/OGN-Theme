@@ -24,6 +24,11 @@ function ourgreennation_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Adds a book class to books
+	if ( is_singular( 'ogn_book' ) ) {
+		$classes[] = 'book';
+	}
+
 	if( get_field( 'use_page_builder' ) && is_page() ) {
 		$classes[] = 'page-builder';
 	}
@@ -794,5 +799,26 @@ function ourgreennation_rsvp_tickets_placement( $content ) {
 	return $content . $out;
 }
 add_filter( 'the_content', 'ourgreennation_rsvp_tickets_placement', 12 );
+
+
+// Create shortcode to link to logged in user profile page BuddyPress
+add_shortcode( 'OGN-Current-User', 'ourgreennation_current_user_link_shortcode' );
+function ourgreennation_current_user_link_shortcode( $atts ) {
+
+	$atts = shortcode_atts( array(
+		'text'		=> 'My Activity',
+	), $atts );
+
+	if( !is_user_logged_in() )
+		return '';
+
+	$link = home_url( bp_core_get_username( get_current_user_id() ) . '/profile/' );
+
+	return "<a href='". esc_attr( $link ) ."'>" . $atts['text'] . "</a>";
+
+}
+
+
+
 
 

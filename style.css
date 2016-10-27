@@ -1417,6 +1417,9 @@ body {
   display: inline-block;
 }
 
+.book .entry-title {
+  margin-bottom: 0;
+}
 
 /*--------------------------------------------------------------
 ## Masonry
@@ -2450,6 +2453,15 @@ a.bp-title-button:focus,
 
 .registration .existing-account {
   font-weight: 600;
+}
+
+.buddypress.books #buddypress div.item-list-tabs#subnav,
+.buddypress.solution-center #buddypress div.item-list-tabs#subnav {
+  display: none;
+}
+
+.buddypress.books #buddypress #item-body {
+  margin-top: 15px;
 }
 
 
