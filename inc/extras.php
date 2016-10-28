@@ -812,9 +812,9 @@ function ourgreennation_current_user_link_shortcode( $atts ) {
 	if( !is_user_logged_in() )
 		return '';
 
-	$link = home_url( bp_core_get_username( get_current_user_id() ) . '/profile/' );
+	$link = home_url( 'members/' . bp_core_get_username( get_current_user_id() ) . '/profile/' );
 
-	return "<a href='". esc_attr( $link ) ."'>" . $atts['text'] . "</a>";
+	return '<li class="fa fa-li fa-user-circle"><a href="' . esc_attr( $link ) . '"">' . $atts['text'] . '</a></li>';
 
 }
 

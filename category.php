@@ -7,7 +7,54 @@
  * @package Our_Green_Nation
  */
 
-get_header(); ?>
+get_header();
+
+add_filter( 'get_the_archive_title', 'ourgreennation_category_icons' );
+function ourgreennation_category_icons() {
+
+	// Get the current category
+	$current_cat = get_query_var('cat');
+	$category = get_category( $current_cat );
+
+	// Parent categories
+	$career_cat = 15;
+	$community_cat = 3;
+	$creative_cat = 44;
+	$fitness_cat = 28;
+	$food_cat = 10;
+	$health_cat = 36;
+	$house_cat = 117;
+	$mindfulness_cat = 11;
+	$relationship_cat = 7;
+	$selfcare_cat = 66;
+
+
+	if( is_category( $career_cat ) || cat_is_ancestor_of( $career_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_career.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $community_cat ) || cat_is_ancestor_of( $community_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_community.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $creative_cat ) || cat_is_ancestor_of( $creative_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_creative.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $fitness_cat ) || cat_is_ancestor_of( $fitness_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_fitness.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $food_cat ) || cat_is_ancestor_of( $food_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_food.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $health_cat ) || cat_is_ancestor_of( $health_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_health.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $house_cat ) || cat_is_ancestor_of( $house_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_house.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $mindfulness_cat ) || cat_is_ancestor_of( $mindfulness_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_mindfulness.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $relationship_cat ) || cat_is_ancestor_of( $relationship_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_relationship.jpg" class="category-icon" /> ' . $category->name;
+	} elseif( is_category( $selfcare_cat ) || cat_is_ancestor_of( $selfcare_cat, $current_cat ) ) {
+		return '<img src="' . get_stylesheet_directory_uri() . '/assets/img/icon_selfcare.jpg" class="category-icon" /> ' . $category->name;
+	} else {
+		return;
+	}
+
+}
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -27,7 +74,7 @@ get_header(); ?>
 						$children = get_categories( array( 'child_of' => $current_cat,'hide_empty' => 0 ) );
 						if ( count( $children ) >= 1 ){
 							$cat_args = array(
-								'show_option_none' => __( 'Subcategories' ),
+								'show_option_none' => __( 'Subcategories', 'our-green-nation' ),
 	 							'hierarchical' => 1,
 	 							'depth'	=> 0,
 	 							'child_of' => $current_cat,
@@ -36,7 +83,7 @@ get_header(); ?>
 
 							// Change option_none title for subcategories
 							if ( $category->category_parent > 0 ){
-								$cat_args['show_option_none'] = __( 'Subcategories' );
+								$cat_args['show_option_none'] = __( 'Subcategories', 'our-green-nation' );
 							}
 
 
