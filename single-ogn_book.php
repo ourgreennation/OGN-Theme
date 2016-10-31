@@ -26,7 +26,7 @@ get_header(); ?>
 				the_title( '<h1 class="entry-title">', '</h1>' );
 
 				echo '<div class="post-meta before-content">';
-					$author_link = '<a href="' . get_author_posts_url( get_the_author_meta('ID') ) . '">' . get_the_author() . '</a>';
+					$author_link = bp_core_get_userlink( get_the_author_id() );
 					echo '<span class="author">' . $author_link . '</span>';
 				echo '</div><!--/.post-meta-->';
 

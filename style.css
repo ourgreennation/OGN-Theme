@@ -1400,10 +1400,23 @@ body {
 }
 
 .entry-title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Serif Pro', serif;
   font-size: 2em;
-  margin: 0 0 1em 0;
+  margin: 0;
   font-weight: normal;
+}
+
+.single .entry-title {
+  margin-bottom: 0;
+}
+
+.book-title.entry-title,
+.solution-title.entry-title {
+  font-size: 1.5em;
+}
+
+.post-meta.before-content {
+  margin-bottom: 1.5em;
 }
 
 .post-tags {
@@ -1947,7 +1960,7 @@ body {
 }
 
 #buddypress-carousel .panel {
-  min-height: 330px;
+  min-height: 250px;
 }
 
 #events-carousel .panel {
@@ -2345,7 +2358,7 @@ a.bp-title-button:focus,
 #buddypress div.activity-comments form div.ac-reply-content a,
 #buddypress .activity-list .activity-content .activity-header,
 #buddypress .activity-list .activity-content .comment-header {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.5em;
   color: #231F20;
@@ -2470,6 +2483,13 @@ a.bp-title-button:focus,
 .buddypress.books #buddypress #item-body {
   margin-top: 15px;
 }
+
+.buddypress.books #buddypress .books-list li,
+.buddypress.solution-center #buddypress .solution-center-list li {
+  overflow: hidden;
+}
+
+
 
 
 
@@ -2743,7 +2763,7 @@ a.bp-title-button:focus,
 }
 
 .widget .tribe-mini-calendar-event .list-date {
-  max-width: 40px;
+  max-width: 42px;
 }
 
 #tribe-events #tribe-bar-form .tribe-bar-submit input[type=submit] {

@@ -5,7 +5,7 @@
  * @package Our_Green_Nation
  */
 ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<?php ourgreennation_before_post(); ?>
 
