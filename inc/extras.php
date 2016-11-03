@@ -798,7 +798,7 @@ function ourgreennation_rsvp_tickets_placement( $content ) {
 
 	return $content . $out;
 }
-add_filter( 'the_content', 'ourgreennation_rsvp_tickets_placement', 12 );
+// add_filter( 'the_content', 'ourgreennation_rsvp_tickets_placement', 12 );
 
 
 // Create shortcode to link to logged in user profile page BuddyPress

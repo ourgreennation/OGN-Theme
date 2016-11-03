@@ -2814,6 +2814,10 @@ a.bp-title-button:focus,
   margin-bottom: 0;
 }
 
+.single-tribe_events .tribe-events-sub-nav li a {
+  background-color: transparent;
+}
+
 /*--------------------------------------------------------------
 ## Misc Plugins
 --------------------------------------------------------------*/
