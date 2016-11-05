@@ -15,22 +15,25 @@
  */
 function ourgreennation_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
 
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}
+	if( !is_admin() ) {
+		if ( is_multi_author() ) {
+			$classes[] = 'group-blog';
+		}
 
-	// Adds a book class to books
-	if ( is_singular( 'ogn_book' ) ) {
-		$classes[] = 'book';
-	}
+		// Adds a class of hfeed to non-singular pages.
+		if ( ! is_singular() ) {
+			$classes[] = 'hfeed';
+		}
 
-	if( get_field( 'use_page_builder' ) && is_page() ) {
-		$classes[] = 'page-builder';
+		// Adds a book class to books
+		if ( is_singular( 'ogn_book' ) ) {
+			$classes[] = 'book';
+		}
+
+		if( get_field( 'use_page_builder' ) && is_page() ) {
+			$classes[] = 'page-builder';
+		}
 	}
 
 	return $classes;
@@ -125,7 +128,7 @@ function ourgreennation_embed_youtube_video( $oembed ){
 		// } else {
 		// 	$width  = apply_filters( 'ourgreennation_archive_item_width', '50%' );
 		// }
-	 	$width  = apply_filters( 'ourgreennation_item_width', '380' );
+	 	$width  = apply_filters( 'ourgreennation_item_width', '360' );
 		$height = ($width / 9 * 6);
 
 		if( !empty( $matches[1][0] ) ){
@@ -222,7 +225,7 @@ function ourgreennation_modify_height_width_atts($matches) {
 	$init_width = 0;
 	$init_height = 0;
 
-	$target_width = apply_filters( 'ourgreennation_item_width', 380 );
+	$target_width = apply_filters( 'ourgreennation_item_width', 360 );
 
 	if(strtolower($key1) == 'width') {
 		$init_width = $val1;
@@ -299,6 +302,41 @@ function ourgreennation_get_featured_media(){
 	return '<a href="' . get_permalink() . '"><img src="' . ourgreennation_get_first_image() . '" alt=""></a>';
 
 }
+
+
+/**
+ * Update the image sizes attribute for responsive images
+ */
+function ourgreennation_content_image_sizes_attr( $sizes, $size ) {
+
+    $width = $size[0];
+    // All pages that aren't single posts
+    if ( !is_single() ) {
+    	// If the image is larger than 360px, return the 360px sized image
+        if ( $width >= 360 ) {
+            return '(max-width: 100%) 360px, 768px';
+        }
+        // If the image is smaller than 360px return the full-sized image
+        return '(max-width: ' . $width . 'px) 100vw, ' . $width . 'px';
+    }
+
+    // Everywhere else
+    return '(max-width: ' . $width . 'px) 100vw, ' . $width . 'px';
+}
+add_filter( 'wp_calculate_image_sizes', 'ourgreennation_content_image_sizes_attr', 10 , 2 );
+
+function ourgreennation_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+    //Calculate Image Sizes by type and breakpoint
+    //Header Images
+    if ( $size === 'post-thumbnail' ) {
+        $attr['sizes'] = '(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 730px';
+    //Blog Thumbnails
+    } else if ( $size === 'medium-large' ) {
+        $attr['sizes'] = '(max-width: 992px) 200px, (max-width: 1200px) 127px, 160px';
+    }
+    return $attr;
+}
+// add_filter( 'wp_get_attachment_image_attributes', 'ourgreennation_post_thumbnail_sizes_attr', 10 , 3 );
 
 
 /**
