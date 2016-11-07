@@ -33,16 +33,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 ## SmartMenu
 # Links
 # Layout
-	## Posts
+  ## Posts
   ## Masonry
   ## Pages
-	## Archives
+  ## Archives
 # Comments
 # Widgets
 # Page Builder
 # Infinite scroll
 # Media
-	## Galleries
+  ## Galleries
 # Plugins
   ## BuddyPress
   ## WP Ultimate Recipe
@@ -1044,26 +1044,11 @@ table {
 .footer-social a {
   font-size: 0;
 }
+
 .footer-social a .fa {
   font-size: 20px;
 }
 
-/* Small menu. */
-/*.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none;
-  }
-
-  .main-navigation ul,
-  .footer-navigation ul {
-    display: block;
-  }
-}*/
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -1805,6 +1790,11 @@ body {
 
 .recent-articles {
   border-bottom: 1px solid #6F9539;
+}
+
+.recent-articles .hentry,
+.recent-articles .hentry img {
+  max-width: 360px;
 }
 
 .recent-articles-inner {
@@ -2779,6 +2769,7 @@ a.bp-title-button:focus,
 #tribe-events .tribe-events-nav-next a,
 #tribe-events .tribe-events-nav-previous a {
   font-size: 1.5em;
+  background: transparent;
 }
 
 .tribe-link-tickets-message {
