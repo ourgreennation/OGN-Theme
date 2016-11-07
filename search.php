@@ -37,7 +37,19 @@ get_header(); ?>
 
 			else :
 
-				get_template_part( 'components/post/content', 'none' );
+				echo '<article id="post-0" class="post no-results not-found">';
+
+					echo '<header class="entry-header">';
+						echo '<h1 class="entry-title">' . __( 'Nothing Found', 'our-green-nation' ) . '</h1>';
+					echo '</header>';
+
+					echo '<div class="entry-content">';
+
+						echo '<p>' . __( 'Apologies, but no results were found.', 'our-green-nation' ) . '</p>';
+
+					echo '</div><!-- .entry-content -->';
+				echo '</article><!-- #post-0 -->';
+
 
 			endif; ?>
 
