@@ -576,7 +576,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border-radius: 5px;
-  color: #6F953D !important;
+  color: #6F953D;
   background-color: #FFFFFF;
   border: 3px solid #6F953D;
   box-shadow: none;
@@ -589,7 +589,7 @@ a.button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   background-color: #6F953D;
   border: 3px solid #6F953D;
 }
@@ -2213,7 +2213,7 @@ object {
 .buddypress #buddypress .generic-button a,
 .buddypress #buddypress .comment-reply-link,
 a.bp-title-button {
-  color: #6F953D !important;
+  color: #6F953D;
   background-color: #FFFFFF;
   border: 2px solid #6F953D;
   border-radius: 5px;
@@ -2233,7 +2233,7 @@ a.bp-title-button {
 .buddypress #buddypress .generic-button a:hover,
 .buddypress #buddypress .comment-reply-link:hover,
 a.bp-title-button:hover {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   background-color: #6F953D;
   border: 2px solid #6F953D;
   box-shadow: none;
@@ -2258,7 +2258,7 @@ a.bp-title-button:active,
 a.bp-title-button:focus,
 .buddypress #buddypress ul.button-nav li.current a {
   background-color: #6F953D;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   border: 2px solid #6F953D;
   box-shadow: none;
 }
@@ -2279,13 +2279,13 @@ a.bp-title-button:focus,
 .buddypress #buddypress #reply-title small a:active span,
 .buddypress #buddypress .activity-list .activity-meta .react.open span {
   background: none;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 .buddypress #buddypress .activity-list .activity-meta .react.open {
   background-color: #6F953D;
   margin-right: 10px;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   border: 2px solid #6F953D;
 }
 .buddypress #buddypress .activity-list .activity-meta .react {
@@ -2741,6 +2741,10 @@ a.bp-title-button:focus,
   line-height: 1.3em;
 }
 
+.single div.sharedaddy {
+  float: left;
+}
+
 /*--------------------------------------------------------------
 ## The Events Calendar
 --------------------------------------------------------------*/
@@ -2820,6 +2824,11 @@ a.bp-title-button:focus,
   margin-bottom: 20px;
 }
 
+.single .button.reshare {
+  float: right;
+  margin-top: 25px;
+}
+
 
 /*--------------------------------------------------------------
 # Misc
@@ -2890,6 +2899,8 @@ body .contributor-form_wrapper.gform_wrapper .top_label div.ginput_container {
 .contributor-form_wrapper.gform_wrapper .description_above .gfield_description {
   font-size: 1em;
 }
+
+
 
 
 
