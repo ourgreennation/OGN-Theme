@@ -2316,6 +2316,16 @@ a.bp-title-button:focus,
 
 .buddypress #buddypress #item-header-cover-image #item-header-avatar {
   margin-top: 90px;
+  max-width: 25%;
+}
+
+.buddypress #buddypress div#item-header #item-header-cover-image #item-actions {
+  max-width: 25% !important;
+  width: 25%;
+}
+
+.buddypress #buddypress div#item-header #item-header-cover-image #item-actions h2 {
+  font-size: 1rem;
 }
 
 .buddypress #buddypress div#item-header #item-header-cover-image #item-header-content {
@@ -2824,7 +2834,7 @@ a.bp-title-button:focus,
   margin-bottom: 20px;
 }
 
-.single .button.reshare {
+.single .reshare-container {
   float: right;
   margin-top: 25px;
 }
