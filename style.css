@@ -33,16 +33,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 ## SmartMenu
 # Links
 # Layout
-  ## Posts
+	## Posts
   ## Masonry
   ## Pages
-  ## Archives
+	## Archives
 # Comments
 # Widgets
 # Page Builder
 # Infinite scroll
 # Media
-  ## Galleries
+	## Galleries
 # Plugins
   ## BuddyPress
   ## WP Ultimate Recipe
@@ -820,7 +820,7 @@ hr {
 .site-menu .search-form input::-ms-input-placeholder {
   color: #231F20;
 }
-
+/*
 .site-menu .search-form input[type="submit"] {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -839,6 +839,21 @@ hr {
   right: 0;
   position: absolute;
   top: -5px;
+}*/
+.search-form .search-button {
+  border: 0;
+  background: transparent;
+  height: 24px;
+  width: 24px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  color: #231F20;
+  display: inline-block;
+  float: none;
+  overflow: visible;
 }
 
 .login-link {
@@ -1382,6 +1397,9 @@ body {
 
 .buddypress .entry-content {
   margin-top: 0;
+}
+.buddypress.directory .entry-content {
+  margin-top: 3.5em;
 }
 
 .entry-title {
@@ -1954,7 +1972,7 @@ body {
 }
 
 #events-carousel .panel {
-  min-height: 205px;
+  min-height: 225px;
   border: 2px solid #66676A;
 }
 
@@ -2681,12 +2699,14 @@ a.bp-title-button:focus,
   margin-bottom: 20px;
   font-weight: 600;
   float: none;
+  list-style: none;
   width: 100%;
 }
 
 .business-directory ul.wpbdp-categories li ul.children li {
   margin-bottom: 0;
   font-weight: 400;
+  list-style: circle;
 }
 
 .business-directory ul.wpbdp-categories .children {
@@ -2821,6 +2841,14 @@ a.bp-title-button:focus,
 
 .single-tribe_events .tribe-events-sub-nav li a {
   background-color: transparent;
+}
+
+.tribe-events-event-meta .tribe-events-meta-group.tribe-events-meta-group-details {
+  width: 66.6%;
+}
+
+.tribe-events-event-meta .tribe-events-meta-group.tribe-events-meta-group-details dl {
+  columns: 2;
 }
 
 /*--------------------------------------------------------------

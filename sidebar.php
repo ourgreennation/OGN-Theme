@@ -24,7 +24,7 @@ echo '<aside id="secondary" class="widget-area" role="complementary">';
 	} elseif( bp_is_group() || bp_is_user_groups() || bp_is_groups_component() ) {
 		// If we're on a BuddyPress group page
 		dynamic_sidebar( 'sidebar-buddypress-group' );
-	} elseif( bp_is_user_profile() || bp_is_user() ) {
+	} elseif( bp_is_user_profile() || bp_is_member() ) {
 		// If we're on a BuddyPress profile page
 		dynamic_sidebar( 'sidebar-buddypress-profile' );
 	} elseif( bp_is_members_component() ) {

@@ -15,25 +15,22 @@
  */
 function ourgreennation_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
+	}
 
-	if( !is_admin() ) {
-		if ( is_multi_author() ) {
-			$classes[] = 'group-blog';
-		}
+	// Adds a class of hfeed to non-singular pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
 
-		// Adds a class of hfeed to non-singular pages.
-		if ( ! is_singular() ) {
-			$classes[] = 'hfeed';
-		}
+	// Adds a book class to books
+	if ( is_singular( 'ogn_book' ) ) {
+		$classes[] = 'book';
+	}
 
-		// Adds a book class to books
-		if ( is_singular( 'ogn_book' ) ) {
-			$classes[] = 'book';
-		}
-
-		if( get_field( 'use_page_builder' ) && is_page() ) {
-			$classes[] = 'page-builder';
-		}
+	if( get_field( 'use_page_builder' ) && is_page() ) {
+		$classes[] = 'page-builder';
 	}
 
 	return $classes;
@@ -181,23 +178,23 @@ function ourgreennation_get_first_oembed() {
 
 	$html = '';
 
-    foreach ($meta as $key => $value){
-        if (false !== strpos($key, 'oembed')){
+    foreach( $meta as $key => $value ) {
+        if (false !== strpos( $key, 'oembed' ) ) {
 
-			if( ! is_singular() ) { // are we on a single post/page?
+			if( !is_singular() ) { // are we on a single post/page?
 
 				// Grab the HTML we need to extract height and width from
 				$oembed_html = $value[0];
 
-				//echo "String: $string\n\n";
 				$html = $oembed_html;
 
-			    return apply_filters('oembed_html',$html);
+			    return apply_filters( 'oembed_html', $html );
 			    break;
 
 			}
         }
     }
+
 }
 
 /**
@@ -272,7 +269,7 @@ function ourgreennation_get_featured_media(){
 
 	global $post;
 
-	$post_format = get_post_format($post);
+	// $post_format = get_post_format($post);
 
 	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
 	$embeds = get_media_embedded_in_content( $content );
@@ -291,7 +288,7 @@ function ourgreennation_get_featured_media(){
 
 	if( has_post_thumbnail( $post->ID ) ) {
 		// return 'we have a thumbnail';
-		return '<a href="' . get_permalink() . '">' . get_the_post_thumbnail( $post->ID ) . '</a>';
+		return '<a href="' . get_permalink() . '">' . get_the_post_thumbnail( $post->ID, 'post-thumbnail' ) . '</a>';
 	}
 
 	if( isset( $media_html ) ):
@@ -314,7 +311,7 @@ function ourgreennation_content_image_sizes_attr( $sizes, $size ) {
     if ( !is_single() ) {
     	// If the image is larger than 360px, return the 360px sized image
         if ( $width >= 360 ) {
-            return '(max-width: 100%) 360px, 768px';
+            return '(max-width: 100vw) 360px, 768px';
         }
         // If the image is smaller than 360px return the full-sized image
         return '(max-width: ' . $width . 'px) 100vw, ' . $width . 'px';
@@ -337,6 +334,7 @@ function ourgreennation_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
     return $attr;
 }
 // add_filter( 'wp_get_attachment_image_attributes', 'ourgreennation_post_thumbnail_sizes_attr', 10 , 3 );
+
 
 
 /**
@@ -722,7 +720,7 @@ function ourgreennation_string_limit_words( $string, $word_limit, $more = '&nbsp
 function ourgreennation_get_post_excerpt( $word_limit, $more = '&nbsp;&hellip;' ) {
 
 	// Get the string that we'll be working with from the post content
-	$string = ourgreennation_string_limit_words( get_the_content(), $word_limit, $more );
+	$string = ourgreennation_string_limit_words( strip_shortcodes( get_the_content() ), $word_limit, $more );
 
 	// Strip HTML and slashes
 	$post_excerpt = wp_strip_all_tags( wp_unslash( $string ) );

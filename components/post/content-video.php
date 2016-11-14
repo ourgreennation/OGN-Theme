@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying vieo content. Used within any masonry/archive/index template.
+ * The template for displaying video content. Used within any masonry/archive/index template.
  *
  * @package Our_Green_Nation
  */
@@ -16,6 +16,8 @@
 			<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
 			<?php } ?>
+
+			<h4 class="entry-author"><?php the_author_posts_link(); ?></h4>
 
 		<?php ourgreennation_post_excerpt( 20 ); ?>
 
