@@ -865,6 +865,50 @@ function ourgreennation_guide_sidebar_display( $atts ) {
 
 	$link = home_url( 'members/' . bp_core_get_username( get_current_user_id() ) . '/activity/' );
 
+	$menu = '';
+
+	if( is_user_logged_in() ) {
+		$menu .= '<ul class="fa-ul" style="text-transform: uppercase;">';
+			$menu .= '<li class="fa fa-li fa-user-circle"><a href="' . esc_attr( $link ) . '">My Activity</a></li>';
+			$menu .= '<li class="fa fa-li fa-tachometer"><a href="' . get_home_url() . '/activity/">Main Activity Stream</a></li>';
+			$menu .= '<li class="fa fa-li fa-user"><a href="' . get_home_url() . '/members/">Community Directory</a></li>';
+			$menu .= '<li class="fa fa-li fa-users"><a href="' . get_home_url() . '/groups/">Community Groups</a></li>';
+			$menu .= '<li class="fa fa-li fa-calendar"><a href="' . get_home_url() . '/events/">Events</a></li>';
+			$menu .= '<li class="fa fa-li fa-wrench"><a href="' . get_home_url() . '/solutions-center/">Solutions Center</a></li>';
+		$menu .= '</ul>';
+
+		$menu .= '<hr style="color: #BDBBBC; height: 1px;">';
+	}
+
+	$menu .= '<h3 class="widget-title">Helpful Info</h3>';
+	$menu .= '<ul class="fa-ul" style="text-transform: uppercase;">';
+		$menu .= '<li class="fa fa-li fa-heart"><a href="' . get_home_url() . '/about/">Our Mission</a></li>';
+		$menu .= '<li class="fa fa-li fa-question"><a href="' . get_home_url() . '/faqs/">FAQS</a></li>';
+		$menu .= '<li class="fa fa-li fa-flag"><a href="' . get_home_url() . '/member-pledge/">Member Pledge</a></li>';
+		$menu .= '<li class="fa fa-li fa-flag"><a href="' . get_home_url() . '/contributor-pledge/">Contributor Pledge</a></li>';
+		$menu .= '<li class="fa fa-li fa-television"><a href="' . get_home_url() . '/video-tutorials/">Video Tutorials</a></li>';
+		if( is_user_logged_in() ) {
+			$menu .= '<li class="fa fa-li fa-star-o"><a href="' . get_home_url() . '/apply-to-contribute/">Apply to Contribute</a></li>';
+		} else {
+			$menu .= '<li class="fa fa-li fa-star-o"><a href="' . get_home_url() . '/register/">Join Us</a></li>';
+		}
+	$menu .= '</ul>';
+
+	return $menu;
+
+}
+
+
+// Create shortcode to display guide on sidebar
+add_shortcode( 'OGN-Helpful-Info', 'ourgreennation_helpful_info_sidebar_display' );
+function ourgreennation_helpful_info_sidebar_display( $atts ) {
+
+	$atts = shortcode_atts( array(
+		'text'		=> 'My Activity',
+	), $atts );
+
+	$link = home_url( 'members/' . bp_core_get_username( get_current_user_id() ) . '/activity/' );
+
 	$menu = '<ul class="fa-ul" style="text-transform: uppercase;">';
 		if( is_user_logged_in() ) {
 			$menu .= '<li class="fa fa-li fa-user-circle"><a href="' . esc_attr( $link ) . '">My Activity</a></li>';

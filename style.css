@@ -1968,12 +1968,12 @@ body {
 }
 
 #buddypress-carousel .panel {
-  min-height: 250px;
+  min-height: 300px;
 }
 
 #events-carousel .panel {
   min-height: 225px;
-  border: 2px solid #66676A;
+  border: 2px solid #f2f2f2;
 }
 
 #events-carousel img,
@@ -2084,7 +2084,7 @@ body {
 }
 
 .solution-box img {
-  max-width: 90px;
+  max-width: 80px;
 }
 
 .solution-text {
@@ -2395,6 +2395,13 @@ a.bp-title-button:focus,
 #buddypress .acomment-meta a,
 #buddypress a.activity-time-since {
   color: #66676a;
+}
+
+#buddypress .activity-header a:hover,
+#buddypress .comment-meta a:hover,
+#buddypress .acomment-meta a:hover,
+#buddypress a.activity-time-since:hover {
+  color: #6F953D;
 }
 
 #buddypress div.item-list-tabs ul li a span {
@@ -2851,6 +2858,25 @@ a.bp-title-button:focus,
   columns: 2;
 }
 
+.widget.tribe-events-adv-list-widget .tribe-events-title a {
+  font-size: 1em;
+}
+
+#tribe-events .tribe-events-button,
+#tribe-events .tribe-events-button:hover,
+#tribe_events_filters_wrapper input[type=submit],
+.tribe-events-button,
+.tribe-events-button.tribe-active:hover,
+.tribe-events-button.tribe-inactive,
+.tribe-events-button:hover,
+.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-],
+.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a {
+  background-color: #6f953d;
+}
+
+
+
+
 /*--------------------------------------------------------------
 ## Misc Plugins
 --------------------------------------------------------------*/
@@ -3112,6 +3138,15 @@ body .contributor-form_wrapper.gform_wrapper .top_label div.ginput_container {
   .site-menu .search-form {
     margin: 10px 0;
     max-width: 160px;
+  }
+
+  .site-menu .search-form label {
+    float: left;
+    width: calc(100% - 24px);
+  }
+
+  .site-menu .search-form .search-button {
+    float: right;
   }
 
 }

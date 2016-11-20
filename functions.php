@@ -277,6 +277,7 @@ function ourgreennation_scripts() {
 
 	// Global styles for theme
 	wp_enqueue_script( 'ourgreennation-global', get_template_directory_uri() . '/assets/js/global.js', array('jquery', 'ourgreennation-scripts'), '', true );
+	wp_enqueue_style( 'ourgreennation-tribe-pro', get_template_directory_uri() . '/assets/css/tribe-events-pro-full.min.css' );
 
 }
 add_action( 'wp_enqueue_scripts', 'ourgreennation_scripts' );
