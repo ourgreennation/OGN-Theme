@@ -29,7 +29,7 @@ function ourgreennation_body_classes( $classes ) {
 		$classes[] = 'book';
 	}
 
-	if( get_field( 'use_page_builder' ) && is_page() ) {
+	if( function_exists( 'get_field' ) && get_field( 'use_page_builder' ) && is_page() ) {
 		$classes[] = 'page-builder';
 	}
 

@@ -17,7 +17,7 @@ get_header(); ?>
 
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
-			if( get_field( 'hook' ) ) {
+			if( function_exists( 'get_field' ) && get_field( 'hook' ) ) {
 				echo '<h3>' . get_field( 'hook' ) . '</h3>';
 			}
 

@@ -357,3 +357,27 @@ require get_template_directory() . '/inc/layout-structures.php';
  * Load Temporary Functions
  */
 require get_template_directory() . '/inc/temporary.php';
+
+
+
+
+
+
+// Defer Javascripts
+// Defer jQuery Parsing using the HTML5 defer property
+function defer_parsing_of_js ( $url ) {
+	if ( FALSE === strpos( $url, '.js' ) ) return $url;
+	if ( strpos( $url, 'jquery.js' ) ) return $url;
+	return "$url' defer ";
+}
+add_filter( 'clean_url', 'defer_parsing_of_js', 20, 1 );
+
+
+function _remove_script_version( $src ){
+	$parts = explode( '?ver', $src );
+	return $parts[0];
+}
+add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
+
+

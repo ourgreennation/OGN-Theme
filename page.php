@@ -21,7 +21,7 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 
 				// Hide content and load page builder scripts if selected for this page
-				if( get_field( 'use_page_builder' ) ) {
+				if( function_exists( 'get_field' ) && get_field( 'use_page_builder' ) ) {
 
 					get_template_part( 'components/page/content', 'page-builder' );
 

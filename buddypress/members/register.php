@@ -6,6 +6,14 @@
  * @subpackage bp-legacy
  */
 
+// // define the bp_modify_page_title callback 
+// function ourgreennation_register_title_change( $new_title, $title = '', $sep = '', $seplocation = 'right' ) {
+// 	$new_title = 'Join Us';
+// 	return $new_title;
+// }
+// add_filter( 'bp_modify_page_title', 'ourgreennation_register_title_change', 5, 4 );
+
+
 ?>
 
 <div id="buddypress">
@@ -56,7 +64,11 @@
 			/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
 			do_action( 'template_notices' ); ?>
 
-			<p class="existing-account"><?php _e( 'Do you already have an account? <a href="/login/">Login here</a>.', 'our-green-nation' ); ?></p>
+			<h1 class="entry-title join-title">Join Us</h1>
+
+			<p class="existing-account"><?php _e( 'Do you already have an account? <a class="button" href="/login/">Login here</a>', 'our-green-nation' ); ?></p>
+
+			<h2>Create an Account</h2>
 
 			<?php
 
@@ -65,7 +77,8 @@
 			 *
 			 * @since 1.1.0
 			 */
-			do_action( 'bp_before_account_details_fields' ); ?>
+			// Disabled to stop Social Login
+			// do_action( 'bp_before_account_details_fields' ); ?>
 
 			<div class="register-section" id="basic-details-section">
 
