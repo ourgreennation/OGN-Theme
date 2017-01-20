@@ -54,8 +54,13 @@ add_action( 'wp_enqueue_scripts', 'onesocial_child_theme_scripts_styles', 9999 )
 
 /****************************** CUSTOM FUNCTIONS ******************************/
 
-// Add your own custom functions here
+// Common 
 
-
+// Groups
+if ( ! is_admin() ) {
+  require_once get_stylesheet_directory() . '/includes/groups/groups-customizations.php';
+  $groups = new Lift\OGN\Theme\Groups;
+  $groups->register_hooks();
+}
 
 ?>
