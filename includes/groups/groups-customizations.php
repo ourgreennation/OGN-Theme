@@ -37,7 +37,7 @@ final class Groups {
 	 * @uses  wp_login_url()
 	 * @uses  get_permalink()
 	 * @uses  get_queried_object_id()
-	 * 
+	 *
 	 * @since  v1.2.0
 	 * @return void
 	 */

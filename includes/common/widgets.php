@@ -10,15 +10,26 @@ namespace Lift\OGN\Theme;
 
 /**
  * Class: Widgets
- * *
+ *
  * @since  v1.2.0
  */
 final class Widgets {
 
+	/**
+	 * Widget IDs added
+	 *
+	 * @var array|null
+	 */
 	protected $added_widget_ids;
 
+	/**
+	 * Constructor
+	 *
+	 * @return  Widgets Instance of self
+	 */
 	public function __construct() {
 		$this->added_widget_ids = array();
+		return $this;
 	}
 
 	/**
@@ -31,6 +42,12 @@ final class Widgets {
 		array_push( $this->added_widget_ids, $this->register_not_logged_sidebar() );
 	}
 
+	/**
+	 * Register Not Logged In Widget Area
+	 *
+	 * @since  v1.2.0
+	 * @return int Widget ID
+	 */
 	public function register_not_logged_sidebar() {
 		return register_sidebar( array(
 			'name'          => esc_html__( 'Not Logged In - Global', 'our-green-nation' ),

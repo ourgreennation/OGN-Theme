@@ -65,16 +65,16 @@ final class Posts {
 
 			// If a user has no friends, hide that button.
 			if ( ! $has_friends ) {
-				$li = '<li class="reshare-activity reshare-friend">';
+				$element = '<li class="reshare-activity reshare-friend">';
 				$hide = '<li class="reshare-activity reshare-friend" style="display:none;">';
-				$reshare = str_replace( $li, $hide, $reshare );
+				$reshare = str_replace( $element, $hide, $reshare );
 			}
 
 			// If a user isn't in a group, hide that button.
 			if ( ! $in_group ) {
-				$li = '<li class="reshare-activity reshare-group">';
+				$element = '<li class="reshare-activity reshare-group">';
 				$hide = '<li class="reshare-activity reshare-group" style="display:none;">';
-				$reshare = str_replace( $li, $hide, $reshare );
+				$reshare = str_replace( $element, $hide, $reshare );
 			}
 
 			// Add reshare button, modified if a condition is met, otherwise as is.
@@ -95,7 +95,7 @@ final class Posts {
 	 *                               the value it was passed.
 	 */
 	public function page_comments( $is_open, $post ) {
-		if ( is_page() ) {
+		if ( is_page( $post ) ) {
 			return false;
 		}
 		return $is_open;

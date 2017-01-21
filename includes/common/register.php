@@ -42,5 +42,5 @@ final class Register {
 			</a>
 		</div>
 		<?php
-	}	
+	}
 }
