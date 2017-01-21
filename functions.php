@@ -54,16 +54,22 @@ add_action( 'wp_enqueue_scripts', 'onesocial_child_theme_scripts_styles', 9999 )
 
 /****************************** CUSTOM FUNCTIONS ******************************/
 
-// Common
+// Common Customizations
+require_once get_stylesheet_directory() . '/includes/common/widgets.php';
+require_once get_stylesheet_directory() . '/includes/common/register.php';
+$widgets = new Lift\OGN\Theme\Widgets;
+$widgets->register_widgets();
+$register = new Lift\OGN\Theme\Register;
+$register->register_hooks();
 
-// Groups
+// Groups Customizations
 if ( ! is_admin() ) {
   require_once get_stylesheet_directory() . '/includes/groups/groups-customizations.php';
   $groups = new Lift\OGN\Theme\Groups;
   $groups->register_hooks();
 }
 
-// Single Posts
+// Single Posts Customizations
 if ( ! is_admin() ) {
   require_once get_stylesheet_directory() . '/includes/posts/posts-customizations.php';
   $posts = new Lift\OGN\Theme\Posts;
