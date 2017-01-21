@@ -11,12 +11,10 @@ test:
   override:
     - phpcs --standard=phpcs.ruleset.xml includes/
   post:
-    - mkdir ~/deploy
-    - cp -R ~/ogn-theme/ ~/deploy
-    - rm -rf ~/deploy/.git
+    - rm -rf .git
 
 deployment:
   deploy:
     branch: master
     commands:
-      - rsync -avz -e 'ssh -p 18765' --progress ~/deploy/ leyan503@77.104.152.91:/home/leyan503/public_html/wp-content/themes/onesocial-child
+      - rsync -avz -e 'ssh -p 18765' --progress ./ leyan503@77.104.152.91:/home/leyan503/public_html/wp-content/themes/onesocial-child
