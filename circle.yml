@@ -12,7 +12,7 @@ test:
     - phpcs --standard=phpcs.ruleset.xml includes/
   post:
     - mkdir ~/deploy
-    - cp -R ~/ogn-theme ~/deploy
+    - cp -R ~/ogn-theme/ ~/deploy
     - rm -rf ~/deploy/.git
 
 deployment:
