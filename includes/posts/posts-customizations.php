@@ -25,6 +25,7 @@ final class Posts {
 	 */
 	public function register_hooks() {
 		add_action( 'wp', array( $this, 'fix_obm_share' ) );
+		add_filter( 'comments_open', array( $this, 'page_comments' ) );
 	}
 
 	/**
@@ -82,5 +83,21 @@ final class Posts {
 
 		// Yield the content with a reshare button if a user can share to either a freind or group.
 		return $content;
+	}
+
+	/**
+	 * Page Comments
+	 *
+	 * @since  v1.2.0
+	 * @param  bool         $is_open Whether the comments are open or closed.
+	 * @param  int|\WP_Post $post    Post ID or WP_Post object.
+	 * @return bool                  False if the current query is for a page. Otherwise returns
+	 *                               the value it was passed.
+	 */
+	public function page_comments( $is_open, $post ) {
+		if ( is_page() ) {
+			return false;
+		}
+		return $is_open;
 	}
 }
