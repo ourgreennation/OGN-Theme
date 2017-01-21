@@ -17,6 +17,8 @@ You're the boss, so have fun editing!
 	2.1 - MAXIMUM width of 480 pixels (phones and smaller)
 	2.2 - MINIMUM width of 481 pixels (phones and larger)
 	2.3 - MINIMUM width of 721 pixels (tablets and larger)
+3.0 - Custom Business Directory Styles
+4.0 - Register Styles
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 - Global Styles
@@ -102,3 +104,26 @@ body h6{
 
 
 }/* don't delete this closing bracket */
+
+/*--------------------------------------------------------------
+3.0 - Custom Business Directory Styles
+--------------------------------------------------------------*/
+
+/* Business Listing Title */
+.wpbdp-listing .listing-title a,
+.wpbdp-listing .listing-title h2 {
+	color: #242424;
+}
+
+/* Business Listing Links */
+.wpbdp-listing a {
+	color: #54ae68;
+}
+
+/*--------------------------------------------------------------
+4.0 - Register Styles
+--------------------------------------------------------------*/
+
+.ogn-register--before-fields {
+	margin-bottom: 1em;
+}
