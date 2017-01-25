@@ -24,7 +24,7 @@ final class Site {
 	 * @return void
 	 */
 	public function register_hooks() {
-		add_action( 'wp_head', 'hotjar' );
+		add_action( 'wp_head', array( $this, 'hotjar' ) );
 	}
 
 	/**
