@@ -49,6 +49,58 @@ body h6{
 	display: none;
 }
 
+#logo-area img{
+  max-height: 40px;
+}
+
+body .site-header .site-title{
+  width: 42px;
+}
+
+.entry-content button,
+.entry-content .button{
+    font-size: 16px !important;
+    padding: 12px 24px !important;
+    font-weight: bold !important;
+}
+
+.single-post .entry-post-thumbnail{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.single-post .entry-post-thumbnail:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.3);
+    z-index: 999;
+}
+
+.sidebar-button a {
+    color: #fff !important;
+    display: inline-block;
+    font-size: 16px;
+    padding: 3px 24px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background: #3aa856;
+    border: 1px solid #2e9c4a
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar-button {
+    line-height: 3;
+}
+
 /*--------------------------------------------------------------
 2.0 - Responsive media queries (mobile styles)
 --------------------------------------------------------------*/
@@ -105,25 +157,8 @@ body h6{
 
 }/* don't delete this closing bracket */
 
-/*--------------------------------------------------------------
-3.0 - Custom Business Directory Styles
---------------------------------------------------------------*/
+/*
+You can add your own CSS here.
 
-/* Business Listing Title */
-.wpbdp-listing .listing-title a,
-.wpbdp-listing .listing-title h2 {
-	color: #242424;
-}
-
-/* Business Listing Links */
-.wpbdp-listing a {
-	color: #54ae68;
-}
-
-/*--------------------------------------------------------------
-4.0 - Register Styles
---------------------------------------------------------------*/
-
-.ogn-register--before-fields {
-	margin-bottom: 1em;
-}
+Click the help icon above to learn more.
+*/
