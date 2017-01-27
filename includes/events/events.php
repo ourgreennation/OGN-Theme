@@ -42,7 +42,7 @@ final class Events {
 
 	/**
 	 * Fix Sidebar Placement on Single Events
-	 * 
+	 *
 	 * @return void
 	 */
 	public function fix_sidebar_placement() {
