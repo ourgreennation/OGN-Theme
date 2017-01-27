@@ -94,7 +94,7 @@ final class Posts {
 	 * @return bool                  False if the current query is for a page. Otherwise returns
 	 *                               the value it was passed.
 	 */
-	public function page_comments( $is_open, $post ) {
+	public function page_comments( $is_open, $post = null ) {
 		if ( is_page( $post ) ) {
 			return false;
 		}

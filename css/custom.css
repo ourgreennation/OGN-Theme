@@ -101,6 +101,88 @@ body .site-header .site-title{
     line-height: 3;
 }
 
+.blog:not(.bp-user) .site-content,
+.archive.tag .site-content,
+.archive.date .site-content,
+.archive.author .site-content,
+.archive.category .site-content{
+    max-width: none !important;
+}
+
+.blog:not(.bp-user) .site-content .hentry,
+.archive.tag .site-content .hentry,
+.archive.date .site-content .hentry,
+.archive.author .site-content .hentry,
+.archive.category .site-content .hentry{
+    width: 270px;
+}
+
+.archive article.type-post{
+    padding: 0;
+}
+
+#masonry .entry-post-thumbnail,
+#masonry .no-entry-post-thumbnail{
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.masonry-title-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.1);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.05) 1%, rgba(0,0,0,0.05) 22%, rgba(0,0,0,0.05) 47%, rgba(0,0,0,0.6) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.05) 1%,rgba(0,0,0,0.05) 22%,rgba(0,0,0,0.05) 47%,rgba(0,0,0,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.05) 1%,rgba(0,0,0,0.05) 22%,rgba(0,0,0,0.05) 47%,rgba(0,0,0,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#99000000',GradientType=0 ); /* IE6-9 */
+    opacity: 0;
+    transition: 200ms linear;
+}
+
+.entry-post-thumbnail:hover .masonry-title-overlay{
+    opacity: 1;
+}
+
+.entry-post-thumbnail h3{
+    color: white;
+    font-size: 18px;
+    font-family: Lato, sans-serif;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.archive article.type-post{
+    border: none !important;
+}
+
+.no-entry-post-thumbnail{
+    padding: 20px;
+    display: block;
+    font-size: 20px;
+    border: none !important;
+}
+
+.no-entry-post-thumbnail h3{
+    font-size: 18px;
+    font-family: Lato, sans-serif;
+    text-transform: capitalize;
+}
+
+.no-entry-post-thumbnail:hover{
+    background-color: green;
+}
+
+.no-entry-post-thumbnail:hover h3{
+    color: white;
+}
+
 /*--------------------------------------------------------------
 2.0 - Responsive media queries (mobile styles)
 --------------------------------------------------------------*/
