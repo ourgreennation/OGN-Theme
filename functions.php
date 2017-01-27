@@ -79,4 +79,11 @@ if ( ! is_admin() ) {
   $posts->register_hooks();
 }
 
+// Events Customizations
+if ( ! is_admin() ) {
+  require_once get_stylesheet_directory() . '/includes/events/events.php';
+  $posts = new Lift\OGN\Theme\Events;
+  $posts->register_hooks();
+}
+
 ?>
