@@ -25,6 +25,7 @@ final class Site {
 	 */
 	public function register_hooks() {
 		add_action( 'wp_head', array( $this, 'hotjar' ) );
+		add_action( 'pre_get_posts', array( $this, 'search_pages' ) );
 	}
 
 	/**
@@ -49,5 +50,20 @@ final class Site {
 		})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
 		</script>
 		<?php
+	}
+
+	/**
+	 * Include Pages in WordPress Core Search
+	 *
+	 * @since  v1.2.0
+	 * @param  \WP_Query $query WP_Query object.
+	 * @return \WP_Query        WP_Query object.
+	 */
+	public function search_pages( \WP_Query $query ) {
+		if ( $query->is_search ) {
+			$query->set( 'post_type', array( 'post', 'page', 'tribe_events' ) );
+		}
+
+		return $query;
 	}
 }
