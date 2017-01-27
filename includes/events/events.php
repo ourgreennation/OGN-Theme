@@ -25,6 +25,7 @@ final class Events {
 	 */
 	public function register_hooks() {
 		add_action( 'wp', array( $this, 'show_footer' ) );
+		add_action( 'wp', array( $this, 'fix_sidebar_placement' ) );
 	}
 
 	/**
@@ -37,5 +38,20 @@ final class Events {
 		if ( is_post_type_archive( 'tribe_events' ) ) {
 			add_filter( 'onesocial_show_footer', '__return_true' );
 		}
+	}
+
+	/**
+	 * Fix Sidebar Placement on Single Events
+	 * 
+	 * @return void
+	 */
+	public function fix_sidebar_placement() {
+		if ( ! is_singular( 'tribe_events' ) ) {
+			return;
+		}
+		add_filter( 'body_class', function( array $classes ) {
+			$classes[] = 'sidebar-left';
+			return $classes;
+		});
 	}
 }
