@@ -239,8 +239,25 @@ body .site-header .site-title{
 
 }/* don't delete this closing bracket */
 
-/*
-You can add your own CSS here.
+/*--------------------------------------------------------------
+3.0 - Custom Business Directory Styles
+--------------------------------------------------------------*/
 
-Click the help icon above to learn more.
-*/
+/* Business Listing Title */
+.wpbdp-listing .listing-title a,
+.wpbdp-listing .listing-title h2 {
+    color: #242424;
+}
+
+/* Business Listing Links */
+.wpbdp-listing a {
+    color: #54ae68;
+}
+
+/*--------------------------------------------------------------
+4.0 - Register Styles
+--------------------------------------------------------------*/
+
+.ogn-register--before-fields {
+    margin-bottom: 1em;
+}
