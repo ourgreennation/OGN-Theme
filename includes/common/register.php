@@ -49,6 +49,7 @@ final class Register {
 	/**
 	 * Disable Profile Pledges
 	 *
+	 * @since  v1.2.0
 	 * @param  string    $html     Field markup.
 	 * @param  \stdClass $obj      Option markup.
 	 * @param  int       $field_id Field ID.
@@ -81,6 +82,15 @@ final class Register {
 		return $html;
 	}
 
+	/**
+	 * Username Hint
+	 *
+	 * Instructs registree to use their real name in the username and name fields for ease
+	 * of use and finding friends.
+	 *
+	 * @since  v1.2.0
+	 * @return void
+	 */
 	public function username_hint() {
 		?>
 		<p class="register--username__input-hint">
