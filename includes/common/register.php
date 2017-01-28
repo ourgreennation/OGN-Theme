@@ -25,8 +25,9 @@ final class Register {
 	 */
 	public function register_hooks() {
 		remove_action( 'bp_before_account_details_fields', 'wsl_render_auth_widget_in_wp_login_form' );
-		add_action( 'bp_before_account_details_fields', array( $this, 'link_to_login' ) );
+		add_action( 'bp_before_account_details_fields', array( $this, 'link_to_login' ), 10 );
 		add_filter( 'bp_get_the_profile_field_options_checkbox', array( $this, 'disable_profile_pledges' ), 10, 5 );
+		add_action( 'bp_before_account_details_fields', array( $this, 'username_hint' ), 15 );
 	}
 
 	/**
@@ -78,5 +79,13 @@ final class Register {
 		}
 
 		return $html;
+	}
+
+	public function username_hint() {
+		?>
+		<p class="register--username__input-hint">
+			To promote authenticity and optimum community functionality, please enter your real name for both username and name fields.
+		</p>
+		<?php
 	}
 }
