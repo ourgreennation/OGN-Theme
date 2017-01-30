@@ -99,7 +99,7 @@
      * @return {void}
      */
     function retrieveAd(zone,id,iterator,pageID) {
-        var iterator = iterator || 0;
+        var i = iterator || 0;
         var pid = pid || "";
         var start = zone.indexOf(';type');
         var place = ';place='+iterator;
