@@ -8,6 +8,8 @@
         } );
     });
 
+    setTimeout( () => { $( '#masonry').masonry() }, 500 );
+
     $( document ).on( 'click', '.button-load-more-posts', function ( event ) {
         event.preventDefault();
 
@@ -166,6 +168,10 @@
         if (data.tracking_pixel){
             $('#'+id).append('<img src="'+data.tracking_pixel+'" />');
         }
+
+        if ( $( "#masonry" ).length ) {
+            $( "#masonry" ).masonry();
+        } 
     }
 
 } )( jQuery );
