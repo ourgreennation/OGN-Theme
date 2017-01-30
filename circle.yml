@@ -17,4 +17,4 @@ deployment:
   deploy:
     branch: master
     commands:
-      - rsync -avz -e 'ssh -p 18765' --progress ./ leyan503@77.104.152.91:/home/leyan503/public_html/wp-content/themes/onesocial-child
+      - rsync -avz -e 'ssh -p 18765' --progress ./ leyan503@77.104.152.91:/home/leyan503/public_html/wp-content/themes/onesocial-child  --delete
