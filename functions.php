@@ -48,6 +48,9 @@ function onesocial_child_theme_scripts_styles()
    * Styles
    */
   wp_enqueue_style( 'onesocial-child-custom', get_stylesheet_directory_uri().'/css/custom.css' );
+
+  wp_dequeue_script( 'onesocial-load-ajax-posts' );
+  wp_enqueue_script( 'onesocial-child-load-ajax-posts', get_stylesheet_directory_uri() . '/js/load-posts.js', array( 'jquery' ), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'onesocial_child_theme_scripts_styles', 9999 );
 
