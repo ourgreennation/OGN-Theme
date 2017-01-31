@@ -41,14 +41,11 @@
                 } );
                 $( response ).find( 'article.advertisement' ).each( function () {
                     this.innerHTML = '';
-                    $( '#masonry' ).append( $( this ) ).masonry( 'appended', adbutlerLoadAd( $( this ) ) );
-
-                    return;
+                    var $el = adbutlerLoadAd( $( this ) );
                     $( '#masonry' )
-                        .append( $( this ) )
-                        .adbutlerLoadAd()
+                        .append( $el )
                         .imagesLoaded()
-                        .done( () => { $( '#masonry' ).masonry( 'appended', $( this ) ) } );
+                        .done( () => { $( '#masonry' ).masonry( 'appended', $el ) } );
                 } );
             }
 
@@ -86,6 +83,7 @@
         var zonetag = 'https://servedbyadbutler.com/adserve/;ID=168865;size=300x250;setID=220857;type=json;click=CLICK_MACRO_PLACEHOLDER';
         var i = 0;
         $element = retrieveAd( zonetag, $el[0].id, i, pageID );
+        console.log( 'adbutlerLoadAd', $element );
         return $element;
     }
 
@@ -106,7 +104,13 @@
         var tagpt1 = zone.slice(0,start);
         var tagpt2 = zone.slice(start,200);
         zone = tagpt1+';pid='+pid+place+tagpt2;
-        let retVal;       
+        let retVal;
+        var mock_response = '{"status": "SUCCESS", "placements": {"placement_1": {"banner_id": "519420655", "redirect_url": "https://servedbyadbutler.com/redirect.spark?MID=168865&plid=566736&setID=220857&channelID=0&CID=148592&banID=519420655&PID=0&textadID=0&tc=1&mt=1485818358476001&hc=9afc003155b16a34d19187d29242436a3d907381&location=", "image_url": "https://ourgreennation.net/wp-content/uploads/2017/01/300x250.gif", "width": "300", "height": "250", "alt_text": "This is a test advertisement", "accompanied_html": "", "target": "_blank", "tracking_pixel": "", "refresh_url": "", "refresh_time": "", "body": ""}}}';
+
+        var data = $.parseJSON( mock_response );
+        console.log(data);
+       
+       return buildBanner( data.placements.placement_1, id );
         
         $.ajax({
             url:zone,  
@@ -121,6 +125,7 @@
                 }
             }
         });
+        console.log( 'retVal', retVal );
         return retVal;
     }
 
@@ -135,6 +140,8 @@
         if (data == undefined){
             return false;
         }
+        console.log(data);
+        console.log(id);
         $('#'+id).html('<a><img id="bannerImage" /></a>');
         $('#'+id).css({
             width: 270,
@@ -168,6 +175,7 @@
         if (data.tracking_pixel){
             $('#'+id).append('<img src="'+data.tracking_pixel+'" />');
         }
+        console.log( 'Build', $('#'+id) );
         return $('#'+id);
     }
 
