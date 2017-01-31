@@ -41,10 +41,8 @@
                 } );
                 $( response ).find( 'article.advertisement' ).each( function () {
                     this.innerHTML = '';
-                    $( '#masonry' ).append( $( this ) );
-                    adbutlerLoadAd( $( this ) );
+                    $( '#masonry' ).append( $( this ) ).masonry( 'appended', adbutlerLoadAd( $( this ) ) );
 
-                    console.log( $(this));
                     return;
                     $( '#masonry' )
                         .append( $( this ) )
@@ -87,8 +85,8 @@
         var pageID = ';pid='+ Math.floor(Math.random() * 10e6);
         var zonetag = 'https://servedbyadbutler.com/adserve/;ID=168865;size=300x250;setID=220857;type=json;click=CLICK_MACRO_PLACEHOLDER';
         var i = 0;
-        retrieveAd( zonetag, $el.id, i, pageID );
-        return $el;
+        $element = retrieveAd( zonetag, $el[0].id, i, pageID );
+        return $element;
     }
 
     /**
@@ -98,7 +96,7 @@
      * @param  {string} id       ID of the element to put the ad in.
      * @param  {int}    iterator Iterator index.
      * @param  {string} pageID   Generate Page ID
-     * @return {void}
+     * @return {object}          jQuery element object.
      */
     function retrieveAd(zone,id,iterator,pageID) {
         var i = iterator || 0;
@@ -108,20 +106,22 @@
         var tagpt1 = zone.slice(0,start);
         var tagpt2 = zone.slice(start,200);
         zone = tagpt1+';pid='+pid+place+tagpt2;
-
+        let retVal;       
+        
         $.ajax({
             url:zone,  
             success:function(data) {
                 if (data.status == "SUCCESS"){
                     i ++;
-                    buildBanner(data.placements.placement_1,id); 
+                    retVal = buildBanner(data.placements.placement_1,id); 
                 }
                 else if (data.status == "NO_ADS" && i > 0) {
                     i = 0;
-                    retrieveAd(zonetag,id,i,pageID);
+                    retVal = retrieveAd(zonetag,id,i,pageID);
                 }
             }
         });
+        return retVal;
     }
 
     /**
@@ -129,7 +129,7 @@
      * 
      * @param  {object} data Data object frm AdButler
      * @param  {string} id   Id of the element to buid the banner in.
-     * @return {void}
+     * @return {object}      jQuery object of the element.
      */
     function buildBanner(data,id){
         if (data == undefined){
@@ -137,9 +137,9 @@
         }
         $('#'+id).html('<a><img id="bannerImage" /></a>');
         $('#'+id).css({
-            width: data.width,
-            height: parseInt(data.height)
-        })
+            width: 270,
+            paddingBottom: '20px'
+        });
         if (data.body != ""){
             $('#'+id).html(data.body);
             if (data.accupixel_url){
@@ -151,13 +151,13 @@
                 $('#'+id+' a').attr({
                     href: data.redirect_url,
                     target: data.target
-                }); 
+                });
             }
             $('#'+id+' #bannerImage').attr({
                 'alt': data.alt_text,
-                'width': data.width,
-                'height': data.height,
-                'src': data.image_url
+                'src': data.image_url,
+                'width': 270,
+                'height': 'auto',
             });
             $('#'+id+' img').on('load',function(){
                 if (data.accupixel_url){
@@ -168,10 +168,7 @@
         if (data.tracking_pixel){
             $('#'+id).append('<img src="'+data.tracking_pixel+'" />');
         }
-
-        if ( $( "#masonry" ).length ) {
-            $( "#masonry" ).masonry();
-        } 
+        return $('#'+id);
     }
 
 } )( jQuery );
