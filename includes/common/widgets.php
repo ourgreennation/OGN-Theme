@@ -40,6 +40,7 @@ final class Widgets {
 	 */
 	public function register_widgets() {
 		array_push( $this->added_widget_ids, $this->register_not_logged_sidebar() );
+		array_push( $this->added_widget_ids, $this->register_404_sidebar() );
 	}
 
 	/**
@@ -53,6 +54,24 @@ final class Widgets {
 			'name'          => esc_html__( 'Not Logged In - Global', 'our-green-nation' ),
 			'id'            => 'not-logged-in',
 			'description'   => 'Sidebar that display across the site if a user is not logged in.',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}
+
+	/**
+	 * Register 404 Widget Area
+	 *
+	 * @since  v1.2.0
+	 * @return int Widget ID
+	 */
+	public function register_404_sidebar() {
+		return register_sidebar( array(
+			'name'          => esc_html__( '404', 'our-green-nation' ),
+			'id'            => 'four-oh-four',
+			'description'   => 'Widget Area for 404 pages.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title">',
