@@ -26,6 +26,7 @@ final class Site {
 	public function register_hooks() {
 		add_action( 'wp_head', array( $this, 'hotjar' ) );
 		add_action( 'pre_get_posts', array( $this, 'search_pages' ) );
+		add_action( 'wp', array( $this, 'ingredients_header' ) );
 	}
 
 	/**
@@ -65,5 +66,17 @@ final class Site {
 		}
 
 		return $query;
+	}
+
+	/**
+	 * Ingredients Header
+	 *
+	 * @since  v1.2.0
+	 * @return void
+	 */
+	public function ingredients_header() {
+		if ( is_singular( 'ogn_ingredient' ) ) {
+			add_filter( 'onesocial_single_header', '__return_false' );
+		}
 	}
 }
