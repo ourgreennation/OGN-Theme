@@ -27,6 +27,7 @@ final class Site {
 		add_action( 'wp_head', array( $this, 'hotjar' ) );
 		add_action( 'pre_get_posts', array( $this, 'search_pages' ) );
 		add_action( 'wp', array( $this, 'ingredients_header' ) );
+		add_action( 'wp', array( $this, 'redirect_anons_to_login' ) );
 	}
 
 	/**
@@ -77,6 +78,20 @@ final class Site {
 	public function ingredients_header() {
 		if ( is_singular( 'ogn_ingredient' ) ) {
 			add_filter( 'onesocial_single_header', '__return_false' );
+		}
+	}
+
+	/**
+	 * Redirects anonymous site users to login
+	 *
+	 * Only redirects if they are on a single post page, or attempting to view a profile.
+	 *
+	 * @return void
+	 */
+	public function redirect_anons_to_login() {
+		if ( is_single() || bp_is_user() ) {
+			wp_safe_redirect( wp_login_url( get_permalink( get_queried_object_id() ) ) );
+			exit;
 		}
 	}
 }
