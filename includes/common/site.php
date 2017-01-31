@@ -89,7 +89,7 @@ final class Site {
 	 * @return void
 	 */
 	public function redirect_anons_to_login() {
-		if ( is_single() || bp_is_user() ) {
+		if ( ! is_user_logged_in() && ( is_single() || bp_is_user() ) ) {
 			wp_safe_redirect( wp_login_url( get_permalink( get_queried_object_id() ) ) );
 			exit;
 		}
