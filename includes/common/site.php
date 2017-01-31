@@ -62,7 +62,7 @@ final class Site {
 	 * @return \WP_Query        WP_Query object.
 	 */
 	public function search_pages( \WP_Query $query ) {
-		if ( $query->is_search ) {
+		if ( ! is_admin() && $query->is_search ) {
 			$query->set( 'post_type', array( 'post', 'page', 'tribe_events' ) );
 		}
 
