@@ -41,6 +41,7 @@
                 } );
                 $( response ).find( 'article.advertisement' ).each( function () {
                     this.innerHTML = '';
+                    $( '#masonry' ).append( $( this ) );
                     var $el = adbutlerLoadAd( $( this ) );
                     $( '#masonry' )
                         .append( $el )
