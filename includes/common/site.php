@@ -26,7 +26,7 @@ final class Site {
 	public function register_hooks() {
 		add_action( 'wp_head', array( $this, 'hotjar' ) );
 		add_action( 'pre_get_posts', array( $this, 'search_pages' ) );
-		add_action( 'wp', array( $this, 'ingredients_header' ) );
+		add_action( 'wp', array( $this, 'custom_post_types_header' ) );
 		add_action( 'wp', array( $this, 'redirect_anons_to_login' ) );
 	}
 
@@ -75,8 +75,8 @@ final class Site {
 	 * @since  v1.2.0
 	 * @return void
 	 */
-	public function ingredients_header() {
-		if ( is_singular( 'ogn_ingredient' ) ) {
+	public function custom_post_types_header() {
+		if ( is_singular( 'ogn_ingredient' ) || is_singular( 'ogn_book' ) ) {
 			add_filter( 'onesocial_single_header', '__return_false' );
 		}
 	}
