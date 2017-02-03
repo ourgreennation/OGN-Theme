@@ -93,7 +93,7 @@ body .site-header .site-title{
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     background: #3aa856;
-    border: 1px solid #2e9c4a
+    border: 1px solid #2e9c4a;
     text-align: center;
     width: 100%;
 }
@@ -106,7 +106,8 @@ body .site-header .site-title{
 .archive.tag .site-content,
 .archive.date .site-content,
 .archive.author .site-content,
-.archive.category .site-content{
+.archive.category .site-content,
+.search.search-results .site-content .search-content{
     max-width: none !important;
 }
 
@@ -114,11 +115,13 @@ body .site-header .site-title{
 .archive.tag .site-content .hentry,
 .archive.date .site-content .hentry,
 .archive.author .site-content .hentry,
-.archive.category .site-content .hentry{
+.archive.category .site-content .hentry,
+.search.search-results .site-content .hentry{
     width: 270px;
 }
 
-.archive article.type-post{
+.archive article.type-post,
+.search article.type-post{
     padding: 0;
 }
 

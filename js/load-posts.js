@@ -1,4 +1,8 @@
 ( function ( $ ) {
+    if ( 0 == $('#masonry').length ) {
+        return;
+    }
+
     $( '#masonry' ).imagesLoaded().done( () => {
         $( '#masonry' ).masonry( {
             itemSelector : '.hentry',
@@ -27,10 +31,6 @@
             if ( template === 'home' ) {
                 $( response ).find( '.article-outher' ).each( function () {
                     $( '#content' ).append( $( this ) );
-                } );
-            } else if ( template === 'search' ) {
-                $( response ).find( 'article.hentry' ).each( function () {
-                    $( '.search-content-inner' ).append( $( this ) );
                 } );
             } else {
                 $( response ).find( 'article.type-post' ).each( function () {
