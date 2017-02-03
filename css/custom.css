@@ -254,6 +254,27 @@ body .site-header .site-title{
     color: #54ae68;
 }
 
+.business-directory ul.wpbdp-categories {
+    list-style: circle;
+    column-count: 2;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+    width: 100%;
+}
+
+ul.wpbdp-categories>li {
+    float: none;
+}
+
+.business-directory ul.wpbdp-categories li {
+    line-height: 1.5em;
+    margin-bottom: 0.618em;
+    font-weight: 600;
+    float: none;
+    width: 100%;
+}
+
 /*--------------------------------------------------------------
 4.0 - Register Styles
 --------------------------------------------------------------*/
