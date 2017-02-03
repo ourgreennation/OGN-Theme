@@ -19,6 +19,7 @@ You're the boss, so have fun editing!
 	2.3 - MINIMUM width of 721 pixels (tablets and larger)
 3.0 - Custom Business Directory Styles
 4.0 - Register Styles
+5.0 - Messages and Notifications Styles
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 - Global Styles
@@ -285,4 +286,12 @@ ul.wpbdp-categories>li {
 
 .ogn-register--before-fields {
     margin-bottom: 1em;
+}
+
+/*--------------------------------------------------------------
+4.0 - Messages and Notifications Styles
+--------------------------------------------------------------*/
+
+#buddypress #messages-bulk-management .messages-options-nav {
+    visibility: hidden;
 }
