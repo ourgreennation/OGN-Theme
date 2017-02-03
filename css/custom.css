@@ -267,6 +267,10 @@ ul.wpbdp-categories>li {
     float: none;
 }
 
+.business-directory ul.wpbdp-categories ul.children {
+    margin-top: 0.618em;
+}
+
 .business-directory ul.wpbdp-categories li {
     line-height: 1.5em;
     margin-bottom: 0.618em;
