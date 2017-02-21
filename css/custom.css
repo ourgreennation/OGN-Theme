@@ -314,6 +314,8 @@ ul.wpbdp-categories>li {
 
 button.shopify-buy_btn {
     color: #6b933e;
+    font-family: Georgia, serif;
+    font-weight: 600;
 }
 
 .shopify-buy__product__title {
