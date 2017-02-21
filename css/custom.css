@@ -312,8 +312,8 @@ ul.wpbdp-categories>li {
 6.0 - Messages and Notifications Styles
 --------------------------------------------------------------*/
 
-button.shopify-buy_btn {
-    color: #6b933e;
+button.shopify-buy__btn {
+    background-color: #6b933e;
     font-family: Georgia, serif;
     font-weight: 600;
 }
