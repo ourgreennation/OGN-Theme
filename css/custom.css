@@ -20,6 +20,7 @@ You're the boss, so have fun editing!
 3.0 - Custom Business Directory Styles
 4.0 - Register Styles
 5.0 - Messages and Notifications Styles
+6.0 - Shopify Integration Styles
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 - Global Styles
@@ -300,9 +301,24 @@ ul.wpbdp-categories>li {
 }
 
 /*--------------------------------------------------------------
-4.0 - Messages and Notifications Styles
+5.0 - Messages and Notifications Styles
 --------------------------------------------------------------*/
 
 #buddypress #messages-bulk-management .messages-options-nav {
     visibility: hidden;
+}
+
+/*--------------------------------------------------------------
+6.0 - Messages and Notifications Styles
+--------------------------------------------------------------*/
+
+button.shopify-buy_btn {
+    color: #6b933e;
+}
+
+.shopify-buy__product__title {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
 }
