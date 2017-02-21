@@ -59,9 +59,9 @@ final class Events {
 
 	/**
 	 * Suppresses Jetpack Related Posts Module on Single Events
-	 * 
-	 * @param  array  $options An array of related posts options.
-	 * @return array           Filtered array of options.
+	 *
+	 * @param  array $options An array of related posts options.
+	 * @return array          Filtered array of options.
 	 */
 	public function suppress_related_posts( $options ) {
 		if ( is_singular( 'tribe_events' ) ) {
