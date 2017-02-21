@@ -111,7 +111,7 @@ final class Posts {
 	 * @param  string $content The post content.
 	 * @return string          The filtered post content.
 	 */
-	public function legacy_featured_image( string $content ) {
+	public function legacy_featured_image( $content ) {
 		global $post;
 		if ( ! is_single() || is_admin() || ! has_post_thumbnail( $post->ID ) ) {
 			return $content;
@@ -131,7 +131,7 @@ final class Posts {
 	 * @param  string $content The content.
 	 * @return string          The filtered content.
 	 */
-	public function content_hook( string $content ) {
+	public function content_hook( $content ) {
 		global $post;
 		if ( get_field( 'hook', $post->ID ) ) {
 			$content = $this->content_hook_markup( get_field( 'hook', $post->ID ), $post->ID ) . $content;
@@ -146,7 +146,7 @@ final class Posts {
 	 * @param  int    $post_id   The Post ID.
 	 * @return string            Markup for the content hook.
 	 */
-	protected function content_hook_markup( string $hook_text, int $post_id ) {
+	protected function content_hook_markup( $hook_text, int $post_id ) {
 		ob_start();
 		?>
 		<h3 class="post-hook field-hook" id="post-hook-<?php echo esc_attr( $post_id );?>">
