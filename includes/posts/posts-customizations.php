@@ -117,6 +117,11 @@ final class Posts {
 			return $content;
 		}
 
+		// Don't preprend to video formats.
+		if ( has_post_format( 'video', $post->ID ) ) {
+			return;
+		}
+
 		// Only applies to posts who haven't been modified since the last legacy migration (2/17/17).
 		if ( strtotime( $post->post_modified_gmt ) > 1487375999 ) {
 			return $content;
