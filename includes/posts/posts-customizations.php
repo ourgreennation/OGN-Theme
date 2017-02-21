@@ -39,6 +39,9 @@ final class Posts {
 			remove_action( 'the_content', 'obm_bp_reshare_single_content', 25 );
 			add_action( 'the_content', array( $this, 'obm_share_modified' ), 25 );
 		}
+
+		add_filter( 'the_content', array( $this, 'legacy_featured_image' ), 25 );
+		add_filter( 'the_content', array( $this, 'content_hook' ), 20 );
 	}
 
 	/**
@@ -99,5 +102,57 @@ final class Posts {
 			return false;
 		}
 		return $is_open;
+	}
+
+
+	/**
+	 * Legacy Featured Image
+	 *
+	 * @param  string $content The post content.
+	 * @return string          The filtered post content.
+	 */
+	public function legacy_featured_image( string $content ) {
+		global $post;
+		if ( ! is_single() || is_admin() || ! has_post_thumbnail( $post->ID ) ) {
+			return $content;
+		}
+
+		// Only applies to posts who haven't been modified since the last legacy migration (2/17/17).
+		if ( strtotime( $post->post_modified_gmt ) > 1487375999 ) {
+			return $content;
+		}
+
+		return get_the_post_thumbnail( $post->id, 'full' ) . $content;
+	}
+
+	/**
+	 * Content Hook
+	 *
+	 * @param  string $content The content.
+	 * @return string          The filtered content.
+	 */
+	public function content_hook( string $content ) {
+		global $post;
+		if ( get_field( 'hook', $post->ID ) ) {
+			$content = $this->content_hook_markup( get_field( 'hook', $post->ID ), $post->ID ) . $content;
+		}
+		return $content;
+	}
+
+	/**
+	 * Content Hook Markup
+	 *
+	 * @param  string $hook_text The text for the hook.
+	 * @param  int    $post_id   The Post ID.
+	 * @return string            Markup for the content hook.
+	 */
+	protected function content_hook_markup( string $hook_text, int $post_id ) {
+		ob_start();
+		?>
+		<h3 class="post-hook field-hook" id="post-hook-<?php echo esc_attr( $post_id );?>">
+			<?php echo esc_html( wp_strip_all_tags( $hook_text ) ); ?>
+		</h3>
+		<?php
+		return ob_get_clean();
 	}
 }
