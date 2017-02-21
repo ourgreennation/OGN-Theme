@@ -119,7 +119,7 @@ final class Posts {
 
 		// Don't preprend to video formats.
 		if ( has_post_format( 'video', $post->ID ) ) {
-			return;
+			return $content;
 		}
 
 		// Only applies to posts who haven't been modified since the last legacy migration (2/17/17).
