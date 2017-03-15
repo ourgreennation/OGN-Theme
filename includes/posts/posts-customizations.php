@@ -147,11 +147,11 @@ final class Posts {
 	/**
 	 * Content Hook Markup
 	 *
-	 * @param  string $hook_text The text for the hook.
-	 * @param  int    $post_id   The Post ID.
-	 * @return string            Markup for the content hook.
+	 * @param  string  $hook_text The text for the hook.
+	 * @param  integer $post_id   The Post ID.
+	 * @return string             Markup for the content hook.
 	 */
-	protected function content_hook_markup( $hook_text, int $post_id ) {
+	protected function content_hook_markup( $hook_text, $post_id ) {
 		ob_start();
 		?>
 		<h3 class="post-hook field-hook" id="post-hook-<?php echo esc_attr( $post_id );?>">
