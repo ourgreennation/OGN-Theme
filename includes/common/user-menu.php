@@ -172,7 +172,9 @@ function ogn_admin_bb_menu_bar_solutions_center() {
 if ( current_user_can( 'manage_options' ) || current_user_can( 'edit_others_posts' ) ) {
 
     add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_activity_sitewide_activity', 1 );
-    add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_community_directory', 41 );
+    //Commented out until we clean up URL.
+    // @TODO Add ability to target links to contributors.
+    //add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_community_directory', 41 );
     add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_groups_all_groups', 1 );
     add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_events', 71 );
     add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_solutions_center', 72 );
