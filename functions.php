@@ -58,9 +58,9 @@ add_action( 'wp_enqueue_scripts', 'onesocial_child_theme_scripts_styles', 9999 )
 /****************************** CUSTOM FUNCTIONS ******************************/
 
 // Common Customizations
-require_once get_stylesheet_directory() . '/includes/common/site.php';
-require_once get_stylesheet_directory() . '/includes/common/widgets.php';
-require_once get_stylesheet_directory() . '/includes/common/register.php';
+require_once get_stylesheet_directory() . '/includes/common/class-site.php';
+require_once get_stylesheet_directory() . '/includes/common/class-widgets.php';
+require_once get_stylesheet_directory() . '/includes/common/class-register.php';
 require_once get_stylesheet_directory() . '/includes/common/user-menu.php';
 $site = new Lift\OGN\Theme\Site;
 $site->register_hooks();
@@ -71,21 +71,21 @@ $register->register_hooks();
 
 // Groups Customizations
 if ( ! is_admin() ) {
-  require_once get_stylesheet_directory() . '/includes/groups/groups-customizations.php';
+  require_once get_stylesheet_directory() . '/includes/groups/class-groups.php';
   $groups = new Lift\OGN\Theme\Groups;
   $groups->register_hooks();
 }
 
 // Single Posts Customizations
 if ( ! is_admin() ) {
-  require_once get_stylesheet_directory() . '/includes/posts/posts-customizations.php';
+  require_once get_stylesheet_directory() . '/includes/posts/class-posts.php';
   $posts = new Lift\OGN\Theme\Posts;
   $posts->register_hooks();
 }
 
 // Events Customizations
 if ( ! is_admin() ) {
-  require_once get_stylesheet_directory() . '/includes/events/events.php';
+  require_once get_stylesheet_directory() . '/includes/events/class-events.php';
   $posts = new Lift\OGN\Theme\Events;
   $posts->register_hooks();
 }
