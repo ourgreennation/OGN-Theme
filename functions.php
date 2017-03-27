@@ -61,6 +61,7 @@ add_action( 'wp_enqueue_scripts', 'onesocial_child_theme_scripts_styles', 9999 )
 require_once get_stylesheet_directory() . '/includes/common/site.php';
 require_once get_stylesheet_directory() . '/includes/common/widgets.php';
 require_once get_stylesheet_directory() . '/includes/common/register.php';
+require_once get_stylesheet_directory() . '/includes/common/user-menu.php';
 $site = new Lift\OGN\Theme\Site;
 $site->register_hooks();
 $widgets = new Lift\OGN\Theme\Widgets;
