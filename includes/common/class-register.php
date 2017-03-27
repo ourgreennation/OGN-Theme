@@ -67,16 +67,23 @@ final class Register {
 			strpos( $obj->name, 'Member Pledge' ),
 			strpos( $obj->name, 'Privacy Policy' ),
 			);
-
+		ob_start();
+		?>
+		<script>
+			window.disablePledgeField = window.disablePledgeField || function(e) {
+				e.target.checked = true;
+			}
+		</script>
+		<?php
 		// If conditions are met and we are agreeing, disable the checkbox if it's checked.
 		if ( false !== strpos( $obj->name, 'I agree' ) && ! empty( array_filter( $conditions ) ) ) {
 			$html = sprintf( '<label for="%3$s" class="option-label"><input %1$s type="checkbox" name="%2$s" id="%3$s" value="%4$s">%5$s</label>',
-				( ! $selected ) ? $selected : $selected . ' disabled="disabled"',
+				( ! $selected ) ? $selected : $selected . ' onChange="window.disablePledgeField(event)"',
 				esc_attr( "field_{$field_id}[]" ),
 				esc_attr( "field_{$obj->id}_{$key}" ),
 				esc_attr( stripslashes( $obj->name ) ),
 				esc_html( stripslashes( $obj->name ) )
-			);
+			) . ob_get_clean();
 		}
 
 		return $html;
