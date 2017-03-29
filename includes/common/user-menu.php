@@ -55,7 +55,7 @@ function ogn_admin_bb_menu_bar_community_directory() {
 
 	$community_directory_domain = bp_get_root_domain() . '/' . bp_get_members_root_slug();
 	$item_link = trailingslashit( $community_directory_domain );
-	$members_link = bp_get_root_domain() . '/' . bp_get_members_root_slug() . '/members';
+	$members_link = bp_get_root_domain() . '/' . bp_get_members_root_slug();
 	$contributors_link = bp_get_root_domain() . '/' . bp_get_members_root_slug() . '/contributors';
 
 	$wp_admin_bar->add_menu( array(
@@ -156,7 +156,7 @@ function ogn_admin_bb_menu_bar_solutions_center() {
 		return;
 	}
 
-	$item_link = trailingslashit( home_url() . '/solution-center' );
+	$item_link = trailingslashit( home_url() . '/solutions-center' );
 
 	$wp_admin_bar->add_menu( array(
 		'parent'  => $bp->my_account_menu_id,

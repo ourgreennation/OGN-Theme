@@ -58,7 +58,7 @@ final class Register {
 	 * @return string           HTML
 	 */
 	public function disable_profile_pledges( $html, $obj, $field_id, $selected, $key ) {
-		if ( ! bp_is_profile_edit() || ! property_exists( $obj, 'name' ) || 'option' !== $obj->type ) {
+		if ( ! bp_is_user_profile_edit() || ! property_exists( $obj, 'name' ) || 'option' !== $obj->type ) {
 			return $html;
 		}
 
