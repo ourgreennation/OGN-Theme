@@ -61,7 +61,7 @@ function ogn_admin_bb_menu_bar_community_directory() {
 	$wp_admin_bar->add_menu( array(
 		'parent'  => $bp->my_account_menu_id,
 		'id'      => 'wp-admin-bar-my-account-community-directory',
-		'title'   => __( 'Community Directory', 'ogn' ),
+		'title'   => __( 'Community<br /> Directory', 'ogn' ),
 		'href'    => trailingslashit( $item_link ),
 		'meta'    => array(
 			'class' => 'wp-admin-bar-community-directory',
@@ -76,17 +76,6 @@ function ogn_admin_bb_menu_bar_community_directory() {
 		'href'   => trailingslashit( $members_link ),
 		'meta'    => array(
 			'class' => 'wp-admin-bar-my-account-community-directory-members',
-		),
-	) );
-
-	// Contributors sub menu item.
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'wp-admin-bar-my-account-community-directory',
-		'id'     => 'wp-admin-bar-my-account-community-directory-contributors',
-		'title'  => __( 'Contributors', 'ogn' ),
-		'href'   => trailingslashit( $contributors_link ),
-		'meta'    => array(
-			'class' => 'wp-admin-bar-my-account-community-directory-contributors',
 		),
 	) );
 
@@ -146,7 +135,7 @@ function ogn_admin_bb_menu_bar_events() {
 		'title'   => __( 'Events', 'ogn' ),
 		'href'    => trailingslashit( $item_link ),
 		'meta'    => array(
-			'class' => 'wp-admin-bar-events',
+			'class' => 'wp-admin-bar-events menupop',
 		),
 	) );
 
@@ -175,14 +164,14 @@ function ogn_admin_bb_menu_bar_solutions_center() {
 		'title'   => __( 'Solution Center', 'ogn' ),
 		'href'    => trailingslashit( $item_link ),
 		'meta'    => array(
-			'class' => 'wp-admin-bar-solution-center',
+			'class' => 'wp-admin-bar-solution-center menupop',
 		),
 	) );
 
 }
 
 add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_activity_sitewide_activity', 1 );
-// @TODO Add ability to target links to contributors at priority 41.
+add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_community_directory', 61 );
 add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_groups_all_groups', 1 );
 add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_events', 71 );
 add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_solutions_center', 72 );
