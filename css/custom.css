@@ -324,3 +324,14 @@ button.shopify-buy__btn {
     font-style: normal;
     font-size: 18px;
 }
+
+/*--------------------------------------------------------------
+7.0 - Admin bar
+--------------------------------------------------------------*/
+@media screen and (min-width: 481px) {
+
+	.header-account-login .menupop.wp-admin-bar-community-directory .ab-item {
+		line-height: 1.3;
+	}
+
+}
