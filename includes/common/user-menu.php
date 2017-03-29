@@ -79,18 +79,6 @@ function ogn_admin_bb_menu_bar_community_directory() {
 		),
 	) );
 
-	// @TODO Add ability to target links to contributors at priority 41.
-	/* Contributors sub menu item.
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'wp-admin-bar-my-account-community-directory',
-		'id'     => 'wp-admin-bar-my-account-community-directory-contributors',
-		'title'  => __( 'Contributors', 'ogn' ),
-		'href'   => trailingslashit( $contributors_link ),
-		'meta'    => array(
-			'class' => 'wp-admin-bar-my-account-community-directory-contributors',
-		),
-	) );*/
-
 }
 
 
