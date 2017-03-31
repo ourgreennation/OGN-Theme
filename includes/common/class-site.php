@@ -28,6 +28,7 @@ final class Site {
 		add_action( 'pre_get_posts', array( $this, 'search_pages' ) );
 		add_action( 'wp', array( $this, 'custom_post_types_header' ) );
 		add_action( 'wp', array( $this, 'redirect_anons_to_login' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'dequeue_wpurp_styles' ), 999 );
 	}
 
 	/**
@@ -93,5 +94,16 @@ final class Site {
 			wp_safe_redirect( wp_login_url( get_permalink( get_queried_object_id() ) ) );
 			exit;
 		}
+	}
+
+	/**
+	 * Dequeue WP Ultimate Recipe Styles that are unnecessary
+	 *
+	 * @return void
+	 */
+	public function dequeue_wpurp_styles() {
+		wp_dequeue_style( 'wpurp_style1-css' );
+		wp_dequeue_style( 'wpurp_style1' );
+		wp_dequeue_style( 'font-awesome' );
 	}
 }
