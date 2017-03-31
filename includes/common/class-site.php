@@ -104,5 +104,6 @@ final class Site {
 	public function dequeue_wpurp_styles() {
 		wp_dequeue_style( 'wpurp_style1-css' );
 		wp_dequeue_style( 'wpurp_style1' );
+		wp_dequeue_style( 'font-awesome' );
 	}
 }
