@@ -292,6 +292,11 @@ ul.wpbdp-categories>li {
     width: 100%;
 }
 
+.business-directory .reshare-container {
+    clear: both;
+    float: left;
+}
+
 /*--------------------------------------------------------------
 4.0 - Register Styles
 --------------------------------------------------------------*/
