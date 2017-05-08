@@ -8,33 +8,33 @@
  * @package OneSocial Child Theme
  */
 
- /**
-  * Add Sitewide Activity
-  *
-  * Add Site-wide Activity Menu Item to User Admin Bar for admin and contributors only.
-  *
-  * @return void
-  */
+	/**
+	 * Add Sitewide Activity
+	 *
+	 * Add Site-wide Activity Menu Item to User Admin Bar for admin and contributors only.
+	 *
+	 * @return void
+	 */
 function ogn_admin_bb_menu_bar_dash() {
 	global $wp_admin_bar, $bp;
 
- 	if ( ! bp_use_wp_admin_bar() || defined( 'DOING_AJAX' ) ) {
- 		return;
- 	}
+	if ( ! bp_use_wp_admin_bar() || defined( 'DOING_AJAX' ) ) {
+		return;
+	}
 
- 	$dashboard_domain = admin_url();
- 	$item_link = trailingslashit( $dashboard_domain );
+		$dashboard_domain = admin_url();
+		$item_link = trailingslashit( $dashboard_domain );
 	admin_url( 'admin.php?page=onesocial_options' );
 
- 	$wp_admin_bar->add_menu( array(
- 		'parent'  => $bp->my_account_menu_id,
- 		'id'      => 'wp-admin-bar-my-account-dash',
- 		'title'   => __( 'Dashboard', 'ogn' ),
- 		'href'    => trailingslashit( admin_url() ),
- 		'meta'    => array(
- 			'class' => 'wp-admin-bar-dashboard menupop',
- 		),
- 	) );
+		$wp_admin_bar->add_menu( array(
+			'parent'  => $bp->my_account_menu_id,
+			'id'      => 'wp-admin-bar-my-account-dash',
+			'title'   => __( 'Dashboard', 'ogn' ),
+			'href'    => trailingslashit( admin_url() ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-dashboard menupop',
+			),
+		) );
 
 	$wp_admin_bar->add_menu( array(
 		'parent' => 'wp-admin-bar-my-account-dash',
@@ -95,8 +95,6 @@ function ogn_admin_bb_menu_bar_dash() {
 			'class' => 'wp-admin-bar-activity-site-wide-activity',
 		),
 	) );
-
-
 
 }
 
