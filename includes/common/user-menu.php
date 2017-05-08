@@ -22,80 +22,77 @@ function ogn_admin_bb_menu_bar_dash() {
 		return;
 	}
 
-		$dashboard_domain = admin_url();
-		$item_link = trailingslashit( $dashboard_domain );
-	admin_url( 'admin.php?page=onesocial_options' );
+	$wp_admin_bar->add_menu( array(
+		'parent'  => $bp->my_account_menu_id,
+		'id'      => 'wp-admin-bar-my-account-dash',
+		'title'   => __( 'Dashboard', 'ogn' ),
+		'href'    => trailingslashit( admin_url() ),
+		'meta'    => array(
+			'class' => 'wp-admin-bar-dashboard menupop',
+		),
+	) );
 
+	if ( current_user_can( 'manage_options' ) ) :
 		$wp_admin_bar->add_menu( array(
-			'parent'  => $bp->my_account_menu_id,
-			'id'      => 'wp-admin-bar-my-account-dash',
-			'title'   => __( 'Dashboard', 'ogn' ),
-			'href'    => trailingslashit( admin_url() ),
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-options',
+			'title'  => __( 'OneSocial Options', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'admin.php?page=onesocial_options' ) ),
 			'meta'    => array(
-				'class' => 'wp-admin-bar-dashboard menupop',
+				'class' => 'wp-admin-bar-my-account-dash-options',
 			),
 		) );
 
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'wp-admin-bar-my-account-dash',
-		'id'     => 'wp-admin-bar-my-account-dash-options',
-		'title'  => __( 'OneSocial Options', 'ogn' ),
-		'href'   => trailingslashit( admin_url( 'admin.php?page=onesocial_options' ) ),
-		'meta'    => array(
-			'class' => 'wp-admin-bar-my-account-dash-options',
-		),
-	) );
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-customize',
+			'title'  => __( 'Customize', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'customize.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
 
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'wp-admin-bar-my-account-dash',
-		'id'     => 'wp-admin-bar-my-account-dash-customize',
-		'title'  => __( 'Customize', 'ogn' ),
-		'href'   => trailingslashit( admin_url( 'customize.php' ) ),
-		'meta'    => array(
-			'class' => 'wp-admin-bar-activity-site-wide-activity',
-		),
-	) );
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-widgets',
+			'title'  => __( 'Widgets', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'widgets.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
 
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'wp-admin-bar-my-account-dash',
-		'id'     => 'wp-admin-bar-my-account-dash-widgets',
-		'title'  => __( 'Widgets', 'ogn' ),
-		'href'   => trailingslashit( admin_url( 'widgets.php' ) ),
-		'meta'    => array(
-			'class' => 'wp-admin-bar-activity-site-wide-activity',
-		),
-	) );
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-menus',
+			'title'  => __( 'Menus', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'nav-menus.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
 
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'wp-admin-bar-my-account-dash',
-		'id'     => 'wp-admin-bar-my-account-dash-menus',
-		'title'  => __( 'Menus', 'ogn' ),
-		'href'   => trailingslashit( admin_url( 'nav-menus.php' ) ),
-		'meta'    => array(
-			'class' => 'wp-admin-bar-activity-site-wide-activity',
-		),
-	) );
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-plugins',
+			'title'  => __( 'Plugins', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'plugins.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
 
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'wp-admin-bar-my-account-dash',
-		'id'     => 'wp-admin-bar-my-account-dash-plugins',
-		'title'  => __( 'Plugins', 'ogn' ),
-		'href'   => trailingslashit( admin_url( 'plugins.php' ) ),
-		'meta'    => array(
-			'class' => 'wp-admin-bar-activity-site-wide-activity',
-		),
-	) );
-
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'wp-admin-bar-my-account-dash',
-		'id'     => 'wp-admin-bar-my-account-dash-themes',
-		'title'  => __( 'Themes', 'ogn' ),
-		'href'   => trailingslashit( admin_url( 'themes.php' ) ),
-		'meta'    => array(
-			'class' => 'wp-admin-bar-activity-site-wide-activity',
-		),
-	) );
-
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-themes',
+			'title'  => __( 'Themes', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'themes.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
+	endif;
 }
 
 /**
