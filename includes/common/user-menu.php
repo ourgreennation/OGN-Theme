@@ -9,6 +9,103 @@
  */
 
 /**
+ * Add Dashboard Links
+ *
+ * Add Dashboard Menu Items to User Admin Bar for admin and contributors only.
+ *
+ * @return void
+ */
+function ogn_admin_bb_menu_bar_dash() {
+	global $wp_admin_bar, $bp;
+
+	if ( ! bp_use_wp_admin_bar() || defined( 'DOING_AJAX' ) ) {
+		return;
+	}
+
+	$wp_admin_bar->add_menu( array(
+		'parent'  => $bp->my_account_menu_id,
+		'id'      => 'wp-admin-bar-my-account-dash',
+		'title'   => __( 'Dashboard', 'ogn' ),
+		'href'    => trailingslashit( admin_url() ),
+		'meta'    => array(
+			'class' => 'wp-admin-bar-dashboard menupop',
+		),
+	) );
+
+	$wp_admin_bar->add_menu( array(
+		'parent'  => 'wp-admin-bar-my-account-dash',
+		'id'      => 'wp-admin-bar-my-account-dash-sub',
+		'title'   => __( 'Access Dashboard', 'ogn' ),
+		'href'    => trailingslashit( admin_url() ),
+		'meta'    => array(
+			'class' => 'wp-admin-bar-dashboard',
+		),
+	) );
+
+	if ( current_user_can( 'manage_options' ) ) :
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-options',
+			'title'  => __( 'OneSocial Options', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'admin.php?page=onesocial_options' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-my-account-dash-options',
+			),
+		) );
+
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-customize',
+			'title'  => __( 'Customize', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'customize.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
+
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-widgets',
+			'title'  => __( 'Widgets', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'widgets.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
+
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-menus',
+			'title'  => __( 'Menus', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'nav-menus.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
+
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-plugins',
+			'title'  => __( 'Plugins', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'plugins.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
+
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'wp-admin-bar-my-account-dash',
+			'id'     => 'wp-admin-bar-my-account-dash-themes',
+			'title'  => __( 'Themes', 'ogn' ),
+			'href'   => trailingslashit( admin_url( 'themes.php' ) ),
+			'meta'    => array(
+				'class' => 'wp-admin-bar-activity-site-wide-activity',
+			),
+		) );
+	endif;
+}
+
+/**
  * Add Sitewide Activity
  *
  * Add Site-wide Activity Menu Item to User Admin Bar for admin and contributors only.
@@ -139,6 +236,16 @@ function ogn_admin_bb_menu_bar_events() {
 		),
 	) );
 
+	$wp_admin_bar->add_menu( array(
+		'parent'  => 'wp-admin-bar-my-account-events',
+		'id'      => 'wp-admin-bar-my-account-events-sub',
+		'title'   => __( 'Find Events', 'ogn' ),
+		'href'    => trailingslashit( $item_link ),
+		'meta'    => array(
+			'class' => 'wp-admin-bar-events',
+		),
+	) );
+
 }
 
 
@@ -168,10 +275,22 @@ function ogn_admin_bb_menu_bar_solutions_center() {
 		),
 	) );
 
+	$wp_admin_bar->add_menu( array(
+		'parent'  => 'wp-admin-bar-my-account-solution-center',
+		'id'      => 'wp-admin-bar-my-account-solution-center-sub',
+		'title'   => __( 'Find Services', 'ogn' ),
+		'href'    => trailingslashit( $item_link ),
+		'meta'    => array(
+			'class' => 'wp-admin-bar-solution-center',
+		),
+	) );
+
 }
 
-add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_activity_sitewide_activity', 1 );
+
+add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_activity_sitewide_activity', 3 );
 add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_community_directory', 61 );
 add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_groups_all_groups', 1 );
 add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_events', 71 );
 add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_solutions_center', 72 );
+add_action( 'bp_setup_admin_bar', 'ogn_admin_bb_menu_bar_dash', 5 );

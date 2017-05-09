@@ -340,3 +340,7 @@ button.shopify-buy__btn {
 	}
 
 }
+
+.is-desktop .header-account-login .wp-admin-bar-dashboard {
+	display: none;
+}
