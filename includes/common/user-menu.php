@@ -8,13 +8,13 @@
  * @package OneSocial Child Theme
  */
 
-	/**
-	 * Add Sitewide Activity
-	 *
-	 * Add Site-wide Activity Menu Item to User Admin Bar for admin and contributors only.
-	 *
-	 * @return void
-	 */
+/**
+ * Add Dashboard Links
+ *
+ * Add Dashboard Menu Items to User Admin Bar for admin and contributors only.
+ *
+ * @return void
+ */
 function ogn_admin_bb_menu_bar_dash() {
 	global $wp_admin_bar, $bp;
 
@@ -29,6 +29,16 @@ function ogn_admin_bb_menu_bar_dash() {
 		'href'    => trailingslashit( admin_url() ),
 		'meta'    => array(
 			'class' => 'wp-admin-bar-dashboard menupop',
+		),
+	) );
+
+	$wp_admin_bar->add_menu( array(
+		'parent'  => 'wp-admin-bar-my-account-dash',
+		'id'      => 'wp-admin-bar-my-account-dash-sub',
+		'title'   => __( 'Access Dashboard', 'ogn' ),
+		'href'    => trailingslashit( admin_url() ),
+		'meta'    => array(
+			'class' => 'wp-admin-bar-dashboard',
 		),
 	) );
 
@@ -226,6 +236,16 @@ function ogn_admin_bb_menu_bar_events() {
 		),
 	) );
 
+	$wp_admin_bar->add_menu( array(
+		'parent'  => 'wp-admin-bar-my-account-events',
+		'id'      => 'wp-admin-bar-my-account-events-sub',
+		'title'   => __( 'Find Events', 'ogn' ),
+		'href'    => trailingslashit( $item_link ),
+		'meta'    => array(
+			'class' => 'wp-admin-bar-events',
+		),
+	) );
+
 }
 
 
@@ -252,6 +272,16 @@ function ogn_admin_bb_menu_bar_solutions_center() {
 		'href'    => trailingslashit( $item_link ),
 		'meta'    => array(
 			'class' => 'wp-admin-bar-solution-center menupop',
+		),
+	) );
+
+	$wp_admin_bar->add_menu( array(
+		'parent'  => 'wp-admin-bar-my-account-solution-center',
+		'id'      => 'wp-admin-bar-my-account-solution-center-sub',
+		'title'   => __( 'Find Services', 'ogn' ),
+		'href'    => trailingslashit( $item_link ),
+		'meta'    => array(
+			'class' => 'wp-admin-bar-solution-center',
 		),
 	) );
 
