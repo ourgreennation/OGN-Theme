@@ -90,4 +90,5 @@ if ( ! is_admin() ) {
   $posts->register_hooks();
 }
 
-?>
+// Removes ASYNC if put in functions.php
+remove_action( 'wp_dashboard_setup', 'register_aj_dashboard_widget' );
