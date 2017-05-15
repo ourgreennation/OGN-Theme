@@ -373,4 +373,34 @@ button.shopify-buy__btn {
     color: black;
     display: block;
     margin-bottom: 3px;
+
+/* Reactions */
+#buddypress .activity-list .activity-content .activity-header {
+    padding-bottom: 32px;
+    position: relative;
+}
+ 
+#buddypress .activity-reactions.active {
+    bottom: 0;
+    clear: both;
+    float: right;
+    left: 0;
+    margin: 0 auto;
+    padding-bottom: 0.6em;
+    position: absolute;
+    width: 100%;
+}
+
+#buddypress .activity-reactions a {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 0px 5px;
+}
+
+#buddypress .activity-reactions a span {
+    margin-left: 7px;
+}
+
+#buddypress #activity-stream .activity-header > p {
+    max-width: 267px;
 }
