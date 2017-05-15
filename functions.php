@@ -128,3 +128,16 @@ function wds_ogn_bp_reactions_container( $action ) {
   bp_reactions_container();
   return $action . ob_get_clean();
 }
+
+/** Add login button to the account activated page.
+ *
+ * @return void
+ */
+function wds_ogn_add_login_button_to_activation_page() {
+  ?>
+  <a class="wds-login-button" href="<?php echo esc_url( wp_login_url() ); ?>">
+    <?php esc_html_e( 'Login', 'ourgreennation' ); ?>
+  </a>
+  <?php
+}
+add_action( 'bp_after_activate_content', 'wds_ogn_add_login_button_to_activation_page' );
