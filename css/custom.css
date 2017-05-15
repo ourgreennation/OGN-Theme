@@ -344,3 +344,33 @@ button.shopify-buy__btn {
 .is-desktop .header-account-login .wp-admin-bar-dashboard {
 	display: none;
 }
+
+/* Reply Button */
+#buddypress div.activity-meta a.acomment-reply {
+    color: #6a933e;
+    font-weight: normal;
+}
+
+.acomment-reply:before {
+    color: black;
+    display: block;
+}
+
+.acomment-reply:after {
+    content: "Reply";
+    font-size: 16px;
+}
+
+/* Delete Button */
+#buddypress #activity-stream .activity-meta .delete-activity {
+    color: #6a933e;
+    font-size: 16px !important;
+    padding: 12px 33px !important;
+    font-weight: normal !important;
+}
+
+#buddypress #activity-stream .activity-meta .delete-activity:before {
+    color: black;
+    display: block;
+    margin-bottom: 3px;
+}
