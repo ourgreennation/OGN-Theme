@@ -92,3 +92,39 @@ if ( ! is_admin() ) {
 
 // Removes ASYNC if put in functions.php
 remove_action( 'wp_dashboard_setup', 'register_aj_dashboard_widget' );
+
+/**
+ * BuddyPress tweaks.
+ */
+
+/**
+ * Remove the default BP Reactions hook and add our own.
+ *
+ * @return void
+ */
+function wds_ogn_update_bp_reactions_hooks() {
+  // Remove the default action.
+  remove_action( 'bp_before_activity_entry_comments', 'bp_reactions_container' );
+
+  // Add our own action to move the markup around.
+  add_action( 'bp_get_activity_action', 'wds_ogn_bp_reactions_container', 99999, 1 );
+}
+add_action( 'init', 'wds_ogn_update_bp_reactions_hooks' );
+
+/**
+ * Appends the BP Reactions content to the activity actions.
+ *
+ * @param  string $action Current markup for the action.
+ * @return string         Modified markup for actions.
+ */
+function wds_ogn_bp_reactions_container( $action ) {
+  // Bail early if the BP Reactions helper doesn't exist.
+  if ( ! function_exists( 'bp_reactions_container' ) ) {
+    return $action;
+  }
+
+  // Append the BP Reactions markup.
+  ob_start();
+  bp_reactions_container();
+  return $action . ob_get_clean();
+}
