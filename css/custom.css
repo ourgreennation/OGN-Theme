@@ -344,3 +344,16 @@ button.shopify-buy__btn {
 .is-desktop .header-account-login .wp-admin-bar-dashboard {
 	display: none;
 }
+
+/* Login Button */
+a.wds-login-button {
+    background-color: #6b933e;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 25px;
+    line-height: 21px;
+    padding: 12px 25px;
+}

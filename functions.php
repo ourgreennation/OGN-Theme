@@ -92,3 +92,21 @@ if ( ! is_admin() ) {
 
 // Removes ASYNC if put in functions.php
 remove_action( 'wp_dashboard_setup', 'register_aj_dashboard_widget' );
+
+/**
+ * BuddyPress tweaks.
+ */
+
+/**
+ * Add login button to the account activated page.
+ *
+ * @return void
+ */
+function wds_ogn_add_login_button_to_activation_page() {
+  ?>
+  <a class="wds-login-button" href="<?php echo esc_url( wp_login_url() ); ?>">
+    <?php esc_html_e( 'Login', 'ourgreennation' ); ?>
+  </a>
+  <?php
+}
+add_action( 'bp_after_activate_content', 'wds_ogn_add_login_button_to_activation_page' );
